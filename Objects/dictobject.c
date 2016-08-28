@@ -2529,7 +2529,7 @@ dictiter_new(PyDictObject *dict, PyTypeObject *itertype)
     register PyDictEntry *ep = dict->ma_table;
     register Py_ssize_t index_pos = di->len - 1;
     
-    /* Fill the indices array with the positions of all items */
+    /* Fill the indices array with the positions of all entries */
     for (Py_ssize_t mask = dict->ma_mask; index_pos >= 0; mask--) {
         if (ep[mask].me_value) {
             indices[index_pos] = mask;
