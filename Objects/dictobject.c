@@ -2493,6 +2493,7 @@ typedef struct {
     Py_ssize_t di_pos;
     PyObject* di_result; /* reusable result tuple for iteritems */
     Py_ssize_t len;
+    Py_ssize_t *di_indices; /* array of entry positions, ordered randomly*/
 } dictiterobject;
 
 static PyObject *
@@ -2516,6 +2517,36 @@ dictiter_new(PyDictObject *dict, PyTypeObject *itertype)
     }
     else
         di->di_result = NULL;
+    
+    di->di_indices = malloc(di->len * sizeof(Py_ssize_t));
+    
+    if (di->di_indices == NULL) {
+        Py_DECREF(di);
+        return NULL;
+    }
+
+    register Py_ssize_t* indices = di->di_indices;
+    register PyDictEntry *ep = dict->ma_table;
+    register Py_ssize_t index_pos = di->len - 1;
+    
+    /* Fill the indices array with the positions of all items */
+    for (Py_ssize_t mask = dict->ma_mask; index_pos >= 0; mask--) {
+        if (ep[mask].me_value) {
+            indices[index_pos] = mask;
+            index_pos--;
+        }
+    }
+
+    /* Shuffle the indices array */
+    Py_ssize_t swap_pos;
+    for (index_pos = di->len - 1; index_pos >= 0; index_pos--) {
+        _PyOS_URandom(&swap_pos, sizeof(Py_ssize_t));
+        swap_pos = abs(swap_pos) % (index_pos + 1);
+        Py_ssize_t temp = indices[index_pos];
+        indices[index_pos] = indices[swap_pos];
+        indices[swap_pos] = temp;
+    }
+
     _PyObject_GC_TRACK(di);
     return (PyObject *)di;
 }
@@ -2525,6 +2556,7 @@ dictiter_dealloc(dictiterobject *di)
 {
     Py_XDECREF(di->di_dict);
     Py_XDECREF(di->di_result);
+    free(di->di_indices);
     PyObject_GC_Del(di);
 }
 
@@ -2555,8 +2587,6 @@ static PyMethodDef dictiter_methods[] = {
 static PyObject *dictiter_iternextkey(dictiterobject *di)
 {
     PyObject *key;
-    register Py_ssize_t i, mask;
-    register PyDictEntry *ep;
     PyDictObject *d = di->di_dict;
 
     if (d == NULL)
@@ -2569,19 +2599,12 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         di->di_used = -1; /* Make this state sticky */
         return NULL;
     }
-
-    i = di->di_pos;
-    if (i < 0)
+    
+    if (di->len == 0)
         goto fail;
-    ep = d->ma_table;
-    mask = d->ma_mask;
-    while (i <= mask && ep[i].me_value == NULL)
-        i++;
-    di->di_pos = i+1;
-    if (i > mask)
-        goto fail;
+    
     di->len--;
-    key = ep[i].me_key;
+    key = d->ma_table[di->di_indices[di->len]].me_key;
     Py_INCREF(key);
     return key;
 
