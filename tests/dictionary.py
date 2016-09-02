@@ -25,22 +25,26 @@ class TestDict(unittest.TestCase):
         d = {}
         counts = self.permCounts(d, 1000)
         self.assertTrue(counts[''] == 1000)
+        self.assertTrue(len(counts) == 1)
 
         d = {'a':1}
         counts = self.permCounts(d, 1000)
         self.assertTrue(counts['a'] == 1000)
-        
+        self.assertTrue(len(counts) == 1)
+
         d = {'a':1, 'b':2}
         counts = self.permCounts(d, 20000)
         self.assertTrue(len(counts) == 2)
-        for v in counts.itervalues():
+        for k, v in counts.iteritems():
+            self.assertTrue(len(set(k)) == len(k)) 
             self.assertTrue(v > 8000)
             self.assertTrue(v < 12000)
 
         d = {'a':1, 'b':2, 'c':3}
         counts = self.permCounts(d, 60000)
         self.assertTrue(len(counts) == 6)
-        for v in counts.itervalues():
+        for k, v in counts.iteritems():
+            self.assertTrue(len(set(k)) == len(k)) 
             self.assertTrue(v > 8000)
             self.assertTrue(v < 12000)
     
@@ -52,7 +56,8 @@ class TestDict(unittest.TestCase):
             i += 1
         counts = self.permCounts(d, 5000)
         self.assertTrue(len(counts) > 4998)
-        for v in counts.itervalues():
+        for k, v in counts.iteritems():
+            self.assertTrue(len(set(k)) == len(k)) 
             self.assertTrue(v < 3)
 
 if __name__ == '__main__':

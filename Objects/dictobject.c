@@ -2493,7 +2493,7 @@ typedef struct {
     Py_ssize_t di_pos;
     PyObject* di_result; /* reusable result tuple for iteritems */
     Py_ssize_t len;
-    Py_ssize_t *di_indices; /* array of entry positions, ordered randomly*/
+    PyObject *di_indices; /* array of entry positions, ordered randomly*/
 } dictiterobject;
 
 static PyObject *
@@ -2518,17 +2518,11 @@ dictiter_new(PyDictObject *dict, PyTypeObject *itertype)
     else
         di->di_result = NULL;
     
-    di->di_indices = malloc(di->len * sizeof(Py_ssize_t));
-    
-    if (di->di_indices == NULL) {
-        Py_DECREF(di);
-        return NULL;
-    }
+    Py_ssize_t indices[di->len];
 
-    register Py_ssize_t* indices = di->di_indices;
     register PyDictEntry *ep = dict->ma_table;
     register Py_ssize_t index_pos = di->len - 1;
-    
+
     /* Fill the indices array with the positions of all entries */
     for (Py_ssize_t mask = dict->ma_mask; index_pos >= 0; mask--) {
         if (ep[mask].me_value) {
@@ -2537,15 +2531,8 @@ dictiter_new(PyDictObject *dict, PyTypeObject *itertype)
         }
     }
 
-    /* Shuffle the indices array */
-    Py_ssize_t swap_pos;
-    for (index_pos = di->len - 1; index_pos >= 0; index_pos--) {
-        _PyOS_URandom(&swap_pos, sizeof(Py_ssize_t));
-        swap_pos = abs(swap_pos) % (index_pos + 1);
-        Py_ssize_t temp = indices[index_pos];
-        indices[index_pos] = indices[swap_pos];
-        indices[swap_pos] = temp;
-    }
+    NonDex_Shuffle_Py_ssize_t(&indices, di->len);
+    di->di_indices = PyByteArray_FromStringAndSize(&indices, di->len * sizeof(Py_ssize_t));
 
     _PyObject_GC_TRACK(di);
     return (PyObject *)di;
@@ -2556,7 +2543,7 @@ dictiter_dealloc(dictiterobject *di)
 {
     Py_XDECREF(di->di_dict);
     Py_XDECREF(di->di_result);
-    free(di->di_indices);
+    Py_XDECREF(di->di_indices);
     PyObject_GC_Del(di);
 }
 
@@ -2604,7 +2591,9 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         goto fail;
     
     di->len--;
-    key = d->ma_table[di->di_indices[di->len]].me_key;
+
+    register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
+    key = d->ma_table[indices[di->len]].me_key;
     Py_INCREF(key);
     return key;
 

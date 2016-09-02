@@ -347,6 +347,7 @@ PYTHON_OBJS=	\
 		Python/modsupport.o \
 		Python/mystrtoul.o \
 		Python/mysnprintf.o \
+		Python/nondeterminism.o \
 		Python/peephole.o \
 		Python/pyarena.o \
 		Python/pyctype.o \
@@ -811,6 +812,7 @@ PYTHON_HEADERS= \
 		Include/modsupport.h \
 		Include/moduleobject.h \
 		Include/node.h \
+		Include/nondeterminism.h \
 		Include/object.h \
 		Include/objimpl.h \
 		Include/opcode.h \
