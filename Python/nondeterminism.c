@@ -1,22 +1,32 @@
 #include "Python.h"
 #include <string.h>
 
-enum mode {
+enum NonDexMode {
     FULL, 
+    ONE
 };
 
-static enum mode NonDex_mode = FULL;
-static unsigned int NonDex_seed = 1;
+static enum NonDexMode mode = FULL;
+static unsigned int seed = 1;
 
-void NonDex_InitFull(Py_ssize_t seed)
+void NonDex_InitFull(Py_ssize_t init_seed)
 {
-    NonDex_mode = FULL;
-    NonDex_seed = seed;
-    srand(seed);
+    mode = FULL;
+    seed = init_seed;
+    srand(init_seed);
+}
+
+void NonDex_InitOne(Py_ssize_t init_seed)
+{
+    mode = ONE;
+    seed = init_seed;
 }
 
 void NonDex_Shuffle_Py_ssize_t(Py_ssize_t *array, Py_ssize_t length)
 {
+    if (mode == ONE) {
+        srand(seed);
+    }
     for (Py_ssize_t pos = length - 1; pos >= 0; pos--) {
         Py_ssize_t swap_pos = rand() % (pos + 1);
         Py_ssize_t temp = array[pos];
