@@ -292,8 +292,11 @@ Py_Main(int argc, char **argv)
     PySys_ResetWarnOptions();
     _PyOS_ResetGetOpt();
 
-    char NonDex_mode = '\0';
-    int NonDex_seed = 0;
+    const char *nd_mode_env = getenv("PYTHONNONDEXMODE");
+    char nd_mode = nd_mode_env ? nd_mode_env[0] : '\0';
+    
+    const char *nd_seed_env = getenv("PYTHONNONDEXSEED");
+    int nd_seed = nd_seed_env ? atoi(nd_seed_env) : 0;
 
     while ((c = _PyOS_GetOpt(argc, argv, PROGRAM_OPTS)) != EOF) {
         if (c == 'c') {
@@ -443,12 +446,12 @@ Py_Main(int argc, char **argv)
                 return usage(2, argv[0]);
             }
             
-            NonDex_mode = _PyOS_optarg[0];
+            nd_mode = _PyOS_optarg[0];
             
             if (_PyOS_optarg[1] == '\0') {
-                NonDex_seed = time(NULL);
+                nd_seed = time(NULL);
             } else {
-                NonDex_seed = atoi(_PyOS_optarg + 1);
+                nd_seed = atoi(_PyOS_optarg + 1);
             }
             
             break;
@@ -462,13 +465,14 @@ Py_Main(int argc, char **argv)
         }
     }
 
-    switch (NonDex_mode) {
+    /* Check environment variables for NonDex mode and seed */
+    switch (nd_mode) {
         case 'f':
-            NonDex_InitFull(NonDex_seed);
+            NonDex_InitFull(nd_seed);
             break;
 
         case 'o':
-            NonDex_InitOne(NonDex_seed);
+            NonDex_InitOne(nd_seed);
             break;
     }
     
