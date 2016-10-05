@@ -293,7 +293,7 @@ Py_Main(int argc, char **argv)
     _PyOS_ResetGetOpt();
 
     const char *nd_mode_env = getenv("PYTHONNONDEXMODE");
-    char nd_mode = nd_mode_env ? nd_mode_env[0] : '\0';
+    char nd_mode = nd_mode_env ? nd_mode_env[0] : 'f';
     
     const char *nd_seed_env = getenv("PYTHONNONDEXSEED");
     int nd_seed = nd_seed_env ? atoi(nd_seed_env) : 0;
@@ -464,7 +464,7 @@ Py_Main(int argc, char **argv)
 
         }
     }
-
+    
     /* Check environment variables for NonDex mode and seed */
     switch (nd_mode) {
         case 'f':

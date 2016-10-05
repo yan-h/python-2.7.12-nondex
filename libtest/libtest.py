@@ -1,6 +1,7 @@
 import subprocess
 import os
 import sys
+import yaml
 
 if len(sys.argv) < 2:
     sys.exit("Usage: python libtest.py <file containing repo URLs>")
@@ -8,12 +9,13 @@ elif not os.path.isfile(sys.argv[1]):
     sys.exit("Could not find file with repo URLs")
 
 # Locations of important files. TODO: make more configurable
-repos_file = sys.argv[1] # List of URLs of Github projects
+repos_file = os.getcwd() + "/" + sys.argv[1] # List of URLs of Github projects
 # Location of executable for nondeterministic version of Python
 py_exe_nondex = "/home/yan/pynondex/python-2.7.12/bin/python"
 py_exe_original = sys.executable
 import_error = "ImportError: No module named "
 import_error_len = len(import_error)
+devnull = open(os.devnull, 'w')
 
 # Location of this python file
 test_home = os.path.dirname(os.path.abspath(__file__)) + "/"
@@ -21,7 +23,7 @@ log_home = test_home + "logs/"
 main_log_file = open(log_home + "main.log", "w+")
 
 def cd(path):
-    subprocess.call("cd %s" % (path), shell=True)
+    os.chdir(path)
 
 def remove_library(url):
     newFile = ""
@@ -52,6 +54,14 @@ def test_repo(url):
     venv_dir = ""
 
     def setup_tests(exe_path):
+        def venvify(s):
+            return s.replace("python", venv_python).replace("nosetests", venv_dir + "bin/nosetests").replace("pip", venv_pip)
+        def get_command(s):
+            if s == None:
+                return ""
+            return venvify('\n'.join(s) if type(s) is list else s)
+
+        cd(repo_dir)
         # Set up virtual environment
         if os.path.isdir(venv_dir):
             print "> Skipping virtualenv creation, already exists"
@@ -66,62 +76,56 @@ def test_repo(url):
 
         venv_python = venv_dir + "bin/python"
         venv_pip = venv_dir + "bin/pip"
-        reqs_file = repo_dir + "requirements.txt"
-        if os.path.isfile(reqs_file):
-            print "> Installing requirements at %s" % (reqs_file)
-            subprocess.call("%s install -r %s" % (venv_pip, reqs_file), shell=True)
-
+#       reqs_file = repo_dir + "requirements.txt"
+        travis_file = repo_dir + ".travis.yml"
+#if os.path.isfile(reqs_file):
+#           print "> Installing requirements at %s" % (reqs_file)
+#
         if not os.path.exists(log_home):
             os.makedirs(log_home)
 
-        subprocess.call("%s install nose" % (venv_pip), shell=True)
+        if os.path.isfile(travis_file):
+            print "> Parsing .travis.yml"
+            with open(travis_file) as stream:
+                yaml_contents = yaml.load(stream)
+                if 'install' in yaml_contents:
+                    subprocess.call(get_command(yaml_contents['install']), shell=True, stdout=devnull, stderr=devnull)
+                if 'before_script' in yaml_contents:
+                    subprocess.call(get_command(yaml_contents['before_script']), shell=True, stdout=devnull, stderr=devnull)
+                test_command = get_command(yaml_contents['script'])
+                return test_command
+        else:
+            subprocess.call("%s install -r %s" % (venv_pip, reqs_file), shell=True)
+            return "%sbin/nosetests" % (repo_dir)
 
-    # Automatically attempt to fix import errors
-    missing_modules = []
-    for i in range(2):
-        print "> Running tests on standard Python"
+    print "> Running tests on standard Python"
+    venv_dir = repo_dir + "venv_original/"
+    result = setup_tests(py_exe_original)
 
-        new_missing_modules = []
-        venv_dir = repo_dir + "venv_original/"
-        setup_tests(py_exe_original)
-        outfile_path_original = log_home + repo_name + "_original.log"
+    if result == None:
+        remove_library(url)
+        return
 
-        subprocess.call("%sbin/nosetests -s -w > %s 2>&1 %s"
-                                    % (venv_dir, outfile_path_original, repo_dir), shell=True)
+    outfile_path_original = log_home + repo_name + "_original.log"
+    with open(outfile_path_original, 'w') as f:
+        subprocess.call(result, shell=True, stdout=devnull, stderr=f)
 
-        # Attempt to fix ImportErrors
-        with open(outfile_path_original) as f:
-            for line in f:
-                if line.startswith(import_error):
-                    if i == 1:
-                        # Abort library
-                        remove_library(url)
-                        return
-                    new_missing_modules.append(line[len(import_error):].split(".")[0])
-
-        for module in new_missing_modules:
-            print "%s install %s" % (venv_dir + "bin/pip", module)
-            subprocess.call("%s install %s" % (venv_dir + "bin/pip", module), shell=True)
-            '''
-            SPECIAL CASES
-            - psycopg2i: sudo apt-get install libpq-dev
-            '''
-        if len(new_missing_modules) == 0:
-            break
-
-        missing_modules += new_missing_modules
+    # Remove this library if there are import errors
+    with open(outfile_path_original) as f:
+        for line in f:
+            if line.startswith(import_error):
+                remove_library(url)
 
     print "> Running tests on nondex Python"
     venv_dir = repo_dir + "venv_nondex/"
-    setup_tests(py_exe_nondex)
+    result = setup_tests(py_exe_nondex)
+
+    if result == None:
+        remove_library(url)
+        return
     outfile_path_nondex = log_home + repo_name + "_nondex.log"
-
-    for module in missing_modules:
-        subprocess.call("%s install %s" % (venv_dir + "bin/pip", module), shell=True)
-
-
-    subprocess.call("%sbin/nosetests -s -w > %s 2>&1 %s"
-         % (venv_dir, outfile_path_nondex, repo_dir), shell=True)
+    with open(outfile_path_nondex, 'w') as f:
+        subprocess.call(result, shell=True, stdout=devnull, stderr=f)
 
     data_orig = ''
     data_nondex = ''
