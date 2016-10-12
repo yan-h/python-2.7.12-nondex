@@ -2587,15 +2587,19 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         return NULL;
     }
     
-    if (di->len == 0)
-        goto fail;
-    
-    di->len--;
+    while (1) {
+        if (di->len == 0)
+            goto fail;
+        
+        di->len--;
 
-    register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
-    key = d->ma_table[indices[di->len]].me_key;
-    Py_INCREF(key);
-    return key;
+        register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
+        key = d->ma_table[indices[di->len]].me_key;
+        if (key != dummy) {
+            Py_INCREF(key);
+            return key;
+        }
+    }
 
 fail:
     di->di_dict = NULL;
@@ -2651,16 +2655,20 @@ static PyObject *dictiter_iternextvalue(dictiterobject *di)
         di->di_used = -1; /* Make this state sticky */
         return NULL;
     }
-
-    if (di->len == 0)
-        goto fail;
     
-    di->len--;
+    while (1) {
+        if (di->len == 0)
+            goto fail;
+        
+        di->len--;
 
-    register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
-    value = d->ma_table[indices[di->len]].me_value;
-    Py_INCREF(value);
-    return value;
+        register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
+        if (d->ma_table[indices[di->len]].me_key != dummy) {
+            value = d->ma_table[indices[di->len]].me_value;
+            Py_INCREF(value);
+            return value;
+        }
+    }
 fail:
     di->di_dict = NULL;
     Py_DECREF(d);
@@ -2718,48 +2726,35 @@ static PyObject *dictiter_iternextitem(dictiterobject *di)
         return NULL;
     }
     
-    if (di->len == 0)
-        goto fail;
-    
-    di->len--;
-    
-    register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
-    key = d->ma_table[indices[di->len]].me_key;
-    value = d->ma_table[indices[di->len]].me_value;
+    while (1) {
+        if (di->len == 0)
+            goto fail;
+        
+        di->len--;
+        
+        register Py_ssize_t *indices = (Py_ssize_t *)PyByteArray_AsString(di->di_indices);
+        key = d->ma_table[indices[di->len]].me_key;
+        
+        if (key == dummy) continue; /* If a key was removed while iterating, skip it */
+        
+        value = d->ma_table[indices[di->len]].me_value;
+        
+        if (result->ob_refcnt == 1) {
+            Py_INCREF(result);
+            Py_DECREF(PyTuple_GET_ITEM(result, 0));
+            Py_DECREF(PyTuple_GET_ITEM(result, 1));
+        } else {
+            result = PyTuple_New(2);
+            if (result == NULL)
+                return NULL;
+        }
 
-    /*
-    i = di->di_pos;
-    if (i < 0)
-        goto fail;
-    ep = d->ma_table;
-    mask = d->ma_mask;
-    while (i <= mask && ep[i].me_value == NULL)
-        i++;
-    di->di_pos = i+1;
-    if (i > mask)
-        goto fail;
-*/
-    if (result->ob_refcnt == 1) {
-        Py_INCREF(result);
-        Py_DECREF(PyTuple_GET_ITEM(result, 0));
-        Py_DECREF(PyTuple_GET_ITEM(result, 1));
-    } else {
-        result = PyTuple_New(2);
-        if (result == NULL)
-            return NULL;
+        Py_INCREF(key);
+        Py_INCREF(value);
+        PyTuple_SET_ITEM(result, 0, key);
+        PyTuple_SET_ITEM(result, 1, value);
+        return result;
     }
-/*    key = ep[i].me_key;
-    value = ep[i].me_value;*/
-
-    key = d->ma_table[indices[di->len]].me_key;
-    value = d->ma_table[indices[di->len]].me_value;
-
-
-    Py_INCREF(key);
-    Py_INCREF(value);
-    PyTuple_SET_ITEM(result, 0, key);
-    PyTuple_SET_ITEM(result, 1, value);
-    return result;
 
 fail:
     di->di_dict = NULL;

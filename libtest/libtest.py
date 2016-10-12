@@ -76,7 +76,7 @@ def test_repo(url):
 
         venv_python = venv_dir + "bin/python"
         venv_pip = venv_dir + "bin/pip"
-#       reqs_file = repo_dir + "requirements.txt"
+        reqs_file = repo_dir + "requirements.txt"
         travis_file = repo_dir + ".travis.yml"
 #if os.path.isfile(reqs_file):
 #           print "> Installing requirements at %s" % (reqs_file)

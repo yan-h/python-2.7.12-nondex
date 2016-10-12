@@ -9,107 +9,76 @@ bounds have been chosen to make failure extremely unlikely.
 
 class TestDict(unittest.TestCase):
 
-    def permCountsKey(self, d, iterations):
+    def permCounts(self, d, iterations, iterFuncName):
+        '''
+        Helper function.
+        Given a dictionary, iterates through it a given number of times and returns a dictionary
+        mapping each iteration order (represented as a tuple) to its number of occurrences.
+        Used to test whether all permutations of iterations are roughly equally likely.
+
+        d - the input dictionary
+        iterations - number of iterations
+        iterFuncName - the name of the function to call on the dictionary to return an iterator.
+                       For dictionaries, can be "iterkeys", "itervalues" or "iteritems"
+        '''
         result = {}
+        iterFunc = getattr(d, iterFuncName)
         for i in range(iterations):
-            dstr = ''
-            for k in d:
-                dstr += k
-            if dstr in result:
-                result[dstr] += 1
+            perm = []
+            for k in iterFunc():
+                perm.append(k)
+            if tuple(perm) in result:
+                result[tuple(perm)] += 1
             else:
-                result[dstr] = 1
+                result[tuple(perm)] = 1
         return result
 
-    def permCountsValue(self, d, iterations):
-        result = {}
-        for i in range(iterations):
-            dstr = ''
-            for k in d.itervalues():
-                dstr += k
-            if dstr in result:
-                result[dstr] += 1
-            else:
-                result[dstr] = 1
-        return result
-
-
-    def test_keys_small(self):
+    def test_small(self):
         d = {}
-        counts = self.permCountsKey(d, 1000)
-        self.assertTrue(counts[''] == 1000)
-        self.assertTrue(len(counts) == 1)
 
-        d = {'a':1}
-        counts = self.permCountsKey(d, 1000)
-        self.assertTrue(counts['a'] == 1000)
-        self.assertTrue(len(counts) == 1)
+        iterFuncNames = ["iterkeys", "itervalues", "iteritems"];
 
-        d = {'a':1, 'b':2}
-        counts = self.permCountsKey(d, 20000)
-        self.assertTrue(len(counts) == 2)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v > 8000)
-            self.assertTrue(v < 12000)
+        for funcName in iterFuncNames:
+            d = {}
+            counts = self.permCounts(d, 1000, funcName)
+            self.assertTrue(len(counts) == 1)
+            for k, v in counts.iteritems():
+                self.assertTrue(len(set(k)) == len(k))
+                self.assertTrue(v == 1000)
 
-        d = {'a':1, 'b':2, 'c':3}
-        counts = self.permCountsKey(d, 60000)
-        self.assertTrue(len(counts) == 6)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v > 8000)
-            self.assertTrue(v < 12000)
+            d = {'a':1}
+            counts = self.permCounts(d, 1000, funcName)
+            self.assertTrue(len(counts) == 1)
+            for k, v in counts.iteritems():
+                self.assertTrue(len(set(k)) == len(k))
+                self.assertTrue(v == 1000)
 
-    def test_keys_large(self):
-        d = {}
-        i = 0
-        for c in ascii_lowercase:
-            d[c] = i
-            i += 1
-        counts = self.permCountsKey(d, 5000)
-        self.assertTrue(len(counts) > 4998)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v < 3)
+            d = {'a':1, 'b':2}
+            counts = self.permCounts(d, 2000, funcName)
+            self.assertTrue(len(counts) == 2)
+            for k, v in counts.iteritems():
+                self.assertTrue(len(set(k)) == len(k))
+                self.assertTrue(v > 800)
+                self.assertTrue(v < 1200)
 
-    def test_values_small(self):
-        d = {}
-        counts = self.permCountsValue(d, 1000)
-        self.assertTrue(counts[''] == 1000)
-        self.assertTrue(len(counts) == 1)
+            d = {'a':1, 'b':2, 'c':3}
+            counts = self.permCounts(d, 6000, funcName)
+            self.assertTrue(len(counts) == 6)
+            for k, v in counts.iteritems():
+                self.assertTrue(len(set(k)) == len(k))
+                self.assertTrue(v > 800)
+                self.assertTrue(v < 1200)
 
-        d = {1:'a'}
-        counts = self.permCountsValue(d, 1000)
-        self.assertTrue(counts['a'] == 1000)
-        self.assertTrue(len(counts) == 1)
+            d = {}
+            i = 0
+            for c in ascii_lowercase:
+                d[c] = i
+                i += 1
+            counts = self.permCounts(d, 2000, funcName)
+            self.assertTrue(len(counts) > 1998)
+            for k, v in counts.iteritems():
+                self.assertTrue(len(set(k)) == len(k))
+                self.assertTrue(v < 3)
 
-        d = {1:'a', 2:'b'}
-        counts = self.permCountsValue(d, 20000)
-        self.assertTrue(len(counts) == 2)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v > 8000)
-            self.assertTrue(v < 12000)
-
-        d = {1:'a', 2:'b', 3:'c'}
-        counts = self.permCountsValue(d, 60000)
-        self.assertTrue(len(counts) == 6)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v > 8000)
-            self.assertTrue(v < 12000)
-
-    def test_values_large(self):
-        d = {}
-        i = 0
-        for c in ascii_lowercase:
-            d[i] = c
-            i += 1
-        counts = self.permCountsValue(d, 5000)
-        self.assertTrue(len(counts) > 4998)
-        for k, v in counts.iteritems():
-            self.assertTrue(len(set(k)) == len(k))
-            self.assertTrue(v < 3)
 if __name__ == '__main__':
     unittest.main()
