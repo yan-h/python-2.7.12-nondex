@@ -9,7 +9,7 @@ bounds have been chosen to make failure extremely unlikely.
 
 class TestDict(unittest.TestCase):
 
-    def permCounts(self, d, iterations, iterFuncName):
+    def perm_counts(self, d, iterations, iterFuncName):
         '''
         Helper function.
         Given a dictionary, iterates through it a given number of times and returns a dictionary
@@ -33,28 +33,28 @@ class TestDict(unittest.TestCase):
                 result[tuple(perm)] = 1
         return result
 
-    def test_small(self):
+    def test_random(self):
         d = {}
 
         iterFuncNames = ["iterkeys", "itervalues", "iteritems"];
 
         for funcName in iterFuncNames:
             d = {}
-            counts = self.permCounts(d, 1000, funcName)
+            counts = self.perm_counts(d, 1000, funcName)
             self.assertTrue(len(counts) == 1)
             for k, v in counts.iteritems():
                 self.assertTrue(len(set(k)) == len(k))
                 self.assertTrue(v == 1000)
 
             d = {'a':1}
-            counts = self.permCounts(d, 1000, funcName)
+            counts = self.perm_counts(d, 1000, funcName)
             self.assertTrue(len(counts) == 1)
             for k, v in counts.iteritems():
                 self.assertTrue(len(set(k)) == len(k))
                 self.assertTrue(v == 1000)
 
             d = {'a':1, 'b':2}
-            counts = self.permCounts(d, 2000, funcName)
+            counts = self.perm_counts(d, 2000, funcName)
             self.assertTrue(len(counts) == 2)
             for k, v in counts.iteritems():
                 self.assertTrue(len(set(k)) == len(k))
@@ -62,7 +62,7 @@ class TestDict(unittest.TestCase):
                 self.assertTrue(v < 1200)
 
             d = {'a':1, 'b':2, 'c':3}
-            counts = self.permCounts(d, 6000, funcName)
+            counts = self.perm_counts(d, 6000, funcName)
             self.assertTrue(len(counts) == 6)
             for k, v in counts.iteritems():
                 self.assertTrue(len(set(k)) == len(k))
@@ -74,7 +74,7 @@ class TestDict(unittest.TestCase):
             for c in ascii_lowercase:
                 d[c] = i
                 i += 1
-            counts = self.permCounts(d, 2000, funcName)
+            counts = self.perm_counts(d, 2000, funcName)
             self.assertTrue(len(counts) > 1998)
             for k, v in counts.iteritems():
                 self.assertTrue(len(set(k)) == len(k))
