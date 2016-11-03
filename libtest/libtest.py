@@ -2,42 +2,68 @@ import subprocess
 import os
 import sys
 import yaml
+import logging
+import random
+import datetime
 
+# Parse arguments
 if len(sys.argv) < 2:
     sys.exit("Usage: python libtest.py <file containing repo URLs>")
 elif not os.path.isfile(sys.argv[1]):
     sys.exit("Could not find file with repo URLs")
 
-# Locations of important files. TODO: make more configurable
-repos_file = os.getcwd() + "/" + sys.argv[1] # List of URLs of Github projects
-# Location of executable for nondeterministic version of Python
-import_error = "ImportError: No module named "
-import_error_len = len(import_error)
-devnull = open(os.devnull, 'w')
+# Set environment variable for nondex mode
+os.environ["PYTHONNONDEXMODE"] = "f"
 
-# Location of this python file
+# Time limit for subprocess calls
+timelimit = 300
+
+# Important files and directories
+repos_file = os.getcwd() + "/" + sys.argv[1] # List of URLs of Github projects
 test_home = os.path.dirname(os.path.abspath(__file__)) + "/"
 log_home = test_home + "logs/"
 venv_original_home = test_home + "venv_original/"
 venv_nondex_home = test_home + "venv_nondex/"
+
+# Files to write output to
+devnull = open(os.devnull, 'w')
+main_log_file = open("%sSummary %s.log" % (log_home, datetime.datetime.now()), "w+")
+main_log_file.write("URL, succeeded?, nondex errors?, number of nondex errors, description\n")
+
+
+# Special environment variable copies. For running a process under a virtualenv
+env_nondex =  os.environ.copy()
+env_nondex["PATH"] = venv_nondex_home + "bin:" + env_nondex["PATH"]
+env_nondex["PYTHONHOME"] = venv_nondex_home
+env_original = os.environ.copy()
+env_original["PATH"] = venv_original_home + "bin:" + env_original["PATH"]
+
 venv_original = {"home": venv_original_home,
-                 "python": venv_original_home + "bin/python",
-                 "pip": venv_original_home + "bin/pip",
-                 "nosetests": venv_original_home + "bin/nosetests",
-                 "tox": venv_original_home + "bin/tox",
-                 "exe": sys.executable}
+                 "log_suffix": "_original.log",
+                 "num_trials": 1,
+                 "env": env_original}
 
 venv_nondex =   {"home": venv_nondex_home,
-                 "python": venv_nondex_home + "bin/python",
-                 "pip": venv_nondex_home + "bin/pip",
-                 "nosetests": venv_nondex_home + "bin/nosetests",
-                 "tox": venv_nondex_home + "bin/tox",
-                 "exe": "/home/yan/pynondex/python-2.7.12/bin/python"}
+                 "log_suffix": "_nondex.log",
+                 "num_trials": 5,
+                 "env": env_nondex}
+# Summary information
+num_succeeded = 0
+num_with_errors = 0
+num_libraries = 0
 
-def venvify_exe(exe, venv_dict):
-    return venv_dict["home"] + "bin/" + exe
-
-main_log_file = open(log_home + "main.log", "w+")
+def write_summary(url, succeeded, errors, description=""):
+    global num_succeeded
+    global num_with_errors
+    global num_libraries
+    main_log_file.write("%s,%s,%s,%s\n" %
+        (url,
+        1 if succeeded else 0,
+        1 if errors else 0,
+        description))
+    num_succeeded += 1 if succeeded else 0
+    num_with_errors += 1 if errors else 0
+    num_libraries += 1
 
 def cd(path):
     os.chdir(path)
@@ -51,41 +77,32 @@ def remove_library(url):
     with open(repos_file, "w") as master:
         master.write(newFile)
 
+def clone_repo(repo_dir, url):
+    if not os.path.isdir(repo_dir):
+        print("Cloning repo %s into %s" % (url, repo_dir))
+        logging.info("Cloning repo %s into %s" % (url, repo_dir))
+        print(subprocess.check_output("git clone %s %s" % (url, repo_dir), shell=True))
+
 # Called on each git url to be tested
 def test_repo(url):
-    print "=== Testing repo at %s ===" % (url)
 
     repo_name = url.split('/')[-1]
-    libs_dir = test_home + "libs/"
-    repo_dir = libs_dir + repo_name + "/"
-    cd(libs_dir);
+    repo_dir = test_home + "libs/" + repo_name + "/"
 
-    # Clone repo
-    if os.path.isdir(repo_dir):
-        print "> Skipping clone of repo since it already exists"
-    else:
-        print "> Cloning repo %s into %s" % (url, repo_dir)
-        print subprocess.check_output("git clone %s %s" % (url, repo_dir), shell=True)
+    clone_repo(repo_dir, url)
 
     cd(repo_dir)
 
-    def setup_tests(info):
-        def replace_first(string, word, rep):
-            return string[:len(word)].replace(word, rep) + string[len(word):]
-
-        def venvify(s):
-            replaceables = ["python", "nosetests", "coverage", "pip"]
-            for exe in replaceables:
-                s = replace_first(s, exe, venvify_exe(exe, info))
-            return s
-
+    def run_tests(info):
         def get_command(s):
             if s == None:
                 return ""
-            return venvify('\n'.join(s) if type(s) is list else s)
+            return '\n'.join(s) if type(s) is list else s
 
-        def can_iterate(yaml_contents, key):
-            return key in yaml_contents and yaml_contents[key] is not None
+        def run_commands(yaml_contents, key):
+            if key in yaml_contents and yaml_contents[key] is not None:
+                for cmd in yaml_contents[key]:
+                    subprocess.call(cmd, shell=True, stdout=devnull, stderr=devnull, timeout=timelimit, env = info["env"])
 
         cd(repo_dir)
 
@@ -99,79 +116,126 @@ def test_repo(url):
         if not os.path.exists(log_home):
             os.makedirs(log_home)
 
+        test_command = "";
+
+        # Try to parse travis file
         if os.path.isfile(travis_file):
-            print "> Parsing .travis.yml"
+            logging.info("Parsing .travis.yml")
             with open(travis_file) as stream:
                 yaml_contents = yaml.load(stream)
-                if can_iterate(yaml_contents, 'before_install'):
-                     for cmd in yaml_contents['before_install']:
-                        subprocess.call(venvify(cmd), shell=True, stdout=devnull, stderr=devnull)
-                if can_iterate(yaml_contents, 'install'):
-                    for cmd in yaml_contents['install']:
-                        subprocess.call(venvify(cmd), shell=True, stdout=devnull, stderr=devnull)
-                if can_iterate(yaml_contents, 'before_script'):
-                    for cmd in yaml_contents['before_script']:
-                        subprocess.call(venvify(cmd), shell=True, stdout=devnull, stderr=devnull)
+                run_commands(yaml_contents, 'before_install')
+                run_commands(yaml_contents, 'install')
+                run_commands(yaml_contents, 'before_script')
                 test_command = get_command(yaml_contents['script'])
-                return test_command
+        # Try to parse pip requirements file
+        elif os.path.isfile(reqs_file):
+            logging.info("No .travis.yml found, attempting to use requirements.txt")
+            subprocess.call("pip install -r %s" % (reqs_file), shell=True)
+            test_command = "nosetests"
+        # If none of the above worked
         else:
-            print "> No .travis.yml found, attempting to use requirements.txt"
-            subprocess.call("%s install -r %s" % (info["pip"], reqs_file), shell=True)
-            return info["nosetests"]
+            logging.info("No tests found; removing library")
+            remove_library(url)
+            return None
 
-    print "> Running tests on standard Python"
-    result = setup_tests(venv_original)
+        outfile_path = log_home + repo_name + info["log_suffix"]
+        open(outfile_path, 'w').close() # Clear output file
+        logging.info("Running test command: "+test_command)
 
-    if result == None:
-        remove_library(url)
-        return
+        # Run multiple trials
+        for trial_num in range(info["num_trials"]):
+            with open(outfile_path, 'a') as f:
+                seed = random.randint(0, 424242)
+                new_env = info["env"].copy()
+                new_env["PYTHONNONDEXSEED"] = str(seed)
+                f.write("=== Test %d with seed %d ===\n\n" % (trial_num + 1, seed))
+                logging.info("Test %d with seed %d" % (trial_num + 1, seed))
+                f.flush()
+                try:
+                    subprocess.call(test_command, shell=True, stdout=f, stderr=f, timeout=timelimit, env=new_env)
+                except subprocess.CalledProcessError as e:
+                    logging.info("Error running test command. Continuing.")
+                f.write('\n')
+                f.flush()
 
-    outfile_path_original = log_home + repo_name + "_original.log"
-    with open(outfile_path_original, 'w') as f:
-        print result
-        subprocess.call(result, shell=True, stdout=f, stderr=f)
+        return outfile_path
 
-    # Remove this library if there are import errors
-    with open(outfile_path_original) as f:
-        for line in f:
-            if line.startswith(import_error):
-                remove_library(url)
+    # First run on standard Python. Check for import errors and attempt a basic fix.
+    logging.info("= Running tests on standard Python")
+    outfile_path_original = run_tests(venv_original)
 
-    print "> Running tests on nondex Python"
-    result = setup_tests(venv_nondex)
+    if outfile_path_original == None: return
 
-    if result == None:
-        remove_library(url)
-        return
-
-    outfile_path_nondex = log_home + repo_name + "_nondex.log"
-    with open(outfile_path_nondex, 'w') as f:
-        subprocess.call(result, shell=True, stdout=f, stderr=f)
-
-    data_orig = ''
-    data_nondex = ''
+    missing_modules = []
     with open(outfile_path_original, 'r') as f:
-        data_orig = f.read()
+        for line in f:
+            if line.startswith("ImportError: No Module named"):
+                missing_modules.append(line.split(' ')[-1])
+
+    # Attempt to fix import errors, then attempt another run on standard Ptython
+    if len(missing_modules) > 0:
+        logging.info("Detected missing modules on standard Python; attempting basic fix and rerunning tests")
+        for module in missing_modules:
+            subprocess.call("pip install %s" % (module), shell=True, env = venv_original["env"])
+
+        outfile_path_original = run_tests(venv_original)
+
+    # Check for errors after running with standard Python
+    with open(outfile_path_original, 'r') as f:
+        text = f.read()
+        if "FAILED" in text:
+            logging.info("Original tests failed with errors; removing library");
+            write_summary(url, False, False, "Regular tests failed")
+            remove_library(url)
+            return
+
+    # Run on nondex Python
+    logging.info("= Running tests on nondex Python")
+    outfile_path_nondex = run_tests(venv_nondex)
+
     with open(outfile_path_nondex, 'r') as f:
         data_nondex = f.read()
-
-    if data_orig.count('\n') != data_nondex.count('\n'):
-        main_log_file.write("%s\n" % repo_name)
-        main_log_file.flush()
+        if "FAILED" in data_nondex:
+            write_summary(url, True, True)
+        else:
+            write_summary(url, True, False)
+# Set up logging
+logging.basicConfig(stream=sys.stdout, format='%(asctime)s: %(message)s' ,level=logging.INFO)
+logging.info("===== Initiating new test session =====")
 
 # Set up virtual environment
 if "--setup" in sys.argv[1:]:
-    print "> Setting up virtualenv"
+    logging.info("=== Setting up virtualenv ===")
     subprocess.call("virtualenv -p %s %s" % (venv_original["exe"], venv_original["home"]), shell=True)
     subprocess.call("virtualenv -p %s %s" % (venv_nondex["exe"], venv_nondex["home"]), shell=True)
-    print venv_original["pip"]
-    subprocess.call(venv_original["pip"] + " install nose", shell=True)
-    subprocess.call(venv_original["pip"] + " install tox", shell=True)
-    subprocess.call(venv_nondex["pip"] + " install nose", shell=True)
-    subprocess.call(venv_nondex["pip"] + " install tox", shell=True)
+    subprocess.call("pip install nose", shell=True, env=venv_original["env"])
+    subprocess.call("pip install tox", shell=True, env=venv_original["env"])
+    subprocess.call("pip install nose", shell=True, env=venv_nondex["env"])
+    subprocess.call("pip install tox", shell=True, env=venv_nondex["env"])
 
+# Main loop
 # Read git urls line by line from input file, test each of them
-test_repos = open(repos_file)
-for line in test_repos:
-    test_repo(line.rstrip())
+with open(repos_file) as test_repos:
+    for line in test_repos:
+
+        url = line.rstrip()
+
+        logging.info("=== Testing " + url + " ===")
+
+        try:
+            test_repo(url)
+        except subprocess.TimeoutExpired:
+            logging.info("TimeoutExpired error while running tests; removing library")
+            write_summary(url, False, False, "TimeoutExpired error")
+            remove_library(url)
+        except subprocess.CalledProcessError:
+            logging.info("subprocess.CalledProcessError while running tests; removing library")
+            write_summary(url, False, False, "CalledProcessError error")
+            remove_library(url)
+        except:
+            logging.info("Uncategorized error; removing library")
+            write_summary(url, False, False, "Uncategorized error")
+            remove_library(url)
+
+main_log_file.write("Total libraries: %s; Num succeeded: %s; Num with errors: %s\n" % (num_libraries, num_succeeded, num_with_errors))
 main_log_file.close()
