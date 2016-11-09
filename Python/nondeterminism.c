@@ -1,6 +1,7 @@
+#include "mt64.h"
 #include "Python.h"
 #include <string.h>
-#include "mt64.h"
+#include <stdlib.h>
 
 enum NonDexMode {
     FULL, 
@@ -24,6 +25,7 @@ void NonDex_InitOne(Py_ssize_t init_seed)
     init_genrand64(init_seed);
 }
 
+// Shuffles an array of Py_ssize_t
 void NonDex_Shuffle_Py_ssize_t(Py_ssize_t *array, Py_ssize_t length)
 {
     if (mode == ONE) {
@@ -35,5 +37,18 @@ void NonDex_Shuffle_Py_ssize_t(Py_ssize_t *array, Py_ssize_t length)
         Py_ssize_t temp = array[pos];
         array[pos] = array[swap_pos];
         array[swap_pos] = temp;
+    }
+}
+
+void NonDex_Shuffle_List(PyListObject *list)
+{
+    if (!list) return;
+    Py_ssize_t n = PyList_GET_SIZE(list);
+    if (n <= 1) return;
+    for (Py_ssize_t pos = n - 1; pos >= 0; pos --) {
+        Py_ssize_t swap_pos = (Py_ssize_t)rand() % (pos + 1);
+        PyObject *temp = PyList_GET_ITEM(list, swap_pos);
+        PyList_SET_ITEM(list, swap_pos, PyList_GET_ITEM(list, pos));
+        PyList_SET_ITEM(list, pos, temp);
     }
 }

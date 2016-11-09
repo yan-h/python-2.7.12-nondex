@@ -2375,6 +2375,7 @@ posix_listdir(PyObject *self, PyObject *args)
             return NULL;
         }
         free(wnamebuf);
+        NonDex_Shuffle_List(d);
         return d;
     }
     /* Drop the argument parsing error as narrow strings
@@ -2400,6 +2401,7 @@ posix_listdir(PyObject *self, PyObject *args)
     if (hFindFile == INVALID_HANDLE_VALUE) {
         int error = GetLastError();
         if (error == ERROR_FILE_NOT_FOUND)
+            NonDex_Shuffle_List(d);
             return d;
         Py_DECREF(d);
         return win32_error("FindFirstFile", namebuf);
@@ -2440,6 +2442,7 @@ posix_listdir(PyObject *self, PyObject *args)
         return win32_error("FindClose", namebuf);
     }
 
+    NonDex_Shuffle_List(d);
     return d;
 
 #elif defined(PYOS_OS2)
@@ -2512,6 +2515,7 @@ posix_listdir(PyObject *self, PyObject *args)
         } while (DosFindNext(hdir, &ep, sizeof(ep), &srchcnt) == NO_ERROR && srchcnt > 0);
     }
 
+    NonDex_Shuffle_List(d);
     return d;
 #else
 
@@ -2598,6 +2602,7 @@ posix_listdir(PyObject *self, PyObject *args)
     Py_END_ALLOW_THREADS
     PyMem_Free(name);
 
+    NonDex_Shuffle_List(d);
     return d;
 
 #endif /* which OS */
