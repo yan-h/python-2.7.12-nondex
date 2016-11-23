@@ -46,12 +46,12 @@ env_original = os.environ.copy()
 env_original["PATH"] = venv_original_home + "bin:" + env_original["PATH"]
 
 venv_original = {"home": venv_original_home,
-                 "log_suffix": "_original.log",
+                 "log_name": "original.log",
                  "num_trials": 1,
                  "env": env_original}
 
 venv_nondex =   {"home": venv_nondex_home,
-                 "log_suffix": "_nondex.log",
+                 "log_name": "nondex.log",
                  "num_trials": 3,
                  "env": env_nondex}
 
@@ -139,10 +139,16 @@ def run_tests(url, summary, repo_name, repo_dir, info):
 
     # If none of the above worked
     else:
+        summary["setup"] = "f"
         logging.info("No tests found")
         return None
 
-    outfile_path = log_home + repo_name + info["log_suffix"]
+    outfile_path = log_home + repo_name + "/"
+
+    if not os.path.exists(outfile_path):
+        os.makedirs(outfile_path)
+
+    outfile_path += info["log_name"]
     open(outfile_path, 'w').close() # Clear output file
     logging.info("Running test command: "+test_command)
 
@@ -187,6 +193,8 @@ def test_repo(url, summary):
             summary["original"] = "f"
         elif "error" in text:
             summary["original"] = "e"
+        else:
+            summary["original"] = "p"
 
     # Run on nondex Python
     logging.info("= Running tests on nondex Python")
@@ -198,6 +206,8 @@ def test_repo(url, summary):
             summary["nondex"] = "f"
         elif "error" in text:
             summary["nondex"] = "e"
+        else:
+            summary["nondex"] = "p"
 
 # Set up logging
 logging.basicConfig(stream=sys.stdout, format='%(asctime)s: %(message)s' ,level=logging.INFO)
