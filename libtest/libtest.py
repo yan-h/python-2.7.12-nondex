@@ -8,6 +8,7 @@ import datetime
 import copy
 
 nondex_source_home = "/home/yan/pynondex/python-2.7.12/"
+failure_string = "!!!failure detected during tests!!!"
 
 # Parse arguments
 if len(sys.argv) < 2:
@@ -34,9 +35,12 @@ if not os.path.exists(log_home):
 # Files to write output to
 devnull = open(os.devnull, 'w')
 main_log_file = open(log_home + "summary.log", "w+")
-main_log_file.write("Mode: " + os.environ["PYTHONNONDEXMODE"] + "\n")
-main_log_file.write("URL, setup, original errors?, nondex errors?, description\n")
+main_log_file.write("URL, setup, original errors?, nondex OFF errors?, nondex ONE errors?, nondex FULL errors?, description\n")
+main_log_file.write("setup key: t=travis file, r=requirements file, f=failed\n")
+main_log_file.write("tests key: p=passed, f=test failures, e=test errors, u=nonzero exit code, but unknown reason\n")
 
+# Nondex modes. x = OFF, o = ONE, f = FULL
+nondex_modes = ["x", "o", "f"]
 
 # Special environment variable copies. For running a process under a virtualenv
 env_nondex =  os.environ.copy()
@@ -46,30 +50,31 @@ env_original = os.environ.copy()
 env_original["PATH"] = venv_original_home + "bin:" + env_original["PATH"]
 
 venv_original = {"home": venv_original_home,
-                 "log_name": "original.log",
                  "num_trials": 1,
-                 "env": env_original}
+                 "env": env_original,
+                 "mode": "original"}
 
 venv_nondex =   {"home": venv_nondex_home,
-                 "log_name": "nondex.log",
-                 "num_trials": 3,
-                 "env": env_nondex}
+                 "num_trials": 1,
+                 "env": env_nondex,
+                 "mode": "nondex"}
 
 summary_data = {"url":None,
                 "setup":"?",
                 "original":"?",
-                "nondex":"?",
+                "nondex_x":"?",
+                "nondex_o":"?",
+                "nondex_f":"?",
                 "error":""}
 
-def bool_str(bool):
-    return "1" if bool else "0"
-
 def write_summary(summary):
-    main_log_file.write("%s,%s,%s,%s,%s\n" %
+    main_log_file.write("%s,%s,%s,%s,%s,%s,%s\n" %
         (url,
          summary["setup"],
          summary["original"],
-         summary["nondex"],
+         summary["nondex_x"],
+         summary["nondex_o"],
+         summary["nondex_f"],
          summary["error"]))
     main_log_file.flush()
 
@@ -89,10 +94,10 @@ def clone_repo(repo_dir, url):
     if not os.path.isdir(repo_dir):
         logging.info("Cloning repo %s into %s" % (url, repo_dir))
         logging.info("Cloning repo %s into %s" % (url, repo_dir))
-        logging.info(subprocess.check_output("git clone %s %s" % (url, repo_dir), shell=True))
+        logging.info(subprocess.check_output("timeout 180 git clone %s %s" % (url, repo_dir), shell=True, timeout=timelimit))
     else:
         logging.info("Updating repo %s in %s" % (url, repo_dir))
-        logging.info(subprocess.check_output("git -C %s pull" % (repo_dir), shell=True))
+        logging.info(subprocess.check_output("timeout 180 git -C %s pull" % (repo_dir), shell=True, timeout=timelimit))
 
 def get_command(s):
     if s == None:
@@ -104,7 +109,10 @@ def run_commands(yaml_contents, key, environment):
         for cmd in yaml_contents[key]:
             subprocess.call(cmd, shell=True, stdout=devnull, stderr=devnull, timeout=timelimit, env = environment)
 
-def run_tests(url, summary, repo_name, repo_dir, info):
+def setup_venv(url, summary, info):
+    repo_name = url.split('/')[-1]
+    repo_dir = test_home + "libs/" + repo_name + "/"
+
     cd(repo_dir)
 
     # Write .pth file for venv so that tests import the library correctly
@@ -148,27 +156,62 @@ def run_tests(url, summary, repo_name, repo_dir, info):
     if not os.path.exists(outfile_path):
         os.makedirs(outfile_path)
 
-    outfile_path += info["log_name"]
+    return test_command
+
+def run_tests(url, summary, info, test_command, nondex_mode = None):
+    repo_name = url.split('/')[-1]
+    repo_dir = test_home + "libs/" + repo_name + "/"
+
+    cd(repo_dir)
+
+    outfile_path = log_home + repo_name + "/" + info["mode"] + ("" if nondex_mode == None else "_" + nondex_mode) + ".log"
     open(outfile_path, 'w').close() # Clear output file
-    logging.info("Running test command: "+test_command)
+    logging.info("Running test command: " + test_command)
 
     # Run multiple trials
+    f = open(outfile_path, 'a')
+
     for trial_num in range(info["num_trials"]):
-        with open(outfile_path, 'a') as f:
+        new_env = info["env"].copy()
+
+        if nondex_mode == None:
+            log_string = "Original Python: test %d" % (trial_num + 1)
+            f.write("=== " + log_string + " ===\n\n")
+            logging.info(log_string)
+        else:
             seed = random.randint(0, 424242)
-            new_env = info["env"].copy()
             new_env["PYTHONNONDEXSEED"] = str(seed)
-            f.write("=== Test %d with seed %d ===\n\n" % (trial_num + 1, seed))
-            logging.info("Test %d with seed %d" % (trial_num + 1, seed))
-            f.flush()
-            try:
-                subprocess.call(test_command, shell=True, stdout=f, stderr=f, timeout=timelimit, env=new_env)
-            except subprocess.CalledProcessError as e:
-                logging.info("Error running test command. Continuing.")
-            f.write('\n')
-            f.flush()
+            new_env["PYTHONNONDEXMODE"] = nondex_mode
+            log_string = "Mode %s: test %d with seed %d" % (nondex_mode, trial_num + 1, seed)
+            f.write("=== " + log_string + " ===\n\n")
+            logging.info(log_string)
+
+        f.flush()
+        try:
+            code = subprocess.call(test_command, shell=True, stdout=f, stderr=f, timeout=timelimit, env=new_env)
+            if code != 0:
+                f.write(failure_string + "\n")
+        except subprocess.CalledProcessError as e:
+            logging.info("Error running test command. Continuing.\n")
+
+        f.write('\n')
+        f.flush()
+    f.close()
 
     return outfile_path
+
+def check_status(f, summary, mode):
+    text = f.read().lower()
+    if failure_string.lower() in text:
+        # use some searching that ignores case
+        if "failed" in text:
+            summary[mode] = "f"
+        elif "error" in text:
+            summary[mode] = "e"
+        else:
+            summary[mode] = "u"
+    else:
+        summary[mode] = "p"
 
 # Called on each git url to be tested
 def test_repo(url, summary):
@@ -182,32 +225,19 @@ def test_repo(url, summary):
 
     # Run on standard Python
     logging.info("= Running tests on standard Python")
-    outfile_path_original = run_tests(url, summary, repo_name, repo_dir, venv_original)
-
+    test_command = setup_venv(url, summary, venv_original)
+    if test_command == None: return
+    outfile_path_original = run_tests(url, summary, venv_original, test_command)
     if outfile_path_original == None: return
-
-    # Check for errors after running with standard Python
-    with open(outfile_path_original, 'r') as f:
-        text = f.read()
-        if "FAILED" in text:
-            summary["original"] = "f"
-        elif "error" in text:
-            summary["original"] = "e"
-        else:
-            summary["original"] = "p"
+    check_status(open(outfile_path_original, 'r'), summary, "original")
 
     # Run on nondex Python
     logging.info("= Running tests on nondex Python")
-    outfile_path_nondex = run_tests(url, summary, repo_name, repo_dir, venv_nondex)
-
-    with open(outfile_path_nondex, 'r') as f:
-        text = f.read()
-        if "FAILED" in text:
-            summary["nondex"] = "f"
-        elif "error" in text:
-            summary["nondex"] = "e"
-        else:
-            summary["nondex"] = "p"
+    test_command = setup_venv(url, summary, venv_nondex)
+    if test_command == None: return
+    for nondex_mode in nondex_modes:
+        outfile_path_nondex = run_tests(url, summary, venv_nondex, test_command, nondex_mode)
+        check_status(open(outfile_path_nondex, 'r'), summary, "nondex_" + nondex_mode)
 
 # Set up logging
 logging.basicConfig(stream=sys.stdout, format='%(asctime)s: %(message)s' ,level=logging.INFO)
