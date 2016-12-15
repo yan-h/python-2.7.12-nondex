@@ -2574,6 +2574,8 @@ static PyMethodDef dictiter_methods[] = {
 static PyObject *dictiter_iternextkey(dictiterobject *di)
 {
     PyObject *key;
+    register Py_ssize_t i, mask;
+    register PyDictEntry *ep;
     PyDictObject *d = di->di_dict;
 
     if (d == NULL)
@@ -2587,6 +2589,23 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         return NULL;
     }
     
+    if (NonDex_Mode() == OFF) {
+        i = di->di_pos;
+        if (i < 0)
+            goto fail;
+        ep = d->ma_table;
+        mask = d->ma_mask;
+        while (i <= mask && ep[i].me_value == NULL)
+            i++;
+        di->di_pos = i+1;
+        if (i > mask)
+            goto fail;
+        di->len--;
+        key = ep[i].me_key;
+        Py_INCREF(key);
+        return key;
+    }
+        
     while (1) {
         if (di->len == 0)
             goto fail;
@@ -2643,6 +2662,8 @@ PyTypeObject PyDictIterKey_Type = {
 static PyObject *dictiter_iternextvalue(dictiterobject *di)
 {
     PyObject *value;
+    register Py_ssize_t i, mask;
+    register PyDictEntry *ep;
     PyDictObject *d = di->di_dict;
 
     if (d == NULL)
@@ -2656,6 +2677,22 @@ static PyObject *dictiter_iternextvalue(dictiterobject *di)
         return NULL;
     }
     
+    if (NonDex_Mode() == OFF) {
+        i = di->di_pos;
+        mask = d->ma_mask;
+        if (i < 0 || i > mask)
+            goto fail;
+        ep = d->ma_table;
+        while ((value=ep[i].me_value) == NULL) {
+            i++;
+            if (i > mask)
+                goto fail;
+        }
+        di->di_pos = i+1;
+        di->len--;
+        Py_INCREF(value);
+        return value;
+    }    
     while (1) {
         if (di->len == 0)
             goto fail;
@@ -2724,6 +2761,36 @@ static PyObject *dictiter_iternextitem(dictiterobject *di)
                         "dictionary changed size during iteration");
         di->di_used = -1; /* Make this state sticky */
         return NULL;
+    }
+
+    if (NonDex_Mode() == OFF) {
+        i = di->di_pos;
+        if (i < 0)
+            goto fail;
+        ep = d->ma_table;
+        mask = d->ma_mask;
+        while (i <= mask && ep[i].me_value == NULL)
+            i++;
+        di->di_pos = i+1;
+        if (i > mask)
+            goto fail;
+        if (result->ob_refcnt == 1) {
+            Py_INCREF(result);
+            Py_DECREF(PyTuple_GET_ITEM(result, 0));
+            Py_DECREF(PyTuple_GET_ITEM(result, 1));
+        } else {
+            result = PyTuple_New(2);
+            if (result == NULL)
+                return NULL;
+        }
+        di->len--;
+        key = ep[i].me_key;
+        value = ep[i].me_value;
+        Py_INCREF(key);
+        Py_INCREF(value);
+        PyTuple_SET_ITEM(result, 0, key);
+        PyTuple_SET_ITEM(result, 1, value);
+        return result;
     }
     
     while (1) {

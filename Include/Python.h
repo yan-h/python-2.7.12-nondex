@@ -116,6 +116,7 @@
 #include "descrobject.h"
 #include "warnings.h"
 #include "weakrefobject.h"
+#include "nondeterminism.h"
 
 #include "codecs.h"
 #include "pyerrors.h"

@@ -2,15 +2,21 @@
 #include "Python.h"
 #include <string.h>
 #include <stdlib.h>
-
+#include "nondeterminism.h"
+/*
 enum NonDexMode {
     OFF,
     FULL, 
     ONE
-};
+};*/
 
 static enum NonDexMode mode = OFF;
 static unsigned int seed = 1;
+
+NonDexMode NonDex_Mode()
+{
+    return mode;
+}
 
 // Initializes seed for FULL mode
 void NonDex_InitFull(Py_ssize_t init_seed)

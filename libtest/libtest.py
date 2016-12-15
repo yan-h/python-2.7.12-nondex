@@ -4,6 +4,7 @@ import sys
 import yaml
 import logging
 import random
+import time
 import datetime
 import copy
 
@@ -18,6 +19,7 @@ elif not os.path.isfile(sys.argv[1]):
 
 # Set environment variable for nondex mode
 os.environ["PYTHONNONDEXMODE"] = "o"
+os.environ["TOX_ENV"] = "py27"
 
 # Time limit for subprocess calls
 timelimit = 180
@@ -35,7 +37,7 @@ if not os.path.exists(log_home):
 # Files to write output to
 devnull = open(os.devnull, 'w')
 main_log_file = open(log_home + "summary.log", "w+")
-main_log_file.write("URL, setup, original errors?, nondex OFF errors?, nondex ONE errors?, nondex FULL errors?, description\n")
+main_log_file.write("URL, setup, original errors?, nondex OFF errors?, nondex ONE errors?, nondex FULL errors?, time, description\n")
 main_log_file.write("setup key: t=travis file, r=requirements file, f=failed\n")
 main_log_file.write("tests key: p=passed, f=test failures, e=test errors, u=nonzero exit code, but unknown reason\n")
 
@@ -45,7 +47,7 @@ nondex_modes = ["x", "o", "f"]
 # Special environment variable copies. For running a process under a virtualenv
 env_nondex =  os.environ.copy()
 env_nondex["PATH"] = venv_nondex_home + "bin:" + env_nondex["PATH"]
-env_nondex["PYTHONHOME"] = venv_nondex_home
+#env_nondex["PYTHONHOME"] = venv_nondex_home
 env_original = os.environ.copy()
 env_original["PATH"] = venv_original_home + "bin:" + env_original["PATH"]
 
@@ -55,7 +57,7 @@ venv_original = {"home": venv_original_home,
                  "mode": "original"}
 
 venv_nondex =   {"home": venv_nondex_home,
-                 "num_trials": 1,
+                 "num_trials": 3,
                  "env": env_nondex,
                  "mode": "nondex"}
 
@@ -65,16 +67,18 @@ summary_data = {"url":None,
                 "nondex_x":"?",
                 "nondex_o":"?",
                 "nondex_f":"?",
-                "error":""}
+                "error":"",
+                "time":-1}
 
 def write_summary(summary):
-    main_log_file.write("%s,%s,%s,%s,%s,%s,%s\n" %
+    main_log_file.write("%s,%s,%s,%s,%s,%s,%d,%s\n" %
         (url,
          summary["setup"],
          summary["original"],
          summary["nondex_x"],
          summary["nondex_o"],
          summary["nondex_f"],
+         summary["time"],
          summary["error"]))
     main_log_file.flush()
 
@@ -106,8 +110,7 @@ def get_command(s):
 
 def run_commands(yaml_contents, key, environment):
     if key in yaml_contents and yaml_contents[key] is not None:
-        for cmd in yaml_contents[key]:
-            subprocess.call(cmd, shell=True, stdout=devnull, stderr=devnull, timeout=timelimit, env = environment)
+        subprocess.call(get_command(yaml_contents[key]), shell=True, timeout=timelimit, env = environment)
 
 def setup_venv(url, summary, info):
     repo_name = url.split('/')[-1]
@@ -171,7 +174,7 @@ def run_tests(url, summary, info, test_command, nondex_mode = None):
     # Run multiple trials
     f = open(outfile_path, 'a')
 
-    for trial_num in range(info["num_trials"]):
+    for trial_num in range(1) if nondex_mode == 'x' else range(info["num_trials"]):
         new_env = info["env"].copy()
 
         if nondex_mode == None:
@@ -219,9 +222,14 @@ def test_repo(url, summary):
     repo_name = url.split('/')[-1]
     repo_dir = test_home + "libs/" + repo_name + "/"
 
-    clone_repo(repo_dir, url)
+    try:
+        clone_repo(repo_dir, url)
+    except Exception as e:
+        pass
 
     cd(repo_dir)
+
+    start_time = time.time()
 
     # Run on standard Python
     logging.info("= Running tests on standard Python")
@@ -239,6 +247,9 @@ def test_repo(url, summary):
         outfile_path_nondex = run_tests(url, summary, venv_nondex, test_command, nondex_mode)
         check_status(open(outfile_path_nondex, 'r'), summary, "nondex_" + nondex_mode)
 
+    end_time = time.time()
+    summary["time"] = end_time - start_time
+
 # Set up logging
 logging.basicConfig(stream=sys.stdout, format='%(asctime)s: %(message)s' ,level=logging.INFO)
 logging.info("===== Initiating new test session =====")
@@ -250,8 +261,12 @@ if "--setup" in sys.argv[1:]:
     subprocess.call("virtualenv -p %s %s" % (nondex_source_home + "bin/python", venv_nondex["home"]), shell=True)
     subprocess.call("pip install nose", shell=True, env=venv_original["env"])
     subprocess.call("pip install tox", shell=True, env=venv_original["env"])
+    subprocess.call("pip install pytest-cov", shell=True, env=venv_original["env"])
+    subprocess.call("pip install numpy", shell=True, env=venv_original["env"])
     subprocess.call(nondex_source_home + "bin/pip install nose", shell=True)
     subprocess.call(nondex_source_home + "bin/pip install tox", shell=True)
+    subprocess.call(nondex_source_home + "bin/pip install pytest-cov", shell=True)
+    subprocess.call(nondex_source_home + "bin/pip install numpy", shell=True)
 
 # Main loop
 # Read git urls line by line from input file, test each of them
