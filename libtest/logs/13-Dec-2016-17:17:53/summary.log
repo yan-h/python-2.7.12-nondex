@@ -1,0 +1,1453 @@
+URL, setup, original errors?, nondex OFF errors?, nondex ONE errors?, nondex FULL errors?, time, description
+setup key: t=travis file, r=requirements file, f=failed
+tests key: p=passed, f=test failures, e=test errors, u=nonzero exit code, but unknown reason
+https://github.com/python-excel/xlwt,t,e,e,e,e,18,
+https://github.com/jlafon/PynamoDB,t,p,p,p,f,78,
+https://github.com/pallets/jinja,t,p,p,p,p,42,
+https://github.com/scrapinghub/dateparser,t,f,f,f,f,845,
+https://github.com/pydata/xarray,t,e,e,e,e,48,
+https://github.com/flask-admin/flask-admin,t,f,f,f,f,72,
+https://github.com/thadeusb/flask-cache,t,u,u,u,u,15,
+https://github.com/gorakhargosh/watchdog,t,e,e,e,e,596,
+https://github.com/qw3rtman/p,f,?,?,?,?,-1,
+https://github.com/yyuu/pyenv,t,p,p,p,p,270,
+https://github.com/nvie/pip-tools,t,e,e,e,e,517,
+https://github.com/conda/conda,t,u,u,u,u,0,
+https://github.com/pypa/warehouse,t,e,e,e,e,70,
+https://github.com/mvantellingen/localshop,t,f,f,f,f,100,
+https://github.com/pyinstaller/pyinstaller,t,e,e,e,e,81,
+https://github.com/spotify/dh-virtualenv,t,p,p,p,p,18,
+https://github.com/platformio/platformio,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/pybuilder/pybuilder,t,?,?,?,?,-1,Command './build.py -v -X install_dependencies analyze install' timed out after 180 seconds
+https://github.com/bpython/bpython,t,p,p,p,p,12,
+https://github.com/jonathanslenders/ptpython,t,e,e,e,e,118,
+https://github.com/jaraco/path.py,t,p,p,p,p,84,
+https://github.com/ahupp/python-magic,t,f,f,f,f,37,
+https://github.com/mikeorr/Unipath,f,?,?,?,?,-1,
+https://github.com/sdispater/pendulum,t,e,e,e,e,35,
+https://github.com/crsmithdev/arrow,t,f,f,f,f,9,
+https://github.com/KoffeinFlummi/Chronyk,t,f,f,f,f,109,
+https://github.com/dateutil/dateutil,t,p,p,p,p,111,
+https://github.com/myusuf3/delorean,t,f,f,f,f,51,
+https://github.com/zachwill/moment,t,e,e,e,e,10,
+https://github.com/shinux/PyTime,t,f,f,f,f,26,
+https://github.com/dirn/When.py,t,e,e,e,e,50,
+https://github.com/chardet/chardet,t,p,p,p,p,15,
+https://github.com/LuminosoInsight/python-ftfy,f,?,?,?,?,-1,
+https://github.com/seatgeek/fuzzywuzzy,t,p,p,p,p,9,
+https://github.com/ztane/python-Levenshtein,t,p,p,p,p,7,
+https://github.com/vinta/pangu.py,t,p,p,p,p,33,
+https://github.com/pwaller/pyfiglet,t,p,p,p,p,245,
+https://github.com/stochastic-technologies/shortuuid,t,p,p,p,p,12,
+https://github.com/moskytw/uniout,f,?,?,?,?,-1,
+https://github.com/lxneng/xpinyin,t,p,p,p,p,9,
+https://github.com/dimka665/awesome-slugify,t,p,p,p,p,8,
+https://github.com/un33k/python-slugify,t,p,p,p,p,71,
+https://github.com/mozilla/unicode-slugify,t,p,p,p,p,16,
+https://github.com/daviddrysdale/python-phonenumbers,t,p,p,p,p,19,
+https://github.com/derek73/python-nameparser,t,p,p,p,p,11,
+https://github.com/selwin/python-user-agents,t,f,f,f,f,15,
+https://github.com/andialbrecht/sqlparse,t,f,f,f,f,248,
+https://github.com/kennethreitz/tablib,t,p,p,p,p,10,
+https://github.com/brianray/mm,r,f,f,f,f,10,
+https://github.com/pyexcel/pyexcel,t,f,f,f,f,67,
+https://github.com/python-openxml/python-docx,t,p,p,p,p,35,
+https://github.com/dagwieers/unoconv,t,f,f,f,f,1,
+https://github.com/euske/pdfminer,t,p,p,p,p,107,
+https://github.com/mstamy2/PyPDF2,f,?,?,?,?,-1,
+https://github.com/lepture/mistune,t,e,e,e,e,1,
+https://github.com/waylan/Python-Markdown,t,f,f,f,f,254,
+https://github.com/wireservice/csvkit,t,f,f,f,f,10,
+https://github.com/mitsuhiko/unp,f,?,?,?,?,-1,
+https://github.com/fxsjy/jieba,f,?,?,?,?,-1,
+https://github.com/isnowfy/snownlp,f,?,?,?,?,-1,
+https://github.com/sloria/TextBlob,t,p,p,p,p,318,
+https://github.com/2shou/TextGrocery,t,p,p,p,p,8,
+https://github.com/saffsd/langid.py,f,?,?,?,?,-1,
+https://github.com/yoloseem/awesome-sphinxdoc,f,?,?,?,?,-1,
+https://github.com/BurntSushi/pdoc,f,?,?,?,?,-1,
+https://github.com/pycco-docs/pycco,t,p,p,p,p,22,
+https://github.com/henriquebastos/python-decouple,t,e,e,e,e,29,
+https://github.com/peterbrittain/asciimatics,t,u,u,u,u,23,
+https://github.com/kennethreitz/clint,f,?,?,?,?,-1,
+https://github.com/chriskiehl/Gooey,f,?,?,?,?,-1,
+https://github.com/jonathanslenders/python-prompt-toolkit,t,e,e,e,e,3,
+https://github.com/aws/aws-cli,t,?,?,?,?,-1,Command 'python scripts/ci/run-tests' timed out after 180 seconds
+https://github.com/glamp/bashplotlib,f,?,?,?,?,-1,
+https://github.com/brettcannon/caniusepython3,t,e,e,e,e,307,
+https://github.com/audreyr/cookiecutter,t,p,p,p,p,66,
+https://github.com/sloria/doitlive,t,e,e,e,e,13,
+https://github.com/gleitz/howdoi,t,f,f,f,f,17,
+https://github.com/jkbrzt/httpie,t,p,p,p,p,21,
+https://github.com/facebook/PathPicker,t,p,p,p,p,18,
+https://github.com/mooz/percol,f,?,?,?,?,-1,
+https://github.com/donnemartin/saws,t,f,f,f,f,170,
+https://github.com/nvbn/thefuck,t,u,u,u,u,24,
+https://github.com/timofurrer/try,t,p,p,p,p,0,
+https://github.com/dbcli/mycli,t,e,f,f,f,69,
+https://github.com/dbcli/pgcli,t,e,e,e,e,20,
+https://github.com/s3tools/s3cmd,t,p,p,p,p,71,
+https://github.com/bloomreach/s4cmd,f,?,?,?,?,-1,
+https://github.com/daboth/pagan,f,?,?,?,?,-1,
+https://github.com/python-pillow/Pillow,t,p,p,p,p,15,
+https://github.com/rossgoodwin/hmap,f,?,?,?,?,-1,
+https://github.com/hhatto/nude.py,t,p,p,p,p,17,
+https://github.com/ajkumar25/pygram,f,?,?,?,?,-1,
+https://github.com/lincolnloop/python-qrcode,f,?,?,?,?,-1,
+https://github.com/fogleman/Quads,f,?,?,?,?,-1,
+https://github.com/thumbor/thumbor,t,f,f,f,f,55,
+https://github.com/dahlia/wand,t,p,p,p,p,18,
+https://github.com/jflesch/pyocr,f,?,?,?,?,-1,
+https://github.com/madmaze/pytesseract,f,?,?,?,?,-1,
+https://github.com/danilobellini/audiolazy,t,?,?,?,?,-1,Command 'tox -vv' timed out after 180 seconds
+https://github.com/beetbox/audioread,t,?,?,?,?,-1,Command 'sudo apt-get update
+sudo apt-get install ffmpeg' timed out after 180 seconds
+https://github.com/worldveil/dejavu,r,f,f,f,f,19,
+https://github.com/StreetVoice/django-elastic-transcoder,t,f,f,f,f,24,
+https://github.com/globocom/m3u8,t,e,e,e,e,23,
+https://github.com/jiaaro/pydub,t,f,f,f,f,69,
+https://github.com/echonest/pyechonest,f,?,?,?,?,-1,
+https://github.com/Parisson/TimeSide,t,p,p,p,p,0,
+https://github.com/devsnd/tinytag,t,p,p,p,p,9,
+https://github.com/aizvorski/scikit-video,f,?,?,?,?,-1,
+https://github.com/maxmind/geoip-api-python,t,f,f,f,f,3,
+https://github.com/frewsxcv/python-geojson,t,p,p,p,p,20,
+https://github.com/geopy/geopy,t,p,p,p,p,379,
+https://github.com/appliedsec/pygeoip,t,e,e,e,e,14,
+https://github.com/SmileyChris/django-countries,f,?,?,?,?,-1,
+https://github.com/kennethreitz/grequests,f,?,?,?,?,-1,
+https://github.com/jcgregorio/httplib2,f,?,?,?,?,-1,
+https://github.com/twisted/treq,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/shazow/urllib3,t,f,f,f,f,921,
+https://github.com/msiemens/tinydb,t,e,e,e,e,23,
+https://github.com/PyMySQL/mysqlclient-python,t,f,f,f,f,10,
+https://github.com/PyMySQL/PyMySQL,t,f,f,f,f,32,
+https://github.com/gmr/queries,t,f,f,f,f,19,
+https://github.com/wulczer/txpostgres,t,f,e,e,e,14,
+https://github.com/pudo/dataset,t,p,p,p,p,36,
+https://github.com/datastax/python-driver,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/wbolster/happybase,r,f,f,f,f,12,
+https://github.com/wbolster/plyvel,f,?,?,?,?,-1,
+https://github.com/pycassa/pycassa,t,f,f,f,f,31,
+https://github.com/andymccurdy/redis-py,t,p,p,?,?,-1,Command 'if [[ $TEST_PEP8 == '1' ]]; then pep8 --repeat --show-source --exclude=.venv,.tox,dist,docs,build,*.egg .; else python setup.py test; fi' timed out after 180 seconds
+https://github.com/driftx/Telephus,f,?,?,?,?,-1,
+https://github.com/deldotdr/txRedis,f,?,?,?,?,-1,
+https://github.com/dahlia/awesome-sqlalchemy,t,u,u,u,u,0,
+https://github.com/coleifer/peewee,t,f,f,f,f,256,
+https://github.com/django-nonrel/mongodb-engine,t,e,e,e,e,444,
+https://github.com/mathcamp/flywheel,t,f,f,f,f,60,
+https://github.com/stephenmcd/hot-redis,t,p,p,p,p,42,
+https://github.com/kiddouk/redisco,t,f,f,f,f,31,
+https://github.com/Widdershin/butterdb,t,f,f,f,f,10,
+https://github.com/rosarior/awesome-django,t,u,u,u,u,0,
+https://github.com/humiaozuzu/awesome-flask,t,u,u,u,u,0,
+https://github.com/uralbash/awesome-pyramid,t,u,u,u,u,0,
+https://github.com/apex/apex,f,?,?,?,?,-1,
+https://github.com/Miserlou/Zappa,t,e,e,e,e,39,
+https://github.com/nficano/python-lambda,t,e,e,e,e,79,
+https://github.com/neuman/python-carteblanche,f,?,?,?,?,-1,
+https://github.com/django-guardian/django-guardian,t,e,e,e,e,13,
+https://github.com/dfunckt/django-rules,t,p,p,p,p,38,
+https://github.com/awesto/django-shop,t,f,f,f,f,159,
+https://github.com/stephenmcd/cartridge,t,e,e,e,e,74,
+https://github.com/lxneng/alipay,t,p,p,p,p,48,
+https://github.com/agiliq/merchant,t,e,e,e,e,36,
+https://github.com/carlospalol/money,f,?,?,?,?,-1,
+https://github.com/Alir3z4/python-currencies,t,p,p,p,p,8,
+https://github.com/5monkeys/django-formapi,t,f,f,f,f,17,
+https://github.com/flask-restful/flask-restful,t,p,p,p,p,12,
+https://github.com/jfinkels/flask-restless,t,e,e,e,e,32,
+https://github.com/marselester/flask-api-utils,t,f,f,f,f,10,
+https://github.com/nicolaiarocci/eve,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/mozilla-services/cornice,t,p,p,p,p,94,
+https://github.com/timothycrosley/hug,t,f,f,f,f,720,
+https://github.com/jeffknupp/sandman,t,e,e,e,e,33,
+https://github.com/toastdriven/restless,t,e,e,e,e,305,
+https://github.com/vertical-knowledge/ripozo,t,e,e,e,e,9,
+https://github.com/marshmallow-code/marshmallow,t,u,u,u,u,32,
+https://github.com/pennersr/django-allauth,t,p,p,p,p,209,
+https://github.com/evonove/django-oauth-toolkit,t,f,f,f,f,738,
+https://github.com/caffeinehit/django-oauth2-provider,t,e,e,e,e,22,
+https://github.com/lepture/flask-oauthlib,t,p,p,p,p,57,
+https://github.com/idan/oauthlib,t,f,f,f,f,182,
+https://github.com/joestump/python-oauth2,t,e,e,e,e,16,
+https://github.com/omab/python-social-auth,t,e,e,e,e,10,
+https://github.com/litl/rauth,t,p,p,f,f,135,
+https://github.com/demianbrecht/sanction,t,p,p,p,p,5,
+https://github.com/demonware/jose,t,p,p,p,p,119,
+https://github.com/jpadilla/pyjwt,t,f,f,f,f,437,
+https://github.com/brianloveswords/python-jws,f,?,?,?,?,-1,
+https://github.com/davedoesdev/python-jwt,t,f,f,f,f,27,
+https://github.com/coleifer/huey,t,p,p,p,p,167,
+https://github.com/pricingassistant/mrq,t,u,u,u,u,0,
+https://github.com/rdegges/simpleq,t,e,e,e,e,30,
+https://github.com/django-haystack/django-haystack,t,?,?,?,?,-1,Command 'python test_haystack/solr_tests/server/wait-for-solr
+python setup.py test' timed out after 180 seconds
+https://github.com/elastic/elasticsearch-dsl-py,t,e,e,?,?,-1,Command 'python setup.py test' timed out after 180 seconds
+https://github.com/catholabs/esengine,t,?,?,?,?,-1,Command 'curl -O https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb && sudo dpkg -i --force-confnew elasticsearch-1.7.3.deb' timed out after 180 seconds
+https://github.com/edsu/solrpy,t,?,?,?,?,-1,Command 'curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=4.10.3 SOLR_CONFS=tests bash' timed out after 180 seconds
+https://github.com/justquick/django-activity-stream,t,f,f,f,f,38,
+https://github.com/tschellenbach/Stream-Framework,t,e,e,e,e,51,
+https://github.com/django-compressor/django-compressor,t,f,f,f,f,521,
+https://github.com/jazzband/django-pipeline,t,e,e,e,e,625,
+https://github.com/jschneier/django-storages,t,f,f,f,f,98,
+https://github.com/miracle2k/flask-assets,t,p,p,p,p,17,
+https://github.com/jaysonsantos/jinja-assets-compressor,t,f,f,f,f,15,
+https://github.com/miracle2k/webassets,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/bbangert/beaker,t,u,u,u,u,26,
+https://github.com/django-cache-machine/django-cache-machine,t,e,e,e,e,119,
+https://github.com/Suor/django-cacheops,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/5monkeys/django-viewlet,t,f,f,f,f,10,
+https://github.com/jmoiron/johnny-cache,t,p,p,p,p,111,
+https://github.com/lericson/pylibmc,t,?,?,?,?,-1,Command 'sh -c "if [ $LIBMEMCACHED_VERSION = '1.0.8' ] ; then sudo add-apt-repository ppa:plewis-m/ppa-libmemcached -y; fi"
+sh -c "if [ $LIBMEMCACHED_VERSION = '0.53' ] ; then sudo add-apt-repository ppa:plewis-m/libmemcached0.5x -y; fi"
+sudo apt-get update -qq
+sudo apt-get install memcached
+sudo service memcached start
+sudo apt-get install libmemcached-dev
+echo "stats settings" | nc localhost 11211' timed out after 180 seconds
+https://github.com/mailgun/flanker,t,f,f,f,f,237,
+https://github.com/martinrusev/imbox,t,p,p,p,p,5,
+https://github.com/kennethreitz/inbox.py,r,p,p,p,p,6,
+https://github.com/zedshaw/lamson,f,?,?,?,?,-1,
+https://github.com/marrow/mailer,t,e,e,e,e,104,
+https://github.com/tonioo/modoboa,t,f,?,?,?,-1,Command 'python setup.py -q develop
+pip install -q psycopg2 mysqlclient
+pip install -q -r ldap-requirements.txt
+pip install -q -r test-requirements.txt' timed out after 180 seconds
+https://github.com/nylas/sync-engine,t,e,e,e,e,87,
+https://github.com/kootenpv/yagmail,t,p,p,p,p,106,
+https://github.com/ovalhub/pyicu,f,?,?,?,?,-1,
+https://github.com/gruns/furl,t,e,e,e,e,267,
+https://github.com/codeinthehole/purl,t,p,p,p,p,22,
+https://github.com/ellisonleao/pyshorteners,t,f,f,f,f,10,
+https://github.com/Alir3z4/python-short_url,t,e,e,e,e,6,
+https://github.com/sloria/webargs,t,u,u,u,u,14,
+https://github.com/mozilla/bleach,t,u,u,u,u,20,
+https://github.com/html5lib/html5lib-python,t,u,u,u,u,22,
+https://github.com/pallets/markupsafe,t,p,p,p,p,30,
+https://github.com/gawel/pyquery,t,e,e,e,e,6,
+https://github.com/stchris/untangle,t,p,p,p,p,10,
+https://github.com/martinblech/xmltodict,t,p,p,p,p,0,
+https://github.com/chineking/cola,r,?,?,?,?,-1,Command 'nosetests' timed out after 180 seconds
+https://github.com/matiasb/demiurge,t,p,p,p,p,9,
+https://github.com/hickford/MechanicalSoup,t,?,?,?,?,-1,Command 'py.test' timed out after 180 seconds
+https://github.com/scrapinghub/portia,t,p,?,?,?,-1,Command 'source ${VIRTUAL_ENV}/bin/activate
+sudo -E ./provision.sh install_deps install_splash install_python_deps
+python -c 'import splash, qt5reactor'
+cd slyd
+npm install -g bower
+npm install
+bower install
+cd ..' timed out after 180 seconds
+https://github.com/binux/pyspider,t,?,?,?,?,-1,Command 'sudo apt-get update -qq
+sudo apt-get install -y beanstalkd
+echo "START=yes" | sudo tee -a /etc/default/beanstalkd > /dev/null
+sudo service beanstalkd start
+curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb && sudo dpkg -i --force-confnew elasticsearch-2.4.0.deb && sudo service elasticsearch restart
+sudo docker pull scrapinghub/splash
+sudo docker run -d --net=host scrapinghub/splash' timed out after 180 seconds
+https://github.com/jmcarp/robobrowser,t,u,u,u,u,17,
+https://github.com/vinta/Haul,t,?,?,?,?,-1,Command 'coverage run --source=haul setup.py test' timed out after 180 seconds
+https://github.com/Alir3z4/html2text,t,p,p,p,p,15,
+https://github.com/michaelhelmick/lassie,t,e,e,e,e,9,
+https://github.com/coleifer/micawber,t,p,p,p,p,23,
+https://github.com/codelucas/newspaper,t,e,e,e,e,66,
+https://github.com/erikriver/opengraph,f,?,?,?,?,-1,
+https://github.com/grangier/python-goose,t,?,?,?,?,-1,Command 'pip install -r requirements.txt --use-mirrors
+python setup.py install' timed out after 180 seconds
+https://github.com/buriy/python-readability,t,f,f,f,f,66,
+https://github.com/Alir3z4/python-sanitize,t,p,p,p,p,12,
+https://github.com/miso-belica/sumy,t,e,e,e,e,340,
+https://github.com/deanmalmgren/textract,t,?,?,?,?,-1,Command 'sudo ./provision/debian.sh' timed out after 180 seconds
+https://github.com/Pylons/deform,t,u,u,u,u,6,
+https://github.com/dyve/django-bootstrap3,t,p,p,p,p,33,
+https://github.com/maraujop/django-crispy-forms,t,f,f,f,f,24,
+https://github.com/WiserTogether/django-remote-forms,r,p,p,p,p,11,
+https://github.com/wtforms/wtforms,t,p,p,p,p,22,
+https://github.com/schematics/schematics,t,e,e,e,e,11,
+https://github.com/keleshev/schema,t,p,p,p,p,118,
+https://github.com/Julian/jsonschema,t,e,e,e,e,6,
+https://github.com/nicolaiarocci/cerberus,t,p,p,p,p,33,
+https://github.com/alecthomas/voluptuous,t,u,u,u,u,10,
+https://github.com/podio/valideer,t,p,p,f,f,12,
+https://github.com/mbi/django-simple-captcha,t,e,e,e,e,6,
+https://github.com/moqada/django-simple-spam-blocker,t,e,e,e,e,89,
+https://github.com/alex/django-taggit,t,e,e,e,e,9,
+https://github.com/Eugeny/ajenti,r,f,f,f,f,43,
+https://github.com/sshwsfc/xadmin,t,u,u,u,u,17,
+https://github.com/mher/flower,t,e,f,?,?,-1,Command 'python -m tests.__main__' timed out after 180 seconds
+https://github.com/wooey/wooey,t,p,p,p,p,253,
+https://github.com/koenbok/Cactus,t,f,f,f,f,181,
+https://github.com/kennethreitz/envoy,t,f,f,f,f,43,
+https://github.com/amoffat/sh,t,f,f,f,f,392,
+https://github.com/python-greenlet/greenlet,t,p,p,p,p,6,
+https://github.com/madisonmay/Tomorrow,f,?,?,?,?,-1,
+https://github.com/MagicStack/uvloop,t,f,f,f,f,5,
+https://github.com/quantmind/pulsar,t,p,p,p,p,65,
+https://github.com/dieseldev/diesel,t,?,?,?,?,-1,Command 'python setup.py install' timed out after 180 seconds
+https://github.com/smira/txZMQ,t,p,p,p,p,65,
+https://github.com/crossbario/autobahn-python,t,e,e,e,e,7,
+https://github.com/crossbario/crossbar,t,e,e,e,e,9,
+https://github.com/stephenmcd/django-socketio,t,p,p,p,p,17,
+https://github.com/Lawouach/WebSocket-for-Python,t,p,p,p,p,5,
+https://github.com/hivesolutions/netius,t,f,f,f,f,727,
+https://github.com/joshmarshall/jsonrpclib,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/0rpc/zerorpc-python,t,p,p,p,p,252,
+https://github.com/davidaurelio/hashids-python,t,p,p,p,p,7,
+https://github.com/pyca/pynacl,t,e,e,e,e,7,
+https://github.com/nucleic/enaml,f,?,?,?,?,-1,
+https://github.com/pybee/toga,f,?,?,?,?,-1,
+https://github.com/zoofIO/flexx,t,p,p,p,p,6,
+https://github.com/ClusterHQ/eliot,t,?,?,?,?,-1,Command 'tox
+coverage combine
+coverage report --show-missing' timed out after 180 seconds
+https://github.com/getsentry/raven-python,t,e,e,e,e,19,
+https://github.com/nose-devs/nose,t,f,f,f,f,389,
+https://github.com/HypothesisWorks/hypothesis-python,t,p,p,p,p,0,
+https://github.com/robotframework/robotframework,f,?,?,?,?,-1,
+https://github.com/CleanCut/green,t,f,f,f,f,20,
+https://github.com/locustio/locust,t,e,e,e,e,6,
+https://github.com/seatgeek/sixpack,t,f,f,f,f,103,
+https://github.com/cobrateam/splinter,t,?,?,?,?,-1,Command 'export DISPLAY=:99.0
+sh -e /etc/init.d/xvfb start
+./.travis.chrome.sh' timed out after 180 seconds
+https://github.com/asweigart/pyautogui,f,?,?,?,?,-1,
+https://github.com/spulec/freezegun,t,f,f,f,f,10,
+https://github.com/patrys/httmock,t,p,p,p,p,10,
+https://github.com/gabrielfalcao/HTTPretty,t,f,f,f,f,14,
+https://github.com/getsentry/responses,t,e,e,e,e,13,
+https://github.com/kevin1024/vcrpy,t,e,e,e,e,7,
+https://github.com/rbarrois/factory_boy,t,e,e,e,e,7,
+https://github.com/klen/mixer,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/vandersonmota/model_mommy,t,?,?,?,?,-1,Command 'sudo apt-get update && sudo apt-get build-dep python-imaging' timed out after 180 seconds
+https://github.com/lk-geimfari/church,t,f,f,f,f,6,
+https://github.com/joke2k/faker,t,f,f,p,p,136,
+https://github.com/emirozer/fake2db,r,p,p,p,p,44,
+https://github.com/ajalt/fuckitpy,t,p,p,p,p,14,
+https://github.com/scottrogowski/code2flow,f,?,?,?,?,-1,
+https://github.com/gak/pycallgraph,t,f,?,?,?,-1,Command 'sudo apt-get update -qq
+sudo apt-get install -qq graphviz' timed out after 180 seconds
+https://github.com/yinwang0/pysonar2,t,?,?,?,?,-1,'script'
+https://github.com/klen/pylama,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/google/pyringe,f,?,?,?,?,-1,
+https://github.com/Kozea/wdb,t,e,e,e,e,19,
+https://github.com/django-debug-toolbar/django-debug-toolbar,t,e,e,e,e,8,
+https://github.com/dcramer/django-devserver,r,p,p,p,p,289,
+https://github.com/mgood/flask-debugtoolbar,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/rkern/line_profiler,t,?,?,?,?,-1,Command 'pip install --install-option='--no-cython-compile' Cython
+pip install -r dev_requirements.txt
+python setup.py develop' timed out after 180 seconds
+https://github.com/fabianp/memory_profiler,t,?,?,?,?,-1,Command 'sudo apt-get update
+if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh; else wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh; fi
+bash miniconda.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+hash -r
+conda config --set always_yes yes --set changeps1 no
+conda update -q conda
+conda info -a
+conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy nose ipython
+source activate test-environment
+python setup.py install' timed out after 180 seconds
+https://github.com/what-studio/profiling,t,e,e,e,e,29,
+https://github.com/eliben/pyelftools,t,p,p,p,p,446,
+https://github.com/WoLpH/python-statsd,t,e,e,e,e,17,
+https://github.com/chapmanb/bcbio-nextgen,t,e,e,e,e,53,
+https://github.com/chapmanb/bcbb,f,?,?,?,?,-1,
+https://github.com/blaze/blaze,t,?,?,?,?,-1,Command 'wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p $HOME/miniconda
+export PATH="$HOME/miniconda/bin:$PATH"
+conda config --set always_yes yes --set changeps1 no
+conda update conda
+conda create -n blaze -c blaze python=$TRAVIS_PYTHON_VERSION pytest numpy sqlalchemy pandas h5py pip flask requests pytables cython bcolz xlrd coverage psutil networkx numba pyyaml cytoolz toolz multipledispatch dask=0.10.2 pymongo=3.0 flask-cors psycopg2 pymysql
+if [ -n "$PANDAS_VERSION" ]; then conda remove -n blaze pandas; fi
+source activate blaze
+conda update setuptools pip
+conda install spark=$SPARK_VERSION -c blaze -c anaconda-cluster
+pip install git+https://github.com/blaze/datashape
+pip install git+https://github.com/blaze/odo
+if [ -n "$PANDAS_VERSION" ]; then pip install cython==0.24.1; pip install $PANDAS_VERSION; else conda install pandas=0.19.0; fi
+pip install coveralls
+pip install -e .[ci]' timed out after 180 seconds
+https://github.com/mining/mining,t,f,f,f,f,9,
+https://github.com/pymc-devs/pymc3,t,f,?,?,?,-1,Command '. ./scripts/test.sh $TESTCMD' timed out after 180 seconds
+https://github.com/statsmodels/statsmodels,t,?,?,?,?,-1,Command 'wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+chmod +x miniconda.sh
+./miniconda.sh -b
+export PATH=/home/travis/miniconda/bin:$PATH
+export PATH=/home/travis/miniconda2/bin:$PATH
+conda update --yes --quiet conda
+export DISPLAY=:99.0
+sh -e /etc/init.d/xvfb start
+mkdir $HOME/.config
+mkdir $HOME/.config/matplotlib
+SRCDIR=$PWD
+cp $SRCDIR/tools/matplotlibrc $HOME/.config/matplotlib/matplotlibrc
+if [ ${MATPLOTLIB} = "1.2" ]; then mkdir $HOME/.matplotlib; fi
+if [ ${MATPLOTLIB} = "1.2" ]; then cp ${SRCDIR}/tools/matplotlibrc $HOME/.matplotlib/matplotlibrc; fi
+PKGS="python=${PYTHON}"
+PKGS="${PKGS} numpy"; if [ ${NUMPY} ]; then PKGS="${PKGS}=${NUMPY}"; fi
+PKGS="${PKGS} scipy"; if [ ${SCIPY} ]; then PKGS="${PKGS}=${SCIPY}"; fi
+PKGS="${PKGS} patsy"; if [ ${PATSY} ]; then PKGS="${PKGS}=${PATSY}"; fi
+PKGS="${PKGS} pandas"; if [ ${PANDAS} ]; then PKGS="${PKGS}=${PANDAS}"; fi
+PKGS="${PKGS} Cython"; if [ ${CYTHON} ]; then PKGS="${PKGS}=${CYTHON}"; fi
+if [ ${USEMPL} = true ]; then PKGS="${PKGS} matplotlib"; if [ ${MATPLOTLIB} ]; then PKGS="${PKGS}=${MATPLOTLIB}"; fi; fi' timed out after 180 seconds
+https://github.com/sympy/sympy,t,p,p,p,p,0,
+https://github.com/quantopian/zipline,t,e,e,e,e,185,
+https://github.com/sorrycc/awesome-javascript#data-visualization,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/awesome-javascript#data-visualization/'
+https://github.com/bokeh/bokeh,t,p,p,p,p,3,
+https://github.com/yhat/ggplot,f,?,?,?,?,-1,
+https://github.com/mwaskom/seaborn,t,?,?,?,?,-1,Command 'if [ $DEPS == 'modern' ]; then nosetests --with-doctest; else nosetests; fi' timed out after 180 seconds
+https://github.com/wrobstory/vincent,t,p,p,p,p,38,
+https://github.com/josephmisiti/awesome-machine-learning#python,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/awesome-machine-learning#python/'
+https://github.com/muricoca/crab,f,?,?,?,?,-1,
+https://github.com/piskvorky/gensim,t,e,e,e,e,49,
+https://github.com/hannes-brt/hebel,f,?,?,?,?,-1,
+https://github.com/tensorflow/tensorflow,f,?,?,?,?,-1,
+https://github.com/numenta/nupic,t,u,u,u,u,15,
+https://github.com/clips/pattern,f,?,?,?,?,-1,
+https://github.com/pybrain/pybrain,f,?,?,?,?,-1,
+https://github.com/lisa-lab/pylearn2,t,?,?,?,?,-1,Command 'sh .travis.sh' timed out after 180 seconds
+https://github.com/ocelma/python-recsys,t,f,f,f,f,16,
+https://github.com/andersbll/deeppy,t,e,e,e,e,68,
+https://github.com/josephreisinger/vowpal_porpoise,f,?,?,?,?,-1,
+https://github.com/tensorflow/skflow,t,u,u,u,u,0,
+https://github.com/douban/dpark,t,f,f,f,f,21,
+https://github.com/klbostee/dumbo,f,?,?,?,?,-1,
+https://github.com/spotify/luigi,t,?,?,?,?,-1,Command 'psql -c 'create database spotify;' -U postgres
+ssh-keygen -t rsa -N '' -C '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+ssh -o StrictHostKeyChecking=no localhost true
+mysql -e 'create database IF NOT EXISTS luigi_test;' -uroot || true' timed out after 180 seconds
+https://github.com/Yelp/mrjob,t,e,e,e,e,33,
+https://github.com/Parsely/streamparse,t,p,p,p,p,0,
+https://github.com/pytoolz/cytoolz,t,f,f,f,f,32,
+https://github.com/kachayev/fn.py,t,p,p,p,p,6,
+https://github.com/Suor/funcy,t,e,e,e,e,13,
+https://github.com/pytoolz/toolz,t,p,p,p,p,18,
+https://github.com/realpython/list-of-python-api-wrappers,f,?,?,?,?,-1,
+https://github.com/boto/boto,t,f,f,f,f,77,
+https://github.com/sunlightlabs/django-wordpress,f,?,?,?,?,-1,
+https://github.com/mobolic/facebook-sdk,t,p,p,p,p,19,
+https://github.com/jgorset/facepy,t,p,p,f,f,11,
+https://github.com/charlierguo/gmail,f,?,?,?,?,-1,
+https://github.com/google/google-api-python-client,t,f,f,f,f,10,
+https://github.com/burnash/gspread,t,p,p,p,p,9,
+https://github.com/ryanmcgrath/twython,t,e,e,e,e,5,
+https://github.com/ansible/ansible,f,?,?,?,?,-1,
+https://github.com/saltstack/salt,t,u,u,u,u,35,
+https://github.com/sebastien/cuisine,f,?,?,?,?,-1,
+https://github.com/ronnix/fabtools,t,p,p,p,p,17,
+https://github.com/nickstenning/honcho,t,e,e,e,e,6,
+https://github.com/pexpect/pexpect,t,e,e,e,e,7,
+https://github.com/giampaolo/psutil,t,f,f,f,f,71,
+https://github.com/Supervisor/supervisor,t,u,u,u,u,0,
+https://github.com/thauber/django-schedule,f,?,?,?,?,-1,
+https://github.com/gunnery/gunnery,t,e,e,e,e,7,
+https://github.com/fengsp/plan,f,?,?,?,?,-1,
+https://github.com/dbader/schedule,t,e,e,e,e,5,
+https://github.com/knipknap/SpiffWorkflow,t,p,p,p,f,130,
+https://github.com/Maratyszcza/PeachPy,t,e,e,e,e,7,
+https://github.com/dropbox/pyston,t,p,p,p,p,0,
+https://github.com/pythonnet/pythonnet,t,e,e,e,e,46,
+https://github.com/noxrepo/pox,f,?,?,?,?,-1,
+https://github.com/sdn-ixp/internet2award,f,?,?,?,?,-1,
+https://github.com/SavinaRoja/PyUserInput,f,?,?,?,?,-1,
+https://github.com/secdev/scapy,t,p,p,p,p,172,
+https://github.com/rockymeza/wifi,t,p,p,p,p,4,
+https://github.com/mitsuhiko/python-modernize,t,p,p,p,p,298,
+https://github.com/jek/blinker,t,p,p,p,p,8,
+https://github.com/pallets/itsdangerous,t,p,p,p,p,33,
+https://github.com/mitsuhiko/pluginbase,t,p,p,p,p,11,
+https://github.com/PacketPerception/pychievements,t,u,u,u,u,7,
+https://github.com/nryoung/algorithms,t,p,p,p,p,174,
+https://github.com/faif/python-patterns,t,p,p,p,p,236,
+https://github.com/jorgenschaefer/elpy,t,f,f,f,f,43,
+https://github.com/srusskih/SublimeJEDI,f,?,?,?,?,-1,
+https://github.com/DamnWidget/anaconda,t,f,f,f,f,4,
+https://github.com/Valloric/YouCompleteMe,t,e,e,e,e,3,
+https://github.com/davidhalter/jedi-vim,t,f,f,f,f,12,
+https://github.com/klen/python-mode,t,f,f,f,f,0,
+https://github.com/Microsoft/PTVS,f,?,?,?,?,-1,
+https://github.com/spyder-ide/spyder,t,e,e,e,e,9,
+https://github.com/ciandcd/awesome-ciandcd#online-build-system,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/awesome-ciandcd#online-build-system/'
+https://github.com/trending?l=python,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/trending?l=python/'
+https://github.com/kirang89/pycrumbs,f,?,?,?,?,-1,
+https://github.com/checkcheckzz/python-github-projects,f,?,?,?,?,-1,
+https://github.com/rasbt/python_reference,f,?,?,?,?,-1,
+https://github.com/svaksha/pythonidae,f,?,?,?,?,-1,
+https://github.com/sindresorhus/awesome,f,?,?,?,?,-1,
+https://github.com/jnv/lists,f,?,?,?,?,-1,
+https://github.com/vinta/awesome-python/blob/master/CONTRIBUTING.md,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/CONTRIBUTING.md/'
+https://github.com/vinta/awesome-python/pulls,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/pulls/'
+https://github.com/elastic/elasticsearch-dsl-py,t,e,e,e,e,22,
+https://github.com/gratipay/gratipay.com,t,f,f,f,f,13,
+https://github.com/insanum/gcalcli,f,?,?,?,?,-1,
+https://github.com/elastic/elasticsearch-py,t,e,e,e,e,22,
+https://github.com/kamalgill/flask-appengine-template,f,?,?,?,?,-1,
+https://github.com/IronLanguages/main,f,?,?,?,?,-1,
+https://github.com/lincolnloop/python-qrcode,f,?,?,?,?,-1,
+https://github.com/liuwons/wxBot,f,?,?,?,?,-1,
+https://github.com/pythoncn/june,t,f,f,f,f,8,
+https://github.com/carmaa/inception,f,?,?,?,?,-1,
+https://github.com/michael-lazar/rtv,t,e,p,p,p,314,
+https://github.com/jpadilla/pyjwt,t,e,e,e,e,8,
+https://github.com/Julian/jsonschema,t,e,e,e,e,6,
+https://github.com/ReactiveX/RxPY,t,f,f,f,f,34,
+https://github.com/jelmer/dulwich,t,e,e,e,e,25,
+https://github.com/maxme/bitcoin-arbitrage,f,?,?,?,?,-1,
+https://github.com/gruns/furl,t,e,e,e,e,4,
+https://github.com/CouchPotato/CouchPotatoV1,f,?,?,?,?,-1,
+https://github.com/hyperopt/hyperopt,f,?,?,?,?,-1,
+https://github.com/hellerve/programming-talks,f,?,?,?,?,-1,
+https://github.com/jborg/attic,t,u,u,u,u,7,
+https://github.com/zyqf/DNS,f,?,?,?,?,-1,
+https://github.com/pytest-dev/pytest,t,e,e,e,e,5,
+https://github.com/yandex/yandex-tank,t,f,f,f,f,68,
+https://github.com/joealcorn/laboratory,t,e,e,e,e,16,
+https://github.com/mikemaccana/python-docx,t,p,p,p,p,54,
+https://github.com/jesolem/PCV,f,?,?,?,?,-1,
+https://github.com/gutomaia/pyNES,t,p,p,p,p,117,
+https://github.com/oxidane/tmuxomatic,f,?,?,?,?,-1,
+https://github.com/celery/django-celery,t,e,e,e,e,3,
+https://github.com/defunkt/pystache,t,f,f,f,f,10,
+https://github.com/themadinventor/esptool,t,e,e,e,e,9,
+https://github.com/debops/debops-tools,t,?,?,?,?,-1,'bool' object is not iterable
+https://github.com/fengsp/plan,f,?,?,?,?,-1,
+https://github.com/Netflix/security_monkey,t,?,?,?,?,-1,Command 'sh env_tests/test_dart.sh
+coverage run -m py.test security_monkey/tests || exit 1' timed out after 180 seconds
+https://github.com/mothran/bunny,f,?,?,?,?,-1,
+https://github.com/stephenmcd/django-socketio,t,p,p,p,p,17,
+https://github.com/keleshev/schema,t,p,p,p,p,30,
+https://github.com/jazzband/django-admin2,t,u,u,u,u,2,
+https://github.com/yosinski/deep-visualization-toolbox,f,?,?,?,?,-1,
+https://github.com/amperka/ino,r,f,f,f,f,8,
+https://github.com/mila-udem/blocks,t,?,?,?,?,-1,sequence item 0: expected str instance, NoneType found
+https://github.com/rbgirshick/fast-rcnn,f,?,?,?,?,-1,
+https://github.com/ryanss/vim-hackernews,t,e,e,e,e,3,
+https://github.com/pybee/toga,f,?,?,?,?,-1,
+https://github.com/JackStouffer/Flask-Foundation,t,f,f,f,f,12,
+https://github.com/conda/conda,t,u,u,u,u,0,
+https://github.com/nickoala/telepot,f,?,?,?,?,-1,
+https://github.com/Yelp/paasta,t,p,p,p,p,265,
+https://github.com/gbeced/pyalgotrade,t,u,u,u,u,1,
+https://github.com/Kozea/Radicale,t,e,e,e,e,6,
+https://github.com/formspree/formspree,t,f,f,f,f,12,
+https://github.com/spotify/dh-virtualenv,t,p,p,p,p,11,
+https://github.com/nojhan/colout,f,?,?,?,?,-1,
+https://github.com/shea256/angular-flask,r,p,p,p,p,22,
+https://github.com/thomasahle/sunfish,f,?,?,?,?,-1,
+https://github.com/kuba/simp_le,t,p,p,p,p,0,
+https://github.com/topazproject/topaz,t,e,e,e,e,10,
+https://github.com/tony/tmuxp,t,p,p,p,p,17,
+https://github.com/JelteF/PyLaTeX,t,f,f,f,f,19,
+https://github.com/cosven/FeelUOwn,r,p,p,p,p,6,
+https://github.com/jmcnamara/XlsxWriter,t,p,p,p,p,109,
+https://github.com/kliment/Printrun,r,f,f,f,f,8,
+https://github.com/cpfair/tapiriik,t,e,e,e,e,10,
+https://github.com/JonnyWong16/plexpy,f,?,?,?,?,-1,
+https://github.com/aigamedev/scikit-neuralnetwork,t,u,u,u,u,20,
+https://github.com/sabnzbd/sabnzbd,f,?,?,?,?,-1,
+https://github.com/Cue/scales,t,p,p,p,p,34,
+https://github.com/vim-awesome/vim-awesome,t,f,f,f,f,106,
+https://github.com/kartograph/kartograph.py,r,f,f,f,f,8,
+https://github.com/scrapinghub/splash,t,e,e,e,e,200,
+https://github.com/georgebrock/1pass,f,?,?,?,?,-1,
+https://github.com/naparuba/shinken,t,e,e,e,e,48,
+https://github.com/buckket/twtxt,t,f,f,f,f,12,
+https://github.com/celery/kombu,t,e,e,e,e,3,
+https://github.com/reviewboard/reviewboard,f,?,?,?,?,-1,
+https://github.com/cozy/cozy-setup,f,?,?,?,?,-1,
+https://github.com/git-cola/git-cola,t,p,p,p,p,186,
+https://github.com/VerbalExpressions/PythonVerbalExpressions,t,p,p,p,p,4,
+https://github.com/DataBrewery/cubes,t,e,f,f,f,26,
+https://github.com/arguman/arguman.org,r,p,p,p,p,20,
+https://github.com/biopython/biopython,t,?,?,?,?,-1,Command 'cd $HOME
+mkdir bin
+export PATH=$HOME/bin:$PATH
+curl -L -O http://www.atgc-montpellier.fr/download/binaries/phyml/PhyML-3.1.zip
+unzip PhyML-3.1.zip
+mv PhyML-3.1/PhyML-3.1_linux64 bin/phyml
+cd $TRAVIS_BUILD_DIR' timed out after 180 seconds
+https://github.com/ansible/ansible-modules-core,f,?,?,?,?,-1,
+https://github.com/BurntSushi/nflgame,f,?,?,?,?,-1,
+https://github.com/Veil-Framework/Veil-Evasion,t,p,p,p,p,0,
+https://github.com/i2y/mochi,r,f,f,f,f,9,
+https://github.com/pogodevorg/pgoapi,t,?,?,?,?,-1,sequence item 0: expected str instance, bool found
+https://github.com/littlecodersh/ItChat,f,?,?,?,?,-1,
+https://github.com/SmileyChris/easy-thumbnails,t,p,p,p,p,62,
+https://github.com/nickstenning/honcho,t,e,e,e,e,6,
+https://github.com/hayaku/hayaku,t,p,p,p,p,2,
+https://github.com/lxml/lxml,t,f,f,f,f,19,
+https://github.com/python-excel/xlrd,t,e,e,e,e,6,
+https://github.com/spesmilo/electrum,t,p,p,p,p,170,
+https://github.com/xiaoxu193/PyTeaser,f,?,?,?,?,-1,
+https://github.com/sphinx-doc/sphinx,t,p,p,p,p,7,
+https://github.com/apenwarr/redo,f,?,?,?,?,-1,
+https://github.com/Netflix/bless,t,f,f,f,f,6,
+https://github.com/xchaoinfo/fuck-login,f,?,?,?,?,-1,
+https://github.com/cs109/content,f,?,?,?,?,-1,
+https://github.com/evonove/django-oauth-toolkit,t,e,e,e,e,8,
+https://github.com/SublimeText/CTags,t,p,p,p,p,0,
+https://github.com/fabianp/memory_profiler,t,f,f,f,f,126,
+https://github.com/jbtule/cdto,f,?,?,?,?,-1,
+https://github.com/9miao/Firefly,f,?,?,?,?,-1,
+https://github.com/moxie0/sslstrip,f,?,?,?,?,-1,
+https://github.com/google/sanitizers,f,?,?,?,?,-1,
+https://github.com/gpjt/webgl-lessons,f,?,?,?,?,-1,
+https://github.com/agiliq/merchant,t,e,e,e,e,5,
+https://github.com/ryankiros/skip-thoughts,f,?,?,?,?,-1,
+https://github.com/michaelliao/sinaweibopy,f,?,?,?,?,-1,
+https://github.com/sdg-mit/gitless,t,f,f,f,f,9,
+https://github.com/binarydud/pyres,t,p,p,p,p,97,
+https://github.com/spulec/freezegun,t,f,f,f,f,8,
+https://github.com/GetBlimp/django-rest-framework-jwt,t,e,e,e,e,5,
+https://github.com/Emsu/prophet,t,f,e,e,e,21,
+https://github.com/p-e-w/krill,f,?,?,?,?,-1,
+https://github.com/DrkSephy/django-hackathon-starter,r,p,p,p,p,21,
+https://github.com/metabrainz/picard,t,e,e,e,e,32,
+https://github.com/openstack/horizon,r,f,f,f,f,65,
+https://github.com/stasinopoulos/commix,t,p,p,p,p,2,
+https://github.com/achiku/jungle,t,e,e,e,e,20,
+https://github.com/boramalper/himawaripy,f,?,?,?,?,-1,
+https://github.com/JonathanSalwan/ROPgadget,f,?,?,?,?,-1,
+https://github.com/vfaronov/httpolice,t,f,f,f,f,221,
+https://github.com/SickRage/SickRage,t,f,f,f,f,473,
+https://github.com/munki/munki,t,u,u,u,u,9,
+https://github.com/YoSmudge/dnsyo,t,e,e,e,e,14,
+https://github.com/PokeAPI/pokeapi,r,f,f,f,f,26,
+https://github.com/anishathalye/dotbot,t,e,e,e,e,0,
+https://github.com/bdarnell/plop,t,e,p,p,f,11,
+https://github.com/spulec/moto,t,?,?,?,?,-1,Command 'make test' timed out after 180 seconds
+https://github.com/lunixbochs/actualvim,f,?,?,?,?,-1,
+https://github.com/devsnd/cherrymusic,t,p,p,p,p,77,
+https://github.com/bndr/pipreqs,t,e,e,e,e,17,
+https://github.com/pyskell/slouchy,r,p,p,p,p,5,
+https://github.com/mitsuhiko/pipsi,t,p,p,p,p,178,
+https://github.com/dagwieers/unoconv,t,f,f,f,f,1,
+https://github.com/jleclanche/django-push-notifications,t,e,e,e,e,6,
+https://github.com/behave/behave,t,f,f,f,f,29,
+https://github.com/stanfordjournalism/search-script-scrape,f,?,?,?,?,-1,
+https://github.com/os/slacker,t,u,u,u,u,0,
+https://github.com/viper-framework/viper,t,p,p,p,p,44,
+https://github.com/marcwebbie/passpie,t,f,f,f,f,17,
+https://github.com/wallproxy/wallproxy,f,?,?,?,?,-1,
+https://github.com/PythonJS/PythonJS,f,?,?,?,?,-1,
+https://github.com/twoscoops/django-twoscoops-project,r,p,p,p,p,10,
+https://github.com/spragunr/deep_q_rl,f,?,?,?,?,-1,
+https://github.com/jarun/googler,t,u,f,f,f,1294,
+https://github.com/trustly/bankapi,f,?,?,?,?,-1,
+https://github.com/eliben/pycparser,t,p,p,p,p,23,
+https://github.com/minimaxir/facebook-page-post-scraper,f,?,?,?,?,-1,
+https://github.com/lepture/flask-oauthlib,t,p,p,p,p,52,
+https://github.com/trustedsec/ptf,f,?,?,?,?,-1,
+https://github.com/django-silk/silk,t,p,p,p,p,22,
+https://github.com/urwid/urwid,t,e,e,e,e,37,
+https://github.com/pyjs/pyjs,t,f,f,f,f,158,
+https://github.com/karan/slack-overflow,r,p,p,p,p,5,
+https://github.com/ckreibich/scholar.py,f,?,?,?,?,-1,
+https://github.com/mwhite/resume,f,?,?,?,?,-1,
+https://github.com/halgari/clojure-py,?,?,?,?,?,-1,[Errno 2] No such file or directory: '/home/yan/pynondex/python-2.7.12-nondex/libtest/libs/clojure-py/'
+https://github.com/mbr/flask-bootstrap,t,e,e,e,e,34,
+https://github.com/srsudar/eg,t,p,p,p,p,6,
+https://github.com/lanyrd/mysql-postgresql-converter,f,?,?,?,?,-1,
+https://github.com/pypa/warehouse,t,e,e,e,e,22,
+https://github.com/fugue/credstash,t,p,p,p,p,8,
+https://github.com/laramies/theHarvester,f,?,?,?,?,-1,
+https://github.com/owocki/pytrader,t,u,u,u,u,34,
+https://github.com/mwrlabs/drozer,t,p,p,p,p,2,
+https://github.com/tarekziade/boom,t,u,u,u,u,9,
+https://github.com/joblib/joblib,t,u,u,u,u,0,
+https://github.com/wepe/MachineLearning,f,?,?,?,?,-1,
+https://github.com/mattupstate/flask-security,t,e,e,e,e,10,
+https://github.com/mozilla/playdoh,f,?,?,?,?,-1,
+https://github.com/pimusicbox/pimusicbox,f,?,?,?,?,-1,
+https://github.com/Maratyszcza/PeachPy,t,e,e,e,e,8,
+https://github.com/sh4nks/flaskbb,t,e,e,e,e,14,
+https://github.com/evhub/coconut,t,f,f,f,f,107,
+https://github.com/tomchristie/flask-api,t,p,p,p,p,24,
+https://github.com/earle/django-bootstrap,f,?,?,?,?,-1,
+https://github.com/CoreSecurity/impacket,f,?,?,?,?,-1,
+https://github.com/openstack/neutron,r,f,f,f,f,33,
+https://github.com/pypa/sampleproject,t,e,e,e,e,5,
+https://github.com/pcmanus/ccm,t,p,p,p,p,85,
+https://github.com/markfinger/python-react,t,f,f,f,f,13,
+https://github.com/wummel/linkchecker,t,f,f,f,f,14,
+https://github.com/audreyr/cookiecutter-pypackage,t,e,e,e,e,6,
+https://github.com/syrusakbary/gdom,r,f,f,f,f,9,
+https://github.com/kmmbvnr/django-jenkins,f,?,?,?,?,-1,
+https://github.com/miracle2k/webassets,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/realpython/python-scripts,r,p,p,p,p,12,
+https://github.com/peterbe/mincss,t,e,e,e,e,24,
+https://github.com/jupyter/nbviewer,t,e,e,e,e,40,
+https://github.com/mhartl/rails_tutorial_sublime_text,f,?,?,?,?,-1,
+https://github.com/ponyorm/pony,f,?,?,?,?,-1,
+https://github.com/bigchaindb/bigchaindb,t,e,e,e,e,31,
+https://github.com/mrjoes/sockjs-tornado,r,f,p,p,p,9,
+https://github.com/disqus/gargoyle,t,p,p,p,p,34,
+https://github.com/sockeye44/instavpn,f,?,?,?,?,-1,
+https://github.com/warner/magic-wormhole,t,p,p,p,p,229,
+https://github.com/EvilCult/Video-Downloader,r,p,p,p,p,4,
+https://github.com/kevin1024/vcrpy,t,e,e,e,e,5,
+https://github.com/pyload/pyload,f,?,?,?,?,-1,
+https://github.com/lepture/mistune,t,e,e,e,e,1,
+https://github.com/cloudera/ibis,r,f,f,f,f,12,
+https://github.com/maltize/sublime-text-2-ruby-tests,f,?,?,?,?,-1,
+https://github.com/sherjilozair/char-rnn-tensorflow,f,?,?,?,?,-1,
+https://github.com/Komodo/KomodoEdit,f,?,?,?,?,-1,
+https://github.com/andialbrecht/sqlparse,t,e,e,e,e,6,
+https://github.com/ansible/ansible-modules-extras,f,?,?,?,?,-1,
+https://github.com/sloria/doitlive,t,e,e,e,e,6,
+https://github.com/mjhea0/flaskr-tdd,r,p,p,p,p,10,
+https://github.com/pybuilder/pybuilder,t,e,e,e,e,11,
+https://github.com/DEAP/deap,t,p,p,p,p,56,
+https://github.com/JasperSnoek/spearmint,f,?,?,?,?,-1,
+https://github.com/ivanov/vim-ipython,t,e,e,e,e,0,
+https://github.com/r8/vagrant-lamp,f,?,?,?,?,-1,
+https://github.com/SublimeText/TrailingSpaces,f,?,?,?,?,-1,
+https://github.com/dennybritz/cnn-text-classification-tf,f,?,?,?,?,-1,
+https://github.com/bradjasper/django-jsonfield,t,u,u,u,u,2,
+https://github.com/muricoca/crab,f,?,?,?,?,-1,
+https://github.com/tyarkoni/transitions,t,u,u,u,u,11,
+https://github.com/osmc/osmc,f,?,?,?,?,-1,
+https://github.com/peterhudec/authomatic,t,?,?,?,?,-1,Command 'openssl aes-256-cbc -K $encrypted_cd197f1c301c_key -iv $encrypted_cd197f1c301c_iv -in ./tests/functional_tests/config.py.enc -out ./tests/functional_tests/config.py -d
+brew update
+brew install caskroom/cask/brew-cask
+brew cask install google-chrome
+brew install python3
+wget -N http://chromedriver.storage.googleapis.com/2.10/chromedriver_mac32.zip -P .
+unzip ./chromedriver_mac32.zip -d .
+chmod +x ./chromedriver' timed out after 180 seconds
+https://github.com/byt3bl33d3r/gcat,f,?,?,?,?,-1,
+https://github.com/vvk-ehk/evalimine,f,?,?,?,?,-1,
+https://github.com/truebit/xUnique,f,?,?,?,?,-1,
+https://github.com/google/prettytensor,f,?,?,?,?,-1,
+https://github.com/dropbox/changes,t,f,f,f,f,0,
+https://github.com/MagicStack/MagicPython,t,f,f,f,f,0,
+https://github.com/kayhayen/Nuitka,f,?,?,?,?,-1,
+https://github.com/graphite-project/whisper,t,p,p,p,p,20,
+https://github.com/ninja-ide/ninja-ide,t,?,?,?,?,-1,'bool' object is not iterable
+https://github.com/dnouri/nolearn,t,e,e,e,e,13,
+https://github.com/micheloosterhof/cowrie,t,f,e,e,e,75,
+https://github.com/wooey/Wooey,t,p,p,p,p,234,
+https://github.com/desaster/kippo,f,?,?,?,?,-1,
+https://github.com/laiwei/thepast,f,?,?,?,?,-1,
+https://github.com/hypothesis/h,t,?,?,?,?,-1,'script'
+https://github.com/jimmyxu/chnroutes,f,?,?,?,?,-1,
+https://github.com/Lawouach/WebSocket-for-Python,t,p,p,p,p,4,
+https://github.com/cea-sec/miasm,t,e,e,e,e,86,
+https://github.com/twilio/twilio-python,t,p,p,p,p,37,
+https://github.com/thiderman/doge,f,?,?,?,?,-1,
+https://github.com/django-nose/django-nose,t,e,e,e,e,6,
+https://github.com/numixproject/numix-core,f,?,?,?,?,-1,
+https://github.com/lennylxx/ipv6-hosts,f,?,?,?,?,-1,
+https://github.com/iambus/youku-lixian,f,?,?,?,?,-1,
+https://github.com/getpelican/pelican-plugins,t,f,f,f,f,34,
+https://github.com/ahupp/python-magic,t,f,f,f,f,13,
+https://github.com/sopel-irc/sopel,t,p,p,p,p,60,
+https://github.com/librosa/librosa,t,?,?,?,?,-1,Command 'python --version
+nosetests --with-coverage --cover-erase --cover-package=librosa -v -w tests/' timed out after 180 seconds
+https://github.com/msanders/cider,t,f,f,f,f,24,
+https://github.com/VikParuchuri/apartment-finder,r,p,p,p,p,20,
+https://github.com/pexpect/pexpect,t,e,e,e,e,15,
+https://github.com/programa-stic/barf-project,f,?,?,?,?,-1,
+https://github.com/gregs1104/pgtune,f,?,?,?,?,-1,
+https://github.com/python-diamond/Diamond,t,f,f,f,f,117,
+https://github.com/kmmbvnr/django-fsm,t,e,e,e,e,6,
+https://github.com/MrS0m30n3/youtube-dl-gui,f,?,?,?,?,-1,
+https://github.com/yourlabs/django-autocomplete-light,t,p,p,p,p,6,
+https://github.com/rholder/retrying,t,p,p,p,p,7,
+https://github.com/GoogleCloudPlatform/PerfKitBenchmarker,t,e,e,e,e,6,
+https://github.com/divio/django-filer,t,f,f,f,f,33,
+https://github.com/centrifugal/centrifuge,t,f,f,f,f,5,
+https://github.com/commonsense/conceptnet5,f,?,?,?,?,-1,
+https://github.com/rossem/RedditStorage,f,?,?,?,?,-1,
+https://github.com/orf/gping,r,p,p,p,p,5,
+https://github.com/coala/coala,t,e,e,e,e,64,
+https://github.com/7sDream/zhihu-py3,t,e,e,e,e,6,
+https://github.com/trailbehind/DeepOSM,t,p,p,p,p,4,
+https://github.com/django-import-export/django-import-export,t,p,p,p,p,42,
+https://github.com/StijnMiroslav/top-starred-devs-and-repos-to-follow,f,?,?,?,?,-1,
+https://github.com/garnaat/kappa,t,p,p,p,p,79,
+https://github.com/timothycrosley/isort,t,e,e,e,e,6,
+https://github.com/buckyroberts/Source-Code-from-Tutorials,f,?,?,?,?,-1,
+https://github.com/buildinspace/peru,t,e,e,e,e,18,
+https://github.com/gak/pycallgraph,t,f,f,f,f,29,
+https://github.com/pilotmoon/PopClip-Extensions,f,?,?,?,?,-1,
+https://github.com/coto/gae-boilerplate,t,e,e,e,e,15,
+https://github.com/alienhard/SublimeAllAutocomplete,f,?,?,?,?,-1,
+https://github.com/shadowsocks/ChinaDNS-Python,t,?,?,?,?,-1,Command 'pep8 .
+pyflakes .
+python test.py -c tests/facebook.com
+python test.py -c tests/google.com
+python test.py -c tests/twitter.com
+python test.py -c tests/www.facebook.com' timed out after 180 seconds
+https://github.com/mongodb-labs/mongo-connector,t,u,u,u,u,56,
+https://github.com/robdmc/pandashells,f,?,?,?,?,-1,
+https://github.com/Plailect/Guide,f,?,?,?,?,-1,
+https://github.com/translate/pootle,t,e,e,e,e,5,
+https://github.com/Exa-Networks/exabgp,t,?,?,?,?,-1,Command 'export INTERPRETER=python
+export SKIPCLEANUP=exabgp
+sbin/exabgp --version
+sbin/exabgp --fi > etc/exabgp/exabgp.env
+set pipefail
+./qa/bin/parsing
+./qa/bin/conversation
+./sbin/exabgp qa/conf/api-open.conf --decode FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:003C:02:0000001C4001010040020040030465016501800404000000C840050400000064000000002001010101
+env exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py' timed out after 180 seconds
+https://github.com/simplejson/simplejson,t,p,p,p,f,57,
+https://github.com/jenskutilek/FiraSystemFontReplacement,f,?,?,?,?,-1,
+https://github.com/mongolab/dex,f,?,?,?,?,-1,
+https://github.com/hubert3/iSniff-GPS,r,p,p,p,p,28,
+https://github.com/rusthon/Rusthon,t,?,?,?,?,-1,Command 'sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt-get update -qq' timed out after 180 seconds
+https://github.com/driverdan/dropship,f,?,?,?,?,-1,
+https://github.com/sebleier/django-redis-cache,t,f,f,f,f,26,
+https://github.com/pinterest/mysql_utils,f,?,?,?,?,-1,
+https://github.com/nicolaiarocci/cerberus,t,p,p,p,p,84,
+https://github.com/TomAnthony/itermocil,r,p,p,p,p,15,
+https://github.com/jfinkels/flask-restless,t,e,e,e,e,62,
+https://github.com/zestyping/q,t,f,f,f,f,29,
+https://github.com/Doist/bitmapist,t,e,e,e,e,16,
+https://github.com/nitishsrivastava/deepnet,f,?,?,?,?,-1,
+https://github.com/simonwagner/mergepbx,f,?,?,?,?,-1,
+https://github.com/karpathy/arxiv-sanity-preserver,r,p,p,p,p,43,
+https://github.com/google/rekall,f,?,?,?,?,-1,
+https://github.com/m57/dnsteal,f,?,?,?,?,-1,
+https://github.com/charlesthomas/magpie,t,u,u,u,u,16,
+https://github.com/signalfx/maestro-ng,t,p,p,p,p,204,
+https://github.com/secdev/scapy,t,p,p,p,p,490,
+https://github.com/adamn/python-webkit2png,f,?,?,?,?,-1,
+https://github.com/csvoss/onelinerizer,t,p,p,p,p,16,
+https://github.com/ocelma/python-recsys,t,f,f,f,f,23,
+https://github.com/pantsbuild/pants,t,p,p,p,p,0,
+https://github.com/CarlosGS/Cyclone-PCB-Factory,f,?,?,?,?,-1,
+https://github.com/miguelgrinberg/microblog,r,f,f,f,f,67,
+https://github.com/bfontaine/term2048,t,f,f,f,f,41,
+https://github.com/miso-belica/sumy,t,e,e,e,e,68,
+https://github.com/dpgaspar/Flask-AppBuilder,t,f,f,f,f,71,
+https://github.com/niwinz/django-redis,t,p,p,p,p,787,
+https://github.com/feincms/feincms,t,u,u,u,u,273,
+https://github.com/alecthomas/voluptuous,t,u,u,u,u,26,
+https://github.com/jh00nbr/Routerhunter-2.0,f,?,?,?,?,-1,
+https://github.com/antiboredom/audiogrep,r,f,f,f,f,16,
+https://github.com/naspeh/mailur,r,f,f,f,f,39,
+https://github.com/Capgemini/Apollo,r,p,p,p,p,16,
+https://github.com/jazzband/django-constance,t,e,e,e,e,15,
+https://github.com/shidenggui/easytrader,r,f,f,f,f,32,
+https://github.com/karandesai-96/digit-classifier,f,?,?,?,?,-1,
+https://github.com/matthiasplappert/keras-rl,t,e,e,e,e,161,
+https://github.com/gregmuellegger/django-floppyforms,t,e,?,?,?,-1,Command 'sudo apt-get -q -y update
+sudo apt-get remove -q -y binutils gdal-bin libproj-dev libgeos-c1
+sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
+sudo apt-get -q -y install build-essential
+sudo apt-get -q -y install binutils gdal-bin libproj-dev libgeos-c1' timed out after 180 seconds
+https://github.com/django-nonrel/mongodb-engine,t,e,e,e,e,51,
+https://github.com/dddomodossola/remi,f,?,?,?,?,-1,
+https://github.com/favll/pogom,r,f,f,f,f,37,
+https://github.com/ericoporto/fgmk,f,?,?,?,?,-1,
+https://github.com/Dobiasd/programming-language-subreddits-and-their-choice-of-words,f,?,?,?,?,-1,
+https://github.com/srusskih/SublimeJEDI,f,?,?,?,?,-1,
+https://github.com/paulgb/sklearn-pandas,f,?,?,?,?,-1,
+https://github.com/eBay/bayesian-belief-networks,r,f,f,f,f,24,
+https://github.com/mongodb/motor,f,?,?,?,?,-1,
+https://github.com/billryan/algorithm-exercise,t,?,?,?,?,-1,Command 'echo "add id_rsa private key"
+openssl aes-256-cbc -K $encrypted_c2697660bfd7_key -iv $encrypted_c2697660bfd7_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+chmod 600 ~/.ssh/id_rsa
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+cp ssh_config ~/.ssh/config
+git config --global user.name "rhett"
+git config --global user.email yuanbin2014@gmail.com
+sudo apt-get update -qq
+npm install gitbook-cli -g
+npm install svgexport -g
+sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"' timed out after 180 seconds
+https://github.com/lyst/lightfm,t,?,?,?,?,-1,Command 'py.test tests/' timed out after 180 seconds
+https://github.com/rubik/radon,t,f,f,f,f,48,
+https://github.com/googlemaps/google-maps-services-python,t,e,e,e,e,31,
+https://github.com/farizrahman4u/seq2seq,f,?,?,?,?,-1,
+https://github.com/twissandra/twissandra,r,p,p,p,p,51,
+https://github.com/slockit/DAO,t,e,e,e,e,38,
+https://github.com/pantsbuild/pex,t,e,e,e,e,25,
+https://github.com/xenith/django-base-template,r,f,f,f,f,46,
+https://github.com/brainsik/virtualenv-burrito,t,?,?,?,?,-1,'bool' object is not iterable
+https://github.com/jaraco/path.py,t,p,p,p,p,105,
+https://github.com/grantjenks/sorted_containers,t,?,?,?,?,-1,'bool' object is not iterable
+https://github.com/iamaziz/PyDataset,f,?,?,?,?,-1,
+https://github.com/machinalis/quepy,f,?,?,?,?,-1,
+https://github.com/hatRiot/zarp,r,f,f,f,f,38,
+https://github.com/joonty/vdebug,t,u,u,u,u,7,
+https://github.com/smarr/latex-to-html5,f,?,?,?,?,-1,
+https://github.com/sunscrapers/djoser,t,f,f,f,f,15,
+https://github.com/ternjs/tern_for_sublime,f,?,?,?,?,-1,
+https://github.com/jyapayne/Web2Executable,r,f,f,f,f,30,
+https://github.com/thauber/django-schedule,f,?,?,?,?,-1,
+https://github.com/np1/mps,f,?,?,?,?,-1,
+https://github.com/jaybaird/python-bloomfilter,t,u,u,u,u,27,
+https://github.com/inducer/pudb,f,?,?,?,?,-1,
+https://github.com/pwnieexpress/raspberry_pwn,f,?,?,?,?,-1,
+https://github.com/isnowfy/pydown,f,?,?,?,?,-1,
+https://github.com/benmatselby/sublime-phpcs,f,?,?,?,?,-1,
+https://github.com/martinrusev/imbox,t,p,p,p,p,14,
+https://github.com/stochastic-technologies/shortuuid,t,p,p,p,p,17,
+https://github.com/an0/Letterpress,f,?,?,?,?,-1,
+https://github.com/LoyaltyNZ/alchemy-framework,t,f,f,f,f,99,
+https://github.com/KarimJedda/whatsappcli,f,?,?,?,?,-1,
+https://github.com/OfflineIMAP/offlineimap,r,f,f,f,f,15,
+https://github.com/syrusakbary/pyjade,t,p,p,p,p,51,
+https://github.com/python/pythondotorg,t,e,e,e,e,49,
+https://github.com/PythonCharmers/python-future,t,p,p,f,f,779,
+https://github.com/architv/soccer-cli,r,p,p,p,p,17,
+https://github.com/erikrose/parsimonious,t,e,e,e,e,16,
+https://github.com/78/ssbc,r,p,p,p,p,38,
+https://github.com/joowani/binarytree,t,e,e,e,e,44,
+https://github.com/vmware/pyvmomi,t,e,e,e,e,61,
+https://github.com/weiweihuanghuang/Work-Sans,f,?,?,?,?,-1,
+https://github.com/mirumee/satchless,t,p,p,p,p,35,
+https://github.com/bpython/bpython,t,p,p,p,p,7,
+https://github.com/django-cache-machine/django-cache-machine,t,e,e,e,e,283,
+https://github.com/PavlovAI/match,f,?,?,?,?,-1,
+https://github.com/dabeaz/ply,t,p,p,p,p,38,
+https://github.com/Tivix/django-rest-auth,t,e,e,e,e,50,
+https://github.com/simpleai-team/simpleai,r,f,p,f,p,116,
+https://github.com/xybu/onedrive-d-old,f,?,?,?,?,-1,
+https://github.com/knownsec/Pocsuite,t,u,u,u,u,34,
+https://github.com/umermansoor/microservices,f,?,?,?,?,-1,
+https://github.com/msgpack/msgpack-python,t,e,e,e,e,28,
+https://github.com/aaugustin/websockets,f,?,?,?,?,-1,
+https://github.com/erikrose/blessings,t,f,f,f,f,48,
+https://github.com/landscapeio/prospector,t,p,p,p,p,131,
+https://github.com/FriendCode/gittle,f,?,?,?,?,-1,
+https://github.com/liris/websocket-client,t,p,p,p,p,77,
+https://github.com/epinna/weevely3,r,f,f,f,f,23,
+https://github.com/synack/knockknock,f,?,?,?,?,-1,
+https://github.com/jdf/processing.py,t,u,u,u,u,45,
+https://github.com/saffsd/langid.py,f,?,?,?,?,-1,
+https://github.com/ilektrojohn/creepy,f,?,?,?,?,-1,
+https://github.com/django-wiki/django-wiki,t,e,e,e,e,15,
+https://github.com/zo7/deconvfaces,f,?,?,?,?,-1,
+https://github.com/ethereum/pyethereum,t,?,?,?,?,-1,Command 'sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get update
+sudo apt-get install -y solc' timed out after 180 seconds
+https://github.com/automl/auto-sklearn,t,u,u,u,u,151,
+https://github.com/condemil/Gist,t,u,u,u,u,18,
+https://github.com/bitcoin/bips,t,p,p,p,p,1,
+https://github.com/overshard/pinry,f,?,?,?,?,-1,
+https://github.com/dagwieers/dstat,t,f,f,f,f,559,
+https://github.com/HIPS/Spearmint,f,?,?,?,?,-1,
+https://github.com/mzucker/page_dewarp,r,p,p,p,p,13,
+https://github.com/asweigart/pyautogui,f,?,?,?,?,-1,
+https://github.com/aaugustin/django-c10k-demo,f,?,?,?,?,-1,
+https://github.com/berdario/pew,t,e,e,e,e,15,
+https://github.com/joerick/pyinstrument,f,?,?,?,?,-1,
+https://github.com/mining/mining,t,f,f,f,f,24,
+https://github.com/glamp/bashplotlib,f,?,?,?,?,-1,
+https://github.com/python-openxml/python-docx,t,p,p,p,p,152,
+https://github.com/mypaint/mypaint,t,p,p,p,p,18,
+https://github.com/DataDog/dd-agent,t,p,p,p,p,0,
+https://github.com/saghul/pythonz,f,?,?,?,?,-1,
+https://github.com/kvh/ramp,r,f,f,f,f,105,
+https://github.com/wallix/PEPS,f,?,?,?,?,-1,
+https://github.com/ZoomerAnalytics/xlwings,f,?,?,?,?,-1,
+https://github.com/taizilongxu/douban.fm,f,?,?,?,?,-1,
+https://github.com/geerlingguy/ansible-for-devops,f,?,?,?,?,-1,
+https://github.com/smicallef/spiderfoot,f,?,?,?,?,-1,
+https://github.com/bradleyayers/django-tables2,t,e,e,e,e,24,
+https://github.com/pyGrowler/Growler,t,e,e,e,e,9,
+https://github.com/OpenRCE/sulley,f,?,?,?,?,-1,
+https://github.com/JBakamovic/yavide,f,?,?,?,?,-1,
+https://github.com/crista/exercises-in-programming-style,f,?,?,?,?,-1,
+https://github.com/Lukasa/hyper,t,f,f,f,f,141,
+https://github.com/conan-io/conan,t,?,?,?,?,-1,Command './.ci/travis/run.sh' timed out after 180 seconds
+https://github.com/kendricktan/suiron,r,p,p,p,p,72,
+https://github.com/coreylynch/async-rl,f,?,?,?,?,-1,
+https://github.com/kmike/django-widget-tweaks,t,e,e,e,e,16,
+https://github.com/tomchristie/django-vanilla-views,t,p,p,p,p,68,
+https://github.com/rthalley/dnspython,t,p,p,p,p,184,
+https://github.com/serverdensity/python-daemon,t,p,p,p,p,45,
+https://github.com/fzliu/style-transfer,r,p,p,p,p,39,
+https://github.com/mrjbq7/ta-lib,t,f,f,f,f,83,
+https://github.com/danielmagnussons/orgmode,f,?,?,?,?,-1,
+https://github.com/MagerValp/AutoDMG,f,?,?,?,?,-1,
+https://github.com/skuroda/Sublime-AdvancedNewFile,f,?,?,?,?,-1,
+https://github.com/ethereon/caffe-tensorflow,f,?,?,?,?,-1,
+https://github.com/flashingpumpkin/django-socialregistration,t,u,u,u,u,53,
+https://github.com/toscanini/maestro,r,f,f,f,f,25,
+https://github.com/dahlia/wand,t,p,p,p,p,32,
+https://github.com/gunnery/gunnery,t,e,e,e,e,19,
+https://github.com/rhiever/TwitterFollowBot,r,f,f,f,f,14,
+https://github.com/deepmind/rc-data,r,p,p,p,p,27,
+https://github.com/guardian/alerta,t,f,f,f,f,403,
+https://github.com/eternnoir/pyTelegramBotAPI,t,p,p,p,p,41,
+https://github.com/ross/requests-futures,t,p,p,p,p,25,
+https://github.com/paul-nechifor/ohmu,t,f,f,f,f,20,
+https://github.com/evansd/whitenoise,t,f,f,f,f,35,
+https://github.com/chardet/chardet,t,p,p,p,p,7,
+https://github.com/F-Secure/see,f,?,?,?,?,-1,
+https://github.com/scragg0x/realms-wiki,t,f,f,f,f,21,
+https://github.com/sehmaschine/django-filebrowser,t,e,e,e,e,23,
+https://github.com/kevinastone/django-api-rest-and-angular,r,p,p,p,p,27,
+https://github.com/axitkhurana/buster,r,p,p,p,p,17,
+https://github.com/openstack/openstack-ansible,r,f,f,f,f,43,
+https://github.com/jorgebastida/awslogs,t,p,p,p,p,114,
+https://github.com/lanjelot/patator,f,?,?,?,?,-1,
+https://github.com/peterbe/premailer,t,f,f,f,f,173,
+https://github.com/jjlee/mechanize,f,?,?,?,?,-1,
+https://github.com/rafalp/Misago,t,e,e,e,e,21,
+https://github.com/ekalinin/nodeenv,t,e,e,e,e,17,
+https://github.com/projectcalico/felix,f,?,?,?,?,-1,
+https://github.com/tonioo/modoboa,t,f,f,f,f,55,
+https://github.com/certsocietegenerale/FIR,t,p,p,p,p,294,
+https://github.com/requests/requests-oauthlib,t,f,p,p,p,61,
+https://github.com/bhrigu123/classifier,f,?,?,?,?,-1,
+https://github.com/tomchop/malcom,r,f,f,f,f,65,
+https://github.com/kivy/pyjnius,t,?,?,?,?,-1,Command 'sudo apt-get update
+sudo apt-get install python-pip openjdk-7-jdk' timed out after 180 seconds
+https://github.com/moonshawdo/checkgoogleip,f,?,?,?,?,-1,
+https://github.com/xxg1413/python,f,?,?,?,?,-1,
+https://github.com/Storyyeller/Krakatau,f,?,?,?,?,-1,
+https://github.com/vandersonmota/model_mommy,t,u,u,u,u,8,
+https://github.com/arskom/spyne,t,p,p,p,p,34,
+https://github.com/FogCreek/WebPutty,f,?,?,?,?,-1,
+https://github.com/abdelhai/devblogs,f,?,?,?,?,-1,
+https://github.com/Kilian/f.lux-indicator-applet,f,?,?,?,?,-1,
+https://github.com/kootenpv/yagmail,t,p,p,p,p,198,
+https://github.com/trakt/Plex-Trakt-Scrobbler,f,?,?,?,?,-1,
+https://github.com/japerk/nltk-trainer,r,p,p,p,p,49,
+https://github.com/divegeek/uscode,f,?,?,?,?,-1,
+https://github.com/sigmavirus24/github3.py,t,e,e,e,e,18,
+https://github.com/taxigps/xbmc-addons-chinese,f,?,?,?,?,-1,
+https://github.com/mediadrop/mediadrop,t,f,f,f,f,32,
+https://github.com/yorkoliu/pyauto,f,?,?,?,?,-1,
+https://github.com/osrg/ryu,t,e,e,e,e,18,
+https://github.com/walac/pyusb,f,?,?,?,?,-1,
+https://github.com/jamesturk/jellyfish,t,f,f,f,f,373,
+https://github.com/mailgun/talon,f,?,?,?,?,-1,
+https://github.com/blockstack/blockstack-core,f,?,?,?,?,-1,
+https://github.com/daid/LegacyCura,r,p,p,p,p,41,
+https://github.com/scrapy-plugins/scrapy-splash,t,f,f,f,f,1110,
+https://github.com/carpedm20/LINE,f,?,?,?,?,-1,
+https://github.com/mirumee/saleor,t,e,e,e,e,24,
+https://github.com/mubix/shellshocker-pocs,f,?,?,?,?,-1,
+https://github.com/thunder-project/thunder,t,e,e,e,e,378,
+https://github.com/bitly/asyncmongo,t,f,f,f,f,54,
+https://github.com/wtforms/wtforms,t,p,p,p,p,44,
+https://github.com/SoCo/SoCo,t,e,e,e,e,36,
+https://github.com/seomoz/shovel,t,p,p,p,p,17,
+https://github.com/grantmcconnaughey/django-avatar,t,f,f,f,f,41,
+https://github.com/scottrice/Ice,r,f,f,f,f,19,
+https://github.com/99designs/colorific,t,f,f,f,f,187,
+https://github.com/namlook/mongokit,t,f,f,f,f,29,
+https://github.com/myusuf3/octogit,t,p,p,p,p,28,
+https://github.com/realpython/dockerizing-django,f,?,?,?,?,-1,
+https://github.com/tartley/colorama,t,u,u,u,u,8,
+https://github.com/tbenthompson/cppimport,f,?,?,?,?,-1,
+https://github.com/mbi/django-rosetta,t,e,e,e,e,16,
+https://github.com/alex/letsencrypt-aws,t,u,u,u,u,32,
+https://github.com/nitely/Spirit,t,e,e,e,e,178,
+https://github.com/tooxie/shiva-server,t,?,?,?,?,-1,Command 'sudo apt-get -qq update
+sudo apt-get -qq install `cat dependencies.apt`
+pip install -r dependencies-dev.pip
+pip install --timeout 120 "python-dateutil==2.1"
+if [ $(python -V 2>&1 | grep -c "2\.6\.") -eq 1 ]; then pip install unittest2; fi' timed out after 180 seconds
+https://github.com/Suor/django-cacheops,t,e,e,e,e,17,
+https://github.com/douban/douban-client,r,f,f,f,f,16,
+https://github.com/espeed/bulbs,f,?,?,?,?,-1,
+https://github.com/Pythonity/font-awesome-to-png,f,?,?,?,?,-1,
+https://github.com/agiliq/Django-Socialauth,r,f,f,f,f,32,
+https://github.com/fireeye/flare-floss,t,?,?,?,?,-1,Command 'pip install https://github.com/williballenthin/vivisect/zipball/master
+pip install pyinstaller pep8
+echo "__version__ = '$(git describe --tags)'" > floss/version.py
+pip install -e .
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y git clang mingw-w64 gcc-mingw-w64 cmake make gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 binutils-mingw-w64-x86-64 mingw-w64-dev  binutils-mingw-w64-i686 gcc-mingw-w64-i686 g++-mingw-w64-i686; fi
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then git clone https://github.com/tpoechtrager/wclang.git ../wclang;                              fi
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pushd ../wclang; cmake -DCMAKE_INSTALL_PREFIX=/usr/local && make && sudo make install; popd; fi
+if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pushd tests/src; make all; popd;                                                             fi
+pyinstaller floss.spec' timed out after 180 seconds
+https://github.com/fogleman/Quads,f,?,?,?,?,-1,
+https://github.com/p2pool/p2pool,r,?,?,?,?,-1,Command 'nosetests' timed out after 180 seconds
+https://github.com/echonest/pyechonest,f,?,?,?,?,-1,
+https://github.com/lensacom/sparkit-learn,t,u,u,u,u,109,
+https://github.com/datastax/python-driver,t,e,e,e,e,16,
+https://github.com/rasbt/mlxtend,t,e,e,e,e,10,
+https://github.com/paicha/gxgk-wechat-server,r,f,f,f,f,24,
+https://github.com/wireservice/agate,t,p,p,p,p,105,
+https://github.com/aichallenge/aichallenge,f,?,?,?,?,-1,
+https://github.com/cloudant/bigcouch,t,f,?,?,?,-1,Command 'echo "deb http://packages.cloudant.com/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/cloudant-source.list
+sudo apt-get update -qq
+sudo apt-get purge -qq libmozjs185-dev libmozjs185-1.0
+sudo apt-get install -qq --force-yes libmozjs185-cloudant libmozjs185-cloudant-dev libicu-dev' timed out after 180 seconds
+https://github.com/freenas/freenas,t,?,?,?,?,-1,Command '.travis/flake8.sh' timed out after 180 seconds
+https://github.com/cpbotha/nvpy,f,?,?,?,?,-1,
+https://github.com/sciyoshi/pyfacebook,f,?,?,?,?,-1,
+https://github.com/n1k0/SublimeHighlight,f,?,?,?,?,-1,
+https://github.com/projecthamster/hamster,f,?,?,?,?,-1,
+https://github.com/tomlepaine/fast-wavenet,f,?,?,?,?,-1,
+https://github.com/schacon/hg-git,f,?,?,?,?,-1,
+https://github.com/GrahamDumpleton/wrapt,t,e,e,e,e,20,
+https://github.com/elceef/dnstwist,r,p,p,p,p,33,
+https://github.com/geopandas/geopandas,t,e,e,e,e,123,
+https://github.com/bluetomlee/NetEase-MusicBox,f,?,?,?,?,-1,
+https://github.com/gornostal/Modific,f,?,?,?,?,-1,
+https://github.com/nijel/weblate,t,u,u,u,u,7,
+https://github.com/DanMcInerney/net-creds,r,p,p,p,p,13,
+https://github.com/bytefish/facerec,f,?,?,?,?,-1,
+https://github.com/slackhq/python-slackclient,t,e,e,e,e,9,
+https://github.com/facebookresearch/CommAI-env,f,?,?,?,?,-1,
+https://github.com/DanMcInerney/xsscrapy,r,p,p,p,p,17,
+https://github.com/Netflix/aminator,r,f,f,f,f,27,
+https://github.com/python-zk/kazoo,t,f,f,f,f,19,
+https://github.com/bookieio/Bookie,t,?,?,?,?,-1,Command 'make clean_all
+sudo make sysdeps
+pip install -r dev-requirements.txt
+make install' timed out after 180 seconds
+https://github.com/entropy1337/infernal-twin,f,?,?,?,?,-1,
+https://github.com/sindresorhus/sublime-autoprefixer,f,?,?,?,?,-1,
+https://github.com/aparo/pyes,f,?,?,?,?,-1,
+https://github.com/toastdriven/restless,t,e,e,e,e,24,
+https://github.com/zedshaw/lamson,f,?,?,?,?,-1,
+https://github.com/cea-sec/ivre,t,?,?,?,?,-1,Command 'wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+tar xfz mongodb-linux-x86_64-$MONGODB_VERSION.tgz
+export PATH=`pwd`/mongodb-linux-x86_64-$MONGODB_VERSION/bin:$PATH
+mkdir -p data/db
+mongod --dbpath=data/db >/dev/null 2>&1 &
+until nc -z localhost 27017 ; do echo Waiting for MongoDB; sleep 1; done
+pip install .
+pip install -r requirements.txt' timed out after 180 seconds
+https://github.com/alehander42/pseudo,t,f,f,f,f,21,
+https://github.com/pimutils/khal,t,e,e,e,e,17,
+https://github.com/subuser-security/subuser,f,?,?,?,?,-1,
+https://github.com/slawekj/wolf,f,?,?,?,?,-1,
+https://github.com/dabeaz/bitey,f,?,?,?,?,-1,
+https://github.com/renpy/renpy,f,?,?,?,?,-1,
+https://github.com/QQuick/Transcrypt,t,?,?,?,?,-1,Command './transcrypt/development/continuous_integration/run no_cleanup set1' timed out after 180 seconds
+https://github.com/tankywoo/simiki,t,f,f,f,f,58,
+https://github.com/toxinu/Sublimall,f,?,?,?,?,-1,
+https://github.com/fagga/transmission-remote-cli,f,?,?,?,?,-1,
+https://github.com/nurv/BicaVM,f,?,?,?,?,-1,
+https://github.com/matthewearl/deep-anpr,f,?,?,?,?,-1,
+https://github.com/ducu/rq-dashboard,r,p,p,p,p,23,
+https://github.com/gcollazo/Fabulous,r,p,p,p,p,19,
+https://github.com/aljosa/django-tinymce,t,f,f,f,f,123,
+https://github.com/snwh/paper-icon-theme,f,?,?,?,?,-1,
+https://github.com/basak/glacier-cli,r,p,p,p,p,32,
+https://github.com/asrivat1/DeepLearningVideoGames,f,?,?,?,?,-1,
+https://github.com/seanliang/ConvertToUTF8,f,?,?,?,?,-1,
+https://github.com/jkbrzt/cointrol,f,?,?,?,?,-1,
+https://github.com/Rapptz/discord.py,r,f,f,f,f,17,
+https://github.com/Flexget/Flexget,t,e,f,f,f,90,
+https://github.com/openworm/OpenWorm,f,?,?,?,?,-1,
+https://github.com/hynek/attrs,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/yasintoy/Slack-Gitsin,r,p,p,p,p,34,
+https://github.com/fonttools/fonttools,t,p,p,p,p,392,
+https://github.com/sammachin/AlexaPi,r,p,p,p,p,18,
+https://github.com/Just-Some-Bots/MusicBot,r,f,f,f,f,28,
+https://github.com/python-excel/xlwt,t,e,e,e,e,17,
+https://github.com/edx/configuration,t,u,?,?,?,-1,Command 'sudo apt-get -y update
+sudo apt-get -y install -o Dpkg::Options::="--force-confold" docker-engine' timed out after 180 seconds
+https://github.com/waveform80/picamera,f,?,?,?,?,-1,
+https://github.com/Xinkai/XwareDesktop,f,?,?,?,?,-1,
+https://github.com/pixelb/ps_mem,t,e,e,e,e,20,
+https://github.com/mcedit/mcedit,r,f,f,f,f,27,
+https://github.com/owais/django-webpack-loader,t,e,e,e,e,8,
+https://github.com/triketora/women-in-software-eng,r,p,p,p,p,18,
+https://github.com/sametmax/0bin,f,?,?,?,?,-1,
+https://github.com/ziggear/shadowsocks,t,?,?,?,?,-1,Command 'sudo apt-get update -qq
+sudo apt-get install -qq build-essential dnsutils iproute nginx bc
+sudo dd if=/dev/urandom of=/usr/share/nginx/www/file bs=1M count=10
+sudo sh -c "echo '127.0.0.1    localhost' > /etc/hosts"
+sudo service nginx restart
+pip install pep8 pyflakes nose coverage PySocks
+sudo tests/socksify/install.sh
+sudo tests/libsodium/install.sh
+sudo tests/setup_tc.sh' timed out after 180 seconds
+https://github.com/johnboxall/django-paypal,f,?,?,?,?,-1,
+https://github.com/avelino/vim-bootstrap,f,?,?,?,?,-1,
+https://github.com/AndrewIngram/django-extra-views,t,u,u,u,u,24,
+https://github.com/ligurio/free-software-testing-books,t,p,p,p,p,194,
+https://github.com/opensourcehacker/sevabot,f,?,?,?,?,-1,
+https://github.com/miguelgrinberg/Flask-Migrate,t,p,p,p,p,494,
+https://github.com/chipsec/chipsec,t,e,?,?,?,-1,Command 'sudo apt-get -qq update
+sudo apt-get install -y linux-headers-$(uname -r) nasm
+sudo ln -s /usr/src/$(uname -r) /lib/modules/$(uname -r)/build' timed out after 180 seconds
+https://github.com/guyzmo/git-repo,t,u,u,u,u,16,
+https://github.com/iSECPartners/sslyze,f,?,?,?,?,-1,
+https://github.com/dzone/osqa,r,f,f,f,f,38,
+https://github.com/eleme/thriftpy,t,f,f,f,f,102,
+https://github.com/jrief/django-websocket-redis,t,f,f,f,f,88,
+https://github.com/noplay/python-mysql-replication,t,f,f,f,f,29,
+https://github.com/lunixbochs/SublimeXiki,f,?,?,?,?,-1,
+https://github.com/joh/when-changed,r,p,p,p,p,16,
+https://github.com/cvxgrp/cvxpy,t,e,e,e,e,132,
+https://github.com/dieseldev/diesel,t,e,e,e,e,16,
+https://github.com/gnumdk/lollypop,f,?,?,?,?,-1,
+https://github.com/google/pinject,f,?,?,?,?,-1,
+https://github.com/levlaz/braindump,r,f,f,f,f,40,
+https://github.com/balloob/pychromecast,t,p,p,p,p,154,
+https://github.com/john-kurkowski/tldextract,t,e,e,e,e,17,
+https://github.com/madmaze/pytesseract,f,?,?,?,?,-1,
+https://github.com/etianen/django-watson,t,e,e,e,e,17,
+https://github.com/joschu/cgt,f,?,?,?,?,-1,
+https://github.com/egirault/googleplay-api,f,?,?,?,?,-1,
+https://github.com/mesonbuild/meson,t,p,p,p,p,0,
+https://github.com/tobgu/pyrsistent,t,e,e,e,e,18,
+https://github.com/jay0lee/GAM,f,?,?,?,?,-1,
+https://github.com/defaultnamehere/tinder-detective,r,p,p,p,p,17,
+https://github.com/thomasf/exitwp,f,?,?,?,?,-1,
+https://github.com/hoxu/gitstats,f,?,?,?,?,-1,
+https://github.com/andreafrancia/trash-cli,f,?,?,?,?,-1,
+https://github.com/HackathonHackers/personal-sites,f,?,?,?,?,-1,
+https://github.com/scikit-learn-contrib/imbalanced-learn,t,u,u,u,u,0,
+https://github.com/gabrielfalcao/sure,t,p,p,p,p,33,
+https://github.com/gogotanaka/hilbert,t,?,?,?,?,-1,argument of type 'NoneType' is not iterable
+https://github.com/o/simmetrica,t,f,f,f,f,90,
+https://github.com/dbr/tvnamer,t,?,?,?,?,-1,Command 'python setup.py test' timed out after 180 seconds
+https://github.com/ridethepony/django-fiber,t,f,f,f,f,199,
+https://github.com/Lasagne/Recipes,f,?,?,?,?,-1,
+https://github.com/Max00355/HTTPLang,r,p,p,p,p,18,
+https://github.com/projectcalico/calico-containers,f,?,?,?,?,-1,
+https://github.com/rdegges/django-skel,r,p,p,p,p,47,
+https://github.com/datafolklabs/cement,t,e,e,e,e,35,
+https://github.com/ncrocfer/whatportis,t,f,f,f,f,22,
+https://github.com/DenisCarriere/geocoder,t,e,e,e,e,33,
+https://github.com/webbju/android-plus-plus,f,?,?,?,?,-1,
+https://github.com/josephmisiti/generic-django-project,f,?,?,?,?,-1,
+https://github.com/digi604/django-smart-selects,t,p,p,p,p,102,
+https://github.com/Kapeli/Dash-User-Contributions,t,e,e,e,e,2,
+https://github.com/python-babel/babel,t,f,f,f,f,53,
+https://github.com/phodal/awesome-iot,f,?,?,?,?,-1,
+https://github.com/tahoe-lafs/tahoe-lafs,t,?,?,?,?,-1,Command 'tox -e codechecks
+if [ "${TRAVIS_OS_NAME}" = "osx" ]; then tox; else tox -e coverage; fi
+if [ "${TRAVIS_OS_NAME}" = "linux" ]; then /bin/bash integration/install-tor.sh; fi
+if [ "${TRAVIS_OS_NAME}" = "linux" ]; then tox -e integration; fi' timed out after 180 seconds
+https://github.com/musalbas/heartbleed-masstest,f,?,?,?,?,-1,
+https://github.com/jgorset/facepy,t,p,p,f,f,48,
+https://github.com/mrjoes/tornadio2,r,f,f,f,f,25,
+https://github.com/QingdaoU/OnlineJudge,t,?,?,?,?,-1,Command 'pip install -r dockerfiles/oj_web_server/requirements.txt
+mkdir log test_case upload
+cp oj/custom_settings.example.py oj/custom_settings.py
+echo "SECRET_KEY=\"`cat /dev/urandom | head -1 | md5sum | head -c 32`\"" >> oj/custom_settings.py
+python manage.py migrate
+python manage.py migrate --database=submission
+python manage.py initadmin' timed out after 180 seconds
+https://github.com/m0mchil/poclbm,f,?,?,?,?,-1,
+https://github.com/zedshaw/python-lust,f,?,?,?,?,-1,
+https://github.com/henices/Tcp-DNS-proxy,t,p,p,p,p,23,
+https://github.com/j2labs/brubeck,t,f,f,f,f,48,
+https://github.com/luispedro/milk,t,?,?,?,?,-1,Command 'wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+chmod +x miniconda.sh
+./miniconda.sh -b
+export PATH=/home/travis/miniconda/bin:$PATH
+conda update --yes conda
+sudo apt-get update -qq
+sudo apt-get install -qq libatlas-dev liblapack-dev gfortran
+sudo apt-get install -qq libeigen3-dev' timed out after 180 seconds
+https://github.com/jtauber-archive/django-notification,f,?,?,?,?,-1,
+https://github.com/Toblerity/Shapely,t,e,e,e,e,48,
+https://github.com/ui/django-rq,t,p,p,p,p,143,
+https://github.com/MorganZhang100/zhihu-spider,f,?,?,?,?,-1,
+https://github.com/makinacorpus/spynner,t,u,u,u,u,71,
+https://github.com/yoonkim/CNN_sentence,f,?,?,?,?,-1,
+https://github.com/hmmlearn/hmmlearn,t,u,u,u,u,0,
+https://github.com/html5lib/html5lib-python,t,e,e,e,e,188,
+https://github.com/evilhero/mylar,f,?,?,?,?,-1,
+https://github.com/jacobian-archive/django-deployment-workshop,f,?,?,?,?,-1,
+https://github.com/jbmouret/matplotlib_for_papers,f,?,?,?,?,-1,
+https://github.com/ahangchen/GDLnotes,f,?,?,?,?,-1,
+https://github.com/zatosource/zato,f,?,?,?,?,-1,
+https://github.com/hugsy/gef,f,?,?,?,?,-1,
+https://github.com/zapier/django-drip,t,e,e,e,e,48,
+https://github.com/bernardopires/django-tenant-schemas,t,u,u,u,u,18,
+https://github.com/REMitchell/python-scraping,f,?,?,?,?,-1,
+https://github.com/geex-arts/django-jet,t,p,p,p,p,213,
+https://github.com/akalongman/sublimetext-codeformatter,f,?,?,?,?,-1,
+https://github.com/MTG/sms-tools,f,?,?,?,?,-1,
+https://github.com/BurntSushi/nfldb,f,?,?,?,?,-1,
+https://github.com/spacetelescope/understanding-json-schema,t,p,p,p,p,194,
+https://github.com/pycco-docs/pycco,t,p,p,p,p,157,
+https://github.com/gcollazo/BrowserRefresh-Sublime,f,?,?,?,?,-1,
+https://github.com/joke2k/django-environ,t,p,p,p,p,146,
+https://github.com/chen3feng/typhoon-blade,f,?,?,?,?,-1,
+https://github.com/zsdonghao/tensorlayer,f,?,?,?,?,-1,
+https://github.com/coleifer/flask-peewee,f,?,?,?,?,-1,
+https://github.com/biolab/orange3,t,u,u,u,u,0,
+https://github.com/peritus/bumpversion,t,f,f,f,f,156,
+https://github.com/TileStache/TileStache,t,u,u,u,u,89,
+https://github.com/dilshod/xlsx2csv,f,?,?,?,?,-1,
+https://github.com/jtriley/StarCluster,t,e,e,e,e,121,
+https://github.com/RDFLib/rdflib,t,p,p,p,p,125,
+https://github.com/lepture/python-livereload,f,?,?,?,?,-1,
+https://github.com/jodal/pykka,t,p,p,p,p,198,
+https://github.com/qiwsir/algorithm,f,?,?,?,?,-1,
+https://github.com/veekun/pokedex,t,e,e,e,e,73,
+https://github.com/marchtea/scrapy_doc_chs,f,?,?,?,?,-1,
+https://github.com/python-beaver/python-beaver,t,u,u,u,u,65,
+https://github.com/Mindwerks/worldengine,t,?,?,?,?,-1,Command 'dpkg -l
+sudo rm -fr /opt/python/pypy-2.6.1 /opt/python/pypy3-2.4.0 /usr/local/pypy/bin
+echo "yes" | sudo apt-add-repository ppa:psi29a/trusty
+echo "yes" | sudo apt-add-repository ppa:pypy/ppa
+sudo apt-get update
+sudo apt-get remove -y libgdal1h postgresql-9.1-postgis-2.1 postgresql-9.2-postgis-2.1 postgresql-9.3-postgis-2.1 liblwgeom-2.1.8
+sudo apt-get install -y libhdf5-dev pypy pypy-dev libgdal1-dev gdal-bin
+echo "libgdal version `gdal-config --version`"
+echo "GCC version `gcc --version` @ `which gcc`"
+echo "Python version `python --version` @ `which python`"
+echo "PyPy version `pypy --version` @ `which pypy`"
+pip install pip --upgrade
+pip install tox codecov coveralls
+git clone https://github.com/Mindwerks/worldengine-data.git ../worldengine-data
+dpkg -l' timed out after 180 seconds
+https://github.com/bowenpay/wechat-spider,r,p,p,p,p,61,
+https://github.com/jedbrown/git-fat,f,?,?,?,?,-1,
+https://github.com/joxeankoret/diaphora,f,?,?,?,?,-1,
+https://github.com/mschwager/dhcpwn,r,p,p,p,p,53,
+https://github.com/brandonshin/slackbot-workout,r,p,p,p,p,52,
+https://github.com/ngerakines/commitment,r,p,p,p,p,49,
+https://github.com/pyqtgraph/pyqtgraph,t,e,e,e,e,153,
+https://github.com/fengli/alipay_python,f,?,?,?,?,-1,
+https://github.com/pydata/numexpr,t,p,p,p,p,205,
+https://github.com/openstack/bandit,r,f,f,f,f,112,
+https://github.com/PyTables/PyTables,t,u,u,u,u,46,
+https://github.com/pyfa-org/Pyfa,r,f,f,f,f,77,
+https://github.com/ab77/netflix-proxy,t,p,?,?,?,-1,Command 'tests/__isfork.sh
+openssl aes-256-cbc -K $encrypted_45757fbb12c0_key -iv $encrypted_45757fbb12c0_iv -in id_rsa.travis.enc -out id_rsa.travis -d
+export CHROME_BIN=/usr/bin/google-chrome
+export DISPLAY=:99.0
+/sbin/start-stop-daemon --start --quiet --pidfile /tmp/netflix-proxy_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
+sudo apt-get -y update
+sudo apt-get -y install -y libappindicator1 fonts-liberation
+wget https://s3-eu-central-1.amazonaws.com/belodetech/google-chrome-stable_49.0.2623.112-1_amd64.deb
+sudo dpkg -i google-chrome-stable_49.0.2623.112-1_amd64.deb
+sudo apt-get -y install build-essential python-dev libffi-dev libssl-dev
+sudo -H pip install --upgrade cryptography
+sudo -H pip install --upgrade pyopenssl ndg-httpsclient pyasn1' timed out after 180 seconds
+https://github.com/pindexis/marker,f,?,?,?,?,-1,
+https://github.com/duydao/Text-Pastry,f,?,?,?,?,-1,
+https://github.com/python/asyncio,t,e,e,e,e,27,
+https://github.com/secretsquirrel/BDFProxy,f,?,?,?,?,-1,
+https://github.com/devsisters/DQN-tensorflow,f,?,?,?,?,-1,
+https://github.com/phodal/ideas,f,?,?,?,?,-1,
+https://github.com/benhamner/Metrics,t,u,u,u,u,122,
+https://github.com/healthchecks/healthchecks,t,e,e,e,e,44,
+https://github.com/wdas/reposado,f,?,?,?,?,-1,
+https://github.com/ant4g0nist/lisa.py,f,?,?,?,?,-1,
+https://github.com/lepture/flask-wtf,t,f,f,f,f,69,
+https://github.com/GDSSecurity/Windows-Exploit-Suggester,f,?,?,?,?,-1,
+https://github.com/ggordan/GutterColor,f,?,?,?,?,-1,
+https://github.com/masmu/pulseaudio-dlna,f,?,?,?,?,-1,
+https://github.com/viewflow/viewflow,t,e,e,e,e,71,
+https://github.com/samgiles/slumber,t,p,p,p,p,163,
+https://github.com/vipul-sharma20/document-scanner,f,?,?,?,?,-1,
+https://github.com/dodger487/dplython,t,p,f,f,f,251,
+https://github.com/buffer/thug,t,p,p,p,p,28,
+https://github.com/kennethreitz/samplemod,r,p,p,p,p,40,
+https://github.com/python-git/python,f,?,?,?,?,-1,
+https://github.com/tomekwojcik/envelopes,t,p,p,p,p,23,
+https://github.com/facebookarchive/react-python,f,?,?,?,?,-1,
+https://github.com/pydanny-archive/django-uni-form,f,?,?,?,?,-1,
+https://github.com/hopsoft/docker-graphite-statsd,f,?,?,?,?,-1,
+https://github.com/kennethreitz/dj-database-url,t,p,p,p,p,1,
+https://github.com/gleicon/restmq,r,f,f,f,f,42,
+https://github.com/macropin/django-registration,t,e,e,e,e,249,
+https://github.com/wger-project/wger,t,p,p,p,p,148,
+https://github.com/jarun/Buku,t,u,u,u,u,33,
+https://github.com/spotify/snakebite,t,e,e,e,e,139,
+https://github.com/bdarnell/torndb,f,?,?,?,?,-1,
+https://github.com/protream/iquery,f,?,?,?,?,-1,
+https://github.com/bloomreach/s4cmd,f,?,?,?,?,-1,
+https://github.com/LionSec/katoolin,f,?,?,?,?,-1,
+https://github.com/zymtom/DidIStealThis,f,?,?,?,?,-1,
+https://github.com/steeve/plugin.video.pulsar,f,?,?,?,?,-1,
+https://github.com/codedance/Retaliation,f,?,?,?,?,-1,
+https://github.com/mailgun/shipper,f,?,?,?,?,-1,
+https://github.com/yanunon/NeteaseCloudMusic,f,?,?,?,?,-1,
+https://github.com/tobami/littlechef,t,p,p,p,p,330,
+https://github.com/erichard/SublimePHPCompanion,f,?,?,?,?,-1,
+https://github.com/xiaocong/uiautomator,t,p,p,p,p,214,
+https://github.com/yukuku/telebot,f,?,?,?,?,-1,
+https://github.com/thebradbain/snapception,f,?,?,?,?,-1,
+https://github.com/listen1/listen1,f,?,?,?,?,-1,
+https://github.com/unitedstates/congress-legislators,t,e,e,e,e,34,
+https://github.com/ericflo/django-pagination,f,?,?,?,?,-1,
+https://github.com/davidaurelio/hashids-python,t,e,e,e,e,58,
+https://github.com/carljm/django-secure,f,?,?,?,?,-1,
+https://github.com/datamade/usaddress,t,?,?,?,?,-1,Command 'pip install --upgrade pip
+pip install --upgrade -r requirements.txt
+pip install -e .
+parserator train training/labeled.xml usaddress' timed out after 180 seconds
+https://github.com/tweekmonster/tmux2html,f,?,?,?,?,-1,
+https://github.com/fjserna/CVE-2015-7547,f,?,?,?,?,-1,
+https://github.com/mdipierro/workflow,f,?,?,?,?,-1,
+https://github.com/ronf/asyncssh,t,e,e,e,e,58,
+https://github.com/pycassa/pycassa,t,f,f,f,f,91,
+https://github.com/allegro/ralph,t,f,f,f,f,253,
+https://github.com/TailorDev/Watson,t,p,p,p,p,158,
+https://github.com/lanbing510/DouBanSpider,f,?,?,?,?,-1,
+https://github.com/Netflix/lemur,t,f,f,f,f,41,
+https://github.com/citronneur/rdpy,t,p,p,p,p,83,
+https://github.com/blampe/IbPy,f,?,?,?,?,-1,
+https://github.com/jsocol/django-waffle,t,f,f,f,f,105,
+https://github.com/zacharyvoase/humanhash,f,?,?,?,?,-1,
+https://github.com/stephenmcd/cartridge,t,f,f,f,f,405,
+https://github.com/michaelliao/learn-python3,f,?,?,?,?,-1,
+https://github.com/snoack/python-goto,t,p,p,p,p,118,
+https://github.com/ejwa/gitinspector,f,?,?,?,?,-1,
+https://github.com/RJT1990/pyflux,t,e,e,e,e,109,
+https://github.com/OpenBazaar/OpenBazaar-Server,t,?,?,?,?,-1,Command 'make -s' timed out after 180 seconds
+https://github.com/fatiherikli/kule,f,?,?,?,?,-1,
+https://github.com/mps-youtube/pafy,t,f,f,f,f,448,
+https://github.com/groveco/django-sql-explorer,t,p,p,p,f,388,
+https://github.com/jdunck/python-unicodecsv,t,e,e,e,e,54,
+https://github.com/mozilla/zamboni,t,e,e,e,e,362,
+https://github.com/Neo23x0/Loki,r,p,p,p,p,55,
+https://github.com/lincolnloop/salmon,t,u,u,u,u,22,
+https://github.com/HonzaKral/django-threadedcomments,t,e,e,e,e,31,
+https://github.com/azazel75/metapensiero.pj,t,e,e,e,e,174,
+https://github.com/syrusakbary/Flask-SuperAdmin,t,f,f,f,f,75,
+https://github.com/scrapy/scrapyd,t,f,f,f,f,509,
+https://github.com/jrfonseca/gprof2dot,t,e,e,e,e,8,
+https://github.com/sagemath/sage,f,?,?,?,?,-1,
+https://github.com/ufora/ufora,f,?,?,?,?,-1,
+https://github.com/CamDavidsonPilon/lifelines,t,e,e,e,e,350,
+https://github.com/nucleic/enaml,f,?,?,?,?,-1,
+https://github.com/arteria/django-hijack,t,p,p,p,p,608,
+https://github.com/areski/python-nvd3,t,p,p,p,p,174,
+https://github.com/openai/rllab,f,?,?,?,?,-1,
+https://github.com/OmniSharp/omnisharp-sublime,t,e,e,e,e,6,
+https://github.com/jazzband/django-configurations,t,e,e,e,e,51,
+https://github.com/deanishe/alfred-workflow,t,f,f,f,f,59,
+https://github.com/skorokithakis/django-annoying,t,p,p,p,p,56,
+https://github.com/kvalle/diy-lisp,f,?,?,?,?,-1,
+https://github.com/getsentry/freight,t,e,e,e,e,116,
+https://github.com/martomo/SublimeTextXdebug,f,?,?,?,?,-1,
+https://github.com/kristianperkins/x_x,f,?,?,?,?,-1,
+https://github.com/ChrisTruncer/EyeWitness,t,?,?,?,?,-1,Command 'cd setup
+sudo ./setup.sh' timed out after 180 seconds
+https://github.com/sinacloud/sae-python-dev-guide,f,?,?,?,?,-1,
+https://github.com/IndicoDataSolutions/Passage,f,?,?,?,?,-1,
+https://github.com/julmon/pg_activity,f,?,?,?,?,-1,
+https://github.com/bitcoin-abe/bitcoin-abe,f,?,?,?,?,-1,
+https://github.com/awslabs/amazon-redshift-utils,f,?,?,?,?,-1,
+https://github.com/pinax/django-user-accounts,t,u,u,u,u,13,
+https://github.com/zorkian/nagios-api,r,p,p,p,p,57,
+https://github.com/Knio/dominate,t,e,e,e,e,138,
+https://github.com/TheAlgorithms/Python,t,e,e,e,e,56,
+https://github.com/clinton-hall/nzbToMedia,f,?,?,?,?,-1,
+https://github.com/unitedstates/contact-congress,t,u,u,u,u,0,
+https://github.com/ceteri/pytextrank,f,?,?,?,?,-1,
+https://github.com/olipo186/Git-Auto-Deploy,t,p,p,p,p,44,
+https://github.com/xmendez/wfuzz,f,?,?,?,?,-1,
+https://github.com/ericzhang-cn/kindle-open-books,f,?,?,?,?,-1,
+https://github.com/wong2/xiaohuangji,r,f,f,f,f,99,
+https://github.com/pyserial/pyserial,t,p,p,p,p,293,
+https://github.com/PokemonGoF/PokemonGo-Bot-Desktop,f,?,?,?,?,-1,
+https://github.com/shuup/shuup,t,e,e,e,e,81,
+https://github.com/ustream/openduty,t,e,e,e,e,73,
+https://github.com/Rydgel/Fake-images-please,r,p,p,p,p,89,
+https://github.com/smurfix/flask-script,t,e,e,e,e,53,
+https://github.com/tsileo/bakthat,r,f,f,f,f,67,
+https://github.com/sublimehq/Vintage,f,?,?,?,?,-1,
+https://github.com/richrd/suplemon,t,u,u,u,u,130,
+https://github.com/SavinaRoja/PyUserInput,f,?,?,?,?,-1,
+https://github.com/coderholic/django-cities,t,e,e,e,e,49,

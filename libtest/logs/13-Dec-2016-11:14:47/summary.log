@@ -1,0 +1,266 @@
+URL, setup, original errors?, nondex OFF errors?, nondex ONE errors?, nondex FULL errors?, time, description
+setup key: t=travis file, r=requirements file, f=failed
+tests key: p=passed, f=test failures, e=test errors, u=nonzero exit code, but unknown reason
+https://github.com/python-excel/xlwt,t,e,e,e,e,17,
+https://github.com/jlafon/PynamoDB,t,p,p,p,f,72,
+https://github.com/pallets/jinja,t,p,p,p,p,40,
+https://github.com/scrapinghub/dateparser,t,f,f,f,f,874,
+https://github.com/pydata/xarray,t,e,e,e,e,47,
+https://github.com/flask-admin/flask-admin,t,?,?,?,?,-1,Command 'nosetests flask_admin/tests --with-coverage --cover-erase --cover-inclusive' timed out after 180 seconds
+https://github.com/thadeusb/flask-cache,t,u,u,u,u,15,
+https://github.com/gorakhargosh/watchdog,t,e,e,e,e,602,
+https://github.com/qw3rtman/p,f,?,?,?,?,-1,
+https://github.com/yyuu/pyenv,t,p,p,p,p,265,
+https://github.com/nvie/pip-tools,t,e,e,e,e,503,
+https://github.com/conda/conda,t,u,u,u,u,0,
+https://github.com/pypa/warehouse,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/warehouse/ pull' returned non-zero exit status 1
+https://github.com/mvantellingen/localshop,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/localshop/ pull' returned non-zero exit status 1
+https://github.com/pyinstaller/pyinstaller,t,e,e,e,e,73,
+https://github.com/spotify/dh-virtualenv,t,p,p,p,p,17,
+https://github.com/platformio/platformio,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/pybuilder/pybuilder,t,?,?,?,?,-1,Command './build.py -v -X install_dependencies analyze install' timed out after 180 seconds
+https://github.com/bpython/bpython,t,p,p,p,p,10,
+https://github.com/jonathanslenders/ptpython,t,e,e,e,e,108,
+https://github.com/jaraco/path.py,t,p,p,p,p,81,
+https://github.com/ahupp/python-magic,t,f,f,f,f,32,
+https://github.com/mikeorr/Unipath,f,?,?,?,?,-1,
+https://github.com/sdispater/pendulum,t,e,e,e,e,33,
+https://github.com/crsmithdev/arrow,t,f,f,f,f,9,
+https://github.com/KoffeinFlummi/Chronyk,t,f,f,f,f,91,
+https://github.com/dateutil/dateutil,t,p,p,p,p,112,
+https://github.com/myusuf3/delorean,t,f,f,f,f,42,
+https://github.com/zachwill/moment,t,e,e,e,e,9,
+https://github.com/shinux/PyTime,t,f,f,f,f,24,
+https://github.com/dirn/When.py,t,e,e,e,e,46,
+https://github.com/chardet/chardet,t,p,p,p,p,11,
+https://github.com/LuminosoInsight/python-ftfy,f,?,?,?,?,-1,
+https://github.com/seatgeek/fuzzywuzzy,t,p,p,p,p,10,
+https://github.com/ztane/python-Levenshtein,t,p,p,p,p,7,
+https://github.com/vinta/pangu.py,t,p,p,p,p,33,
+https://github.com/pwaller/pyfiglet,t,p,p,p,p,322,
+https://github.com/stochastic-technologies/shortuuid,t,p,p,p,p,6,
+https://github.com/moskytw/uniout,f,?,?,?,?,-1,
+https://github.com/lxneng/xpinyin,t,p,p,p,p,5,
+https://github.com/dimka665/awesome-slugify,t,p,p,p,p,5,
+https://github.com/un33k/python-slugify,t,p,p,p,p,45,
+https://github.com/mozilla/unicode-slugify,t,p,p,p,p,16,
+https://github.com/daviddrysdale/python-phonenumbers,t,p,p,p,p,19,
+https://github.com/derek73/python-nameparser,t,p,p,p,p,15,
+https://github.com/selwin/python-user-agents,t,f,f,f,f,14,
+https://github.com/andialbrecht/sqlparse,t,f,f,f,f,205,
+https://github.com/kennethreitz/tablib,t,p,p,p,p,10,
+https://github.com/brianray/mm,r,f,f,f,f,10,
+https://github.com/pyexcel/pyexcel,t,f,f,f,f,64,
+https://github.com/python-openxml/python-docx,t,p,p,p,p,36,
+https://github.com/dagwieers/unoconv,t,f,f,f,f,1,
+https://github.com/euske/pdfminer,t,p,p,p,p,124,
+https://github.com/mstamy2/PyPDF2,f,?,?,?,?,-1,
+https://github.com/lepture/mistune,t,e,e,e,e,1,
+https://github.com/waylan/Python-Markdown,t,f,f,f,f,291,
+https://github.com/wireservice/csvkit,t,f,f,f,f,10,
+https://github.com/mitsuhiko/unp,f,?,?,?,?,-1,
+https://github.com/fxsjy/jieba,f,?,?,?,?,-1,
+https://github.com/isnowfy/snownlp,f,?,?,?,?,-1,
+https://github.com/sloria/TextBlob,t,p,p,p,p,320,
+https://github.com/2shou/TextGrocery,t,p,p,p,p,10,
+https://github.com/saffsd/langid.py,f,?,?,?,?,-1,
+https://github.com/yoloseem/awesome-sphinxdoc,f,?,?,?,?,-1,
+https://github.com/BurntSushi/pdoc,f,?,?,?,?,-1,
+https://github.com/pycco-docs/pycco,t,p,p,p,p,25,
+https://github.com/henriquebastos/python-decouple,t,e,e,e,e,37,
+https://github.com/peterbrittain/asciimatics,t,u,u,u,u,25,
+https://github.com/kennethreitz/clint,f,?,?,?,?,-1,
+https://github.com/chriskiehl/Gooey,f,?,?,?,?,-1,
+https://github.com/jonathanslenders/python-prompt-toolkit,t,e,e,e,e,5,
+https://github.com/aws/aws-cli,t,?,?,?,?,-1,Command 'python scripts/ci/run-tests' timed out after 180 seconds
+https://github.com/glamp/bashplotlib,f,?,?,?,?,-1,
+https://github.com/brettcannon/caniusepython3,t,e,e,e,e,325,
+https://github.com/audreyr/cookiecutter,t,p,p,p,p,64,
+https://github.com/sloria/doitlive,t,e,e,e,e,13,
+https://github.com/gleitz/howdoi,t,f,f,f,f,17,
+https://github.com/jkbrzt/httpie,t,p,p,p,p,21,
+https://github.com/facebook/PathPicker,t,p,p,p,p,18,
+https://github.com/mooz/percol,f,?,?,?,?,-1,
+https://github.com/donnemartin/saws,t,f,f,f,f,193,
+https://github.com/nvbn/thefuck,t,u,u,u,u,27,
+https://github.com/timofurrer/try,t,p,p,p,p,0,
+https://github.com/dbcli/mycli,t,e,f,f,f,74,
+https://github.com/dbcli/pgcli,t,e,e,e,e,19,
+https://github.com/s3tools/s3cmd,t,p,p,p,p,70,
+https://github.com/bloomreach/s4cmd,f,?,?,?,?,-1,
+https://github.com/daboth/pagan,f,?,?,?,?,-1,
+https://github.com/python-pillow/Pillow,t,p,p,p,p,18,
+https://github.com/rossgoodwin/hmap,f,?,?,?,?,-1,
+https://github.com/hhatto/nude.py,t,p,p,p,p,22,
+https://github.com/ajkumar25/pygram,f,?,?,?,?,-1,
+https://github.com/lincolnloop/python-qrcode,f,?,?,?,?,-1,
+https://github.com/fogleman/Quads,f,?,?,?,?,-1,
+https://github.com/thumbor/thumbor,t,f,f,f,f,48,
+https://github.com/dahlia/wand,t,p,p,p,p,17,
+https://github.com/jflesch/pyocr,f,?,?,?,?,-1,
+https://github.com/madmaze/pytesseract,f,?,?,?,?,-1,
+https://github.com/danilobellini/audiolazy,t,?,?,?,?,-1,Command 'tox -vv' timed out after 180 seconds
+https://github.com/beetbox/audioread,t,?,?,?,?,-1,Command 'sudo apt-get update
+sudo apt-get install ffmpeg' timed out after 180 seconds
+https://github.com/worldveil/dejavu,r,f,f,f,f,16,
+https://github.com/StreetVoice/django-elastic-transcoder,t,f,f,f,f,24,
+https://github.com/globocom/m3u8,t,e,e,e,e,24,
+https://github.com/jiaaro/pydub,t,f,f,f,f,72,
+https://github.com/echonest/pyechonest,f,?,?,?,?,-1,
+https://github.com/Parisson/TimeSide,t,p,p,p,p,0,
+https://github.com/devsnd/tinytag,t,p,p,p,p,9,
+https://github.com/aizvorski/scikit-video,f,?,?,?,?,-1,
+https://github.com/maxmind/geoip-api-python,t,f,f,f,f,3,
+https://github.com/frewsxcv/python-geojson,t,p,p,p,p,19,
+https://github.com/geopy/geopy,t,p,p,p,p,382,
+https://github.com/appliedsec/pygeoip,t,e,e,e,e,13,
+https://github.com/SmileyChris/django-countries,f,?,?,?,?,-1,
+https://github.com/kennethreitz/grequests,f,?,?,?,?,-1,
+https://github.com/jcgregorio/httplib2,f,?,?,?,?,-1,
+https://github.com/twisted/treq,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/shazow/urllib3,t,f,f,f,f,911,
+https://github.com/msiemens/tinydb,t,e,e,e,e,21,
+https://github.com/PyMySQL/mysqlclient-python,t,f,f,f,f,9,
+https://github.com/PyMySQL/PyMySQL,t,f,f,f,f,31,
+https://github.com/gmr/queries,t,f,f,f,f,18,
+https://github.com/wulczer/txpostgres,t,f,e,e,e,13,
+https://github.com/pudo/dataset,t,p,p,p,p,36,
+https://github.com/datastax/python-driver,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/wbolster/happybase,r,f,f,f,f,11,
+https://github.com/wbolster/plyvel,f,?,?,?,?,-1,
+https://github.com/pycassa/pycassa,t,f,f,f,f,30,
+https://github.com/andymccurdy/redis-py,t,p,p,?,?,-1,Command 'if [[ $TEST_PEP8 == '1' ]]; then pep8 --repeat --show-source --exclude=.venv,.tox,dist,docs,build,*.egg .; else python setup.py test; fi' timed out after 180 seconds
+https://github.com/driftx/Telephus,f,?,?,?,?,-1,
+https://github.com/deldotdr/txRedis,f,?,?,?,?,-1,
+https://github.com/dahlia/awesome-sqlalchemy,t,u,u,u,u,0,
+https://github.com/coleifer/peewee,t,f,f,f,f,186,
+https://github.com/django-nonrel/mongodb-engine,t,e,e,e,e,391,
+https://github.com/mathcamp/flywheel,t,f,f,f,f,78,
+https://github.com/stephenmcd/hot-redis,t,p,p,p,p,41,
+https://github.com/kiddouk/redisco,t,f,f,f,f,25,
+https://github.com/Widdershin/butterdb,t,f,f,f,f,8,
+https://github.com/rosarior/awesome-django,t,u,u,u,u,0,
+https://github.com/humiaozuzu/awesome-flask,t,u,u,u,u,0,
+https://github.com/uralbash/awesome-pyramid,t,u,u,u,u,0,
+https://github.com/apex/apex,f,?,?,?,?,-1,
+https://github.com/Miserlou/Zappa,t,e,e,e,e,33,
+https://github.com/nficano/python-lambda,t,e,e,e,e,73,
+https://github.com/neuman/python-carteblanche,f,?,?,?,?,-1,
+https://github.com/django-guardian/django-guardian,t,e,e,e,e,12,
+https://github.com/dfunckt/django-rules,t,p,p,p,p,36,
+https://github.com/awesto/django-shop,t,f,f,f,f,149,
+https://github.com/stephenmcd/cartridge,t,e,e,e,e,38,
+https://github.com/lxneng/alipay,t,p,p,p,p,36,
+https://github.com/agiliq/merchant,t,e,e,e,e,36,
+https://github.com/carlospalol/money,f,?,?,?,?,-1,
+https://github.com/Alir3z4/python-currencies,t,p,p,p,p,8,
+https://github.com/5monkeys/django-formapi,t,f,f,f,f,16,
+https://github.com/flask-restful/flask-restful,t,p,p,p,p,11,
+https://github.com/jfinkels/flask-restless,t,e,e,e,e,30,
+https://github.com/marselester/flask-api-utils,t,f,f,f,f,10,
+https://github.com/nicolaiarocci/eve,t,?,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/mozilla-services/cornice,t,p,p,p,p,89,
+https://github.com/timothycrosley/hug,t,f,f,f,f,717,
+https://github.com/jeffknupp/sandman,t,f,f,f,f,55,
+https://github.com/toastdriven/restless,t,e,e,e,e,284,
+https://github.com/vertical-knowledge/ripozo,t,e,e,e,e,11,
+https://github.com/marshmallow-code/marshmallow,t,u,u,u,u,37,
+https://github.com/pennersr/django-allauth,t,p,p,p,p,246,
+https://github.com/evonove/django-oauth-toolkit,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/caffeinehit/django-oauth2-provider,t,e,e,e,e,55,
+https://github.com/lepture/flask-oauthlib,t,p,p,p,p,78,
+https://github.com/idan/oauthlib,t,f,f,f,f,272,
+https://github.com/joestump/python-oauth2,t,e,e,e,e,18,
+https://github.com/omab/python-social-auth,t,e,e,e,e,10,
+https://github.com/litl/rauth,t,p,p,f,f,163,
+https://github.com/demianbrecht/sanction,t,p,p,p,p,6,
+https://github.com/demonware/jose,t,p,p,p,p,140,
+https://github.com/jpadilla/pyjwt,t,f,f,f,f,512,
+https://github.com/brianloveswords/python-jws,f,?,?,?,?,-1,
+https://github.com/davedoesdev/python-jwt,t,f,f,f,f,30,
+https://github.com/coleifer/huey,t,p,p,p,f,132,
+https://github.com/pricingassistant/mrq,t,u,u,u,u,0,
+https://github.com/rdegges/simpleq,t,e,e,e,e,26,
+https://github.com/django-haystack/django-haystack,t,?,?,?,?,-1,Command 'python test_haystack/solr_tests/server/wait-for-solr
+python setup.py test' timed out after 180 seconds
+https://github.com/elastic/elasticsearch-dsl-py,t,e,e,?,?,-1,Command 'python setup.py test' timed out after 180 seconds
+https://github.com/catholabs/esengine,t,f,f,f,f,143,
+https://github.com/edsu/solrpy,t,?,?,?,?,-1,Command 'curl -sSL https://raw.githubusercontent.com/moliware/travis-solr/master/travis-solr.sh | SOLR_VERSION=4.10.3 SOLR_CONFS=tests bash' timed out after 180 seconds
+https://github.com/justquick/django-activity-stream,t,f,f,f,f,46,
+https://github.com/tschellenbach/Stream-Framework,t,e,e,e,e,273,
+https://github.com/django-compressor/django-compressor,t,f,f,f,f,591,
+https://github.com/jazzband/django-pipeline,t,e,e,e,e,714,
+https://github.com/jschneier/django-storages,t,f,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/miracle2k/flask-assets,t,p,p,p,p,16,
+https://github.com/jaysonsantos/jinja-assets-compressor,t,f,f,f,f,14,
+https://github.com/miracle2k/webassets,t,?,?,?,?,-1,Command 'sudo apt-get -qq update
+sudo apt-get install python-tk
+sudo apt-get install python-software-properties
+npm install -g postcss-cli autoprefixer
+sh requirements-dev.sh
+pip install tox' timed out after 180 seconds
+https://github.com/bbangert/beaker,t,u,u,u,u,12,
+https://github.com/django-cache-machine/django-cache-machine,t,e,e,e,e,127,
+https://github.com/Suor/django-cacheops,t,?,?,?,?,-1,Command 'tox' timed out after 180 seconds
+https://github.com/5monkeys/django-viewlet,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/django-viewlet/ pull' returned non-zero exit status 1
+https://github.com/jmoiron/johnny-cache,t,p,p,p,p,115,
+https://github.com/lericson/pylibmc,t,e,e,e,e,150,
+https://github.com/mailgun/flanker,t,f,?,?,?,-1,Command 'tox -e $TOX_ENV' timed out after 180 seconds
+https://github.com/martinrusev/imbox,t,p,p,p,p,5,
+https://github.com/kennethreitz/inbox.py,r,p,p,p,p,5,
+https://github.com/zedshaw/lamson,f,?,?,?,?,-1,
+https://github.com/marrow/mailer,t,e,e,e,e,206,
+https://github.com/tonioo/modoboa,t,?,?,?,?,-1,Command 'python setup.py -q develop
+pip install -q psycopg2 mysqlclient
+pip install -q -r ldap-requirements.txt
+pip install -q -r test-requirements.txt' timed out after 180 seconds
+https://github.com/nylas/sync-engine,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/sync-engine/ pull' returned non-zero exit status 1
+https://github.com/kootenpv/yagmail,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/yagmail/ pull' returned non-zero exit status 1
+https://github.com/ovalhub/pyicu,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/pyicu/ pull' returned non-zero exit status 1
+https://github.com/gruns/furl,t,e,e,e,e,288,
+https://github.com/codeinthehole/purl,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/purl/ pull' returned non-zero exit status 1
+https://github.com/ellisonleao/pyshorteners,t,f,f,f,f,14,
+https://github.com/Alir3z4/python-short_url,t,e,e,e,e,131,
+https://github.com/sloria/webargs,t,u,u,u,u,21,
+https://github.com/mozilla/bleach,t,e,e,e,e,35,
+https://github.com/html5lib/html5lib-python,t,e,e,e,e,3,
+https://github.com/pallets/markupsafe,t,p,p,p,p,32,
+https://github.com/gawel/pyquery,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/pyquery/ pull' returned non-zero exit status 1
+https://github.com/stchris/untangle,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/untangle/ pull' returned non-zero exit status 1
+https://github.com/martinblech/xmltodict,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/xmltodict/ pull' returned non-zero exit status 1
+https://github.com/chineking/cola,r,f,f,?,?,-1,Command 'nosetests' timed out after 180 seconds
+https://github.com/matiasb/demiurge,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/demiurge/ pull' returned non-zero exit status 1
+https://github.com/hickford/MechanicalSoup,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/MechanicalSoup/ pull' returned non-zero exit status 1
+https://github.com/scrapinghub/portia,t,p,p,p,p,177,
+https://github.com/binux/pyspider,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/pyspider/ pull' returned non-zero exit status 1
+https://github.com/jmcarp/robobrowser,t,u,u,u,u,32,
+https://github.com/vinta/Haul,t,f,f,?,?,-1,Command 'coverage run --source=haul setup.py test' timed out after 180 seconds
+https://github.com/Alir3z4/html2text,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/html2text/ pull' returned non-zero exit status 1
+https://github.com/michaelhelmick/lassie,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/lassie/ pull' returned non-zero exit status 1
+https://github.com/coleifer/micawber,t,f,f,f,f,26,
+https://github.com/codelucas/newspaper,t,?,?,?,?,-1,Command 'pip install -r requirements.txt coverage coveralls
+python download_corpora.py' timed out after 180 seconds
+https://github.com/erikriver/opengraph,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/opengraph/ pull' returned non-zero exit status 1
+https://github.com/grangier/python-goose,t,f,f,?,?,-1,Command 'python setup.py test' timed out after 180 seconds
+https://github.com/buriy/python-readability,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/python-readability/ pull' returned non-zero exit status 1
+https://github.com/Alir3z4/python-sanitize,t,p,p,p,p,17,
+https://github.com/miso-belica/sumy,t,e,e,e,e,79,
+https://github.com/deanmalmgren/textract,t,f,?,?,?,-1,Command 'sudo ./provision/debian.sh' timed out after 180 seconds
+https://github.com/Pylons/deform,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/deform/ pull' returned non-zero exit status 1
+https://github.com/dyve/django-bootstrap3,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/django-bootstrap3/ pull' returned non-zero exit status 1
+https://github.com/maraujop/django-crispy-forms,t,f,f,f,f,82,
+https://github.com/WiserTogether/django-remote-forms,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/django-remote-forms/ pull' returned non-zero exit status 1
+https://github.com/wtforms/wtforms,t,p,p,p,p,25,
+https://github.com/schematics/schematics,t,f,f,f,f,243,
+https://github.com/keleshev/schema,t,p,p,p,p,34,
+https://github.com/Julian/jsonschema,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/jsonschema/ pull' returned non-zero exit status 1
+https://github.com/nicolaiarocci/cerberus,t,p,p,p,p,34,
+https://github.com/alecthomas/voluptuous,t,p,p,p,p,16,
+https://github.com/podio/valideer,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/valideer/ pull' returned non-zero exit status 1
+https://github.com/mbi/django-simple-captcha,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/django-simple-captcha/ pull' returned non-zero exit status 1
+https://github.com/moqada/django-simple-spam-blocker,t,e,e,e,e,97,
+https://github.com/alex/django-taggit,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/django-taggit/ pull' returned non-zero exit status 1
+https://github.com/Eugeny/ajenti,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/ajenti/ pull' returned non-zero exit status 1
+https://github.com/sshwsfc/xadmin,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/xadmin/ pull' returned non-zero exit status 1
+https://github.com/mher/flower,t,e,?,?,?,-1,Command 'python -m tests.__main__' timed out after 180 seconds
+https://github.com/wooey/wooey,?,?,?,?,?,-1,Command 'timeout 180 git -C /home/yan/pynondex/python-2.7.12-nondex/libtest/libs/wooey/ pull' returned non-zero exit status 1

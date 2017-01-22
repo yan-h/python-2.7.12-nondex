@@ -2493,7 +2493,7 @@ typedef struct {
     Py_ssize_t di_pos;
     PyObject* di_result; /* reusable result tuple for iteritems */
     Py_ssize_t len;
-    PyObject *di_indices; /* array of entry positions, ordered randomly*/
+    PyObject *di_indices; /* array of entry positions for nondeterministic iteration */
 } dictiterobject;
 
 static PyObject *
@@ -2531,6 +2531,7 @@ dictiter_new(PyDictObject *dict, PyTypeObject *itertype)
         }
     }
 
+    /* Shuffle order of indices array */
     NonDex_Shuffle_Py_ssize_t(&indices, di->len);
     di->di_indices = PyByteArray_FromStringAndSize(&indices, di->len * sizeof(Py_ssize_t));
 
@@ -2589,6 +2590,7 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         return NULL;
     }
     
+    /* If we don't want nondeterminism, use the regular algorithm */
     if (NonDex_Mode() == OFF) {
         i = di->di_pos;
         if (i < 0)
@@ -2606,6 +2608,7 @@ static PyObject *dictiter_iternextkey(dictiterobject *di)
         return key;
     }
         
+    /* If we want nondeterminism, step to the next entry in our pre-shuffled indices array */
     while (1) {
         if (di->len == 0)
             goto fail;
@@ -2677,6 +2680,7 @@ static PyObject *dictiter_iternextvalue(dictiterobject *di)
         return NULL;
     }
     
+    /* If we don't want nondeterminism, use the regular algorithm */
     if (NonDex_Mode() == OFF) {
         i = di->di_pos;
         mask = d->ma_mask;
@@ -2692,7 +2696,9 @@ static PyObject *dictiter_iternextvalue(dictiterobject *di)
         di->len--;
         Py_INCREF(value);
         return value;
-    }    
+    }
+
+    /* If we want nondeterminism, step to the next entry in our pre-shuffled indices array */
     while (1) {
         if (di->len == 0)
             goto fail;
@@ -2763,6 +2769,7 @@ static PyObject *dictiter_iternextitem(dictiterobject *di)
         return NULL;
     }
 
+    /* If we don't want nondeterminism, use the regular algorithm */
     if (NonDex_Mode() == OFF) {
         i = di->di_pos;
         if (i < 0)
@@ -2793,6 +2800,7 @@ static PyObject *dictiter_iternextitem(dictiterobject *di)
         return result;
     }
     
+    /* If we want nondeterminism, step to the next entry in our pre-shuffled indices array */
     while (1) {
         if (di->len == 0)
             goto fail;
