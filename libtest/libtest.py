@@ -13,7 +13,7 @@ failure_string = "!!!failure detected during tests!!!"
 
 # Parse arguments
 if len(sys.argv) < 2:
-    sys.exit("Usage: python libtest.py <file containing repo URLs> <--setup>")
+    sys.exit("Usage: python libtest.py <file containing repo URLs> --setup <directory of source of nondex Python>")
 elif not os.path.isfile(sys.argv[1]):
     sys.exit("Could not find file with repo URLs")
 

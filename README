@@ -1,3 +1,20 @@
+Nondex modifications
+=============================
+In this modified version of Python, dictionary iteration order and the result of os.listdir() are randomized.
+
+This version of Python can be run in three nondeterminism modes:
+ONE - Shuffling subroutines always start with the same seed. Argument: -no
+FULL - Shuffling subroutines start with random seeds. Argument: -nf
+NONE - Regular, unmodified Python. Argument: -nx
+
+Objects/dictobject.c is modified to randomize the order of dictionary iteration.
+Modules/posixmodule.c was modified to shuffle the return value of os.listdir().
+Python/nondeterminism.c contains common subroutines for implementing nondeterminism.
+libtest/ contains a hacky script to test git libraries in bulk.
+	It also contains some logs from running said script.
+tests/ contains unfinished unit tests to make sure nondeterminism. 
+	Currently, there are tests for dictionary iteration functionality is tested in FULL mode. 
+
 This is Python version 2.7.12
 =============================
 
