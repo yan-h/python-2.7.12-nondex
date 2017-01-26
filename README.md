@@ -1,4 +1,4 @@
-Nondex modifications
+Nondex information
 =============================
 In this modified version of Python, dictionary iteration order and the result of os.listdir() are randomized.
 
@@ -14,6 +14,42 @@ libtest/ contains a hacky script to test git libraries in bulk.
 	It also contains some logs from running said script.
 tests/ contains unfinished unit tests to make sure nondeterminism. 
 	Currently, there are tests for dictionary iteration functionality is tested in FULL mode. 
+
+Python building tips
+-----------------------------
+
+The following commands are how I built this version of Python. 
+--enable-unicode=ucs4 is important because many libraries require it.
+```
+./configure --prefix=/path/to/destination/ --enable-unicode=ucs4
+make install
+```
+
+Nondex testing script
+-----------------------------
+libtest/ contains files and results from testing libraries:
+
+libtest/logs/ contains results from script runs. Each test run receives a directory named by its date. 
+Inside, there is a summary.log file that summarizes the results of the run, along with a directory with detailed information for each library.
+	
+libtest/venv_nondex/ and libtest/venv_original/ house the virtual environments for regular Python and nondex python. They are created by the script.
+		
+libtest/libs/ contains the libraries tested. It is created by the script.
+
+The main testing script is libtest/libtest.py, which requires Python 3.
+Here is a sample command for running it:
+
+```
+python3 libtest.py list_of_repos.txt --setup /path/to/pynondex/
+```
+
+list_of_repos.txt is a list of github repositories for the script to test.
+
+--setup is an optional flag that causes the script to set up virtual environments for nondex Python and 
+	regular Python. This should be used the first time the script is run.
+	
+/path/to/pynondex/ is the path to the location where nondex Python was built. Mandatory on the first run.
+	
 
 This is Python version 2.7.12
 =============================
