@@ -8,12 +8,12 @@ import time
 import datetime
 import copy
 
-nondex_source_home = "/home/yan/pynondex/python-2.7.12/"
+nondex_source_home = "/path/to/source/code/of/nondex/Python"
 failure_string = "!!!failure detected during tests!!!"
 
 # Parse arguments
 if len(sys.argv) < 2:
-    sys.exit("Usage: python libtest.py <file containing repo URLs>")
+    sys.exit("Usage: python libtest.py <file containing repo URLs> <--setup>")
 elif not os.path.isfile(sys.argv[1]):
     sys.exit("Could not find file with repo URLs")
 
@@ -26,10 +26,13 @@ timelimit = 180
 
 # Important files and directories
 repos_file = os.getcwd() + "/" + sys.argv[1] # List of URLs of Github projects
+
+# The directory this file is located is the base directory for storing test results, etc
 test_home = os.path.dirname(os.path.abspath(__file__)) + "/"
-log_home = test_home + "logs/" + datetime.datetime.now().strftime("%d-%b-%Y-%H:%M:%S") + "/"
-venv_original_home = test_home + "venv_original/"
-venv_nondex_home = test_home + "venv_nondex/"
+
+log_home = test_home + "logs/" + datetime.datetime.now().strftime("%d-%b-%Y-%H:%M:%S") + "/" # Directory to store logs
+venv_original_home = test_home + "venv_original/" # Directory of virtual environment copy of original Python
+venv_nondex_home = test_home + "venv_nondex/" # Directory of virtual environment copy of nondex Python
 
 if not os.path.exists(log_home):
     os.makedirs(log_home)
@@ -47,20 +50,21 @@ nondex_modes = ["x", "o", "f"]
 # Special environment variable copies. For running a process under a virtualenv
 env_nondex =  os.environ.copy()
 env_nondex["PATH"] = venv_nondex_home + "bin:" + env_nondex["PATH"]
-#env_nondex["PYTHONHOME"] = venv_nondex_home
 env_original = os.environ.copy()
 env_original["PATH"] = venv_original_home + "bin:" + env_original["PATH"]
 
+# Information on the original Python virtual environment to pass to functions that need it
 venv_original = {"home": venv_original_home,
                  "num_trials": 1,
                  "env": env_original,
                  "mode": "original"}
-
+# Equivalent of venv_original for nondex Python
 venv_nondex =   {"home": venv_nondex_home,
                  "num_trials": 3,
                  "env": env_nondex,
                  "mode": "nondex"}
 
+# Data structure containing test run info to output to the summary log file
 summary_data = {"url":None,
                 "setup":"?",
                 "original":"?",
@@ -70,6 +74,7 @@ summary_data = {"url":None,
                 "error":"",
                 "time":-1}
 
+# Writes a dictionary representing library test information to the summary log file
 def write_summary(summary):
     main_log_file.write("%s,%s,%s,%s,%s,%s,%d,%s\n" %
         (url,
@@ -254,19 +259,33 @@ def test_repo(url, summary):
 logging.basicConfig(stream=sys.stdout, format='%(asctime)s: %(message)s' ,level=logging.INFO)
 logging.info("===== Initiating new test session =====")
 
-# Set up virtual environment
-if "--setup" in sys.argv[1:]:
-    logging.info("=== Setting up virtualenv ===")
+
+# Set up virtual environment for original and nondex Python
+def setup_venv_original():
     subprocess.call("virtualenv -p %s %s" % ("python2.7", venv_original["home"]), shell=True)
-    subprocess.call("virtualenv -p %s %s" % (nondex_source_home + "bin/python", venv_nondex["home"]), shell=True)
     subprocess.call("pip install nose", shell=True, env=venv_original["env"])
     subprocess.call("pip install tox", shell=True, env=venv_original["env"])
     subprocess.call("pip install pytest-cov", shell=True, env=venv_original["env"])
     subprocess.call("pip install numpy", shell=True, env=venv_original["env"])
-    subprocess.call(nondex_source_home + "bin/pip install nose", shell=True)
-    subprocess.call(nondex_source_home + "bin/pip install tox", shell=True)
-    subprocess.call(nondex_source_home + "bin/pip install pytest-cov", shell=True)
-    subprocess.call(nondex_source_home + "bin/pip install numpy", shell=True)
+
+def setup_venv_nondex():
+    subprocess.call("virtualenv -p %s %s" % (nondex_source_home + "bin/python", venv_nondex["home"]), shell=True)
+    subprocess.call(venv_nondex["home"] + "bin/pip install nose", shell=True)
+    subprocess.call(venv_nondex["home"] + "bin/pip install tox", shell=True)
+    subprocess.call(venv_nondex["home"] + "bin/pip install pytest-cov", shell=True)
+    subprocess.call(venv_nondex["home"] + "bin/pip install numpy", shell=True)
+
+if "--setup" in sys.argv[1:]:
+    nondex_source_home = sys.argv[sys.argv.index("--setup") + 1]
+    print(nondex_source_home)
+    setup_venv_original()
+    setup_venv_nondex()
+
+if not os.path.exists(venv_original_home):
+    setup_venv_original()
+
+if not os.path.exists(venv_nondex_home):
+    setup_venv_nondex()
 
 # Main loop
 # Read git urls line by line from input file, test each of them
